@@ -2,15 +2,23 @@ import { useState } from "react";
 import {
   CASES_BY_MOBILE,
   SUMMARY_TO_LEVEL,
-  formatFactorValue,
-  type Factor,
+  type Insight,
+  type Influence,
   type RiskLevel,
   type SummaryRisk,
 } from "@/data/cases";
 import RiskGauge from "./RiskGauge";
 import CollapsibleCard from "./CollapsibleCard";
 import DecisionModal, { type Decision } from "./DecisionModal";
-import { ShieldCheck, RotateCcw, AlertTriangle, ChevronDown } from "lucide-react";
+import {
+  ShieldCheck,
+  RotateCcw,
+  AlertTriangle,
+  ChevronDown,
+  TrendingUp,
+  TrendingDown,
+  Minus,
+} from "lucide-react";
 
 interface Props {
   mobile: string;
@@ -22,6 +30,18 @@ const RISK_CLASS: Record<RiskLevel, string> = {
   Medium: "bg-risk-medium/20 text-risk-medium border-risk-medium/40",
   High: "bg-risk-high/15 text-risk-high border-risk-high/30",
   "Very High": "bg-risk-veryhigh/15 text-risk-veryhigh border-risk-veryhigh/30",
+};
+
+const INFLUENCE_CLASS: Record<Influence, string> = {
+  positive: "bg-success/15 text-success border-success/30",
+  negative: "bg-destructive/10 text-destructive border-destructive/30",
+  neutral: "bg-muted text-muted-foreground border-border",
+};
+
+const INFLUENCE_LABEL: Record<Influence, string> = {
+  positive: "Positive",
+  negative: "Negative",
+  neutral: "Neutral",
 };
 
 export default function ResultsScreen({ mobile, onReset }: Props) {
@@ -127,15 +147,22 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
           title="Bureau Risk Alerts"
           defaultOpen
           summary={
-            noHit ? <NoDataChip /> : <SummaryChip risk={data.summary.bureauRisk} />
+            noHit ? (
+              <NoDataChip />
+            ) : (
+              <>
+                {data.results.bureau.risky && <RiskyBadge />}
+                <SummaryChip risk={data.summary.bureauRisk} />
+              </>
+            )
           }
         >
           {noHit ? (
             <NoData />
           ) : (
-            <FactorBlock
-              top={data.results.bureau.topFactors}
-              all={data.results.bureau.factors}
+            <InsightBlock
+              top={data.results.bureau.insights}
+              all={data.results.bureau.allInsights}
             />
           )}
         </CollapsibleCard>
@@ -143,14 +170,23 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
         {/* Section 3: Digital */}
         <CollapsibleCard
           title="Digital Footprints"
-          summary={noHit ? <NoDataChip /> : <SummaryChip risk={data.summary.digitalRisk} />}
+          summary={
+            noHit ? (
+              <NoDataChip />
+            ) : (
+              <>
+                {data.results.digital.risky && <RiskyBadge />}
+                <SummaryChip risk={data.summary.digitalRisk} />
+              </>
+            )
+          }
         >
           {noHit ? (
             <NoData />
           ) : (
-            <FactorBlock
-              top={data.results.digital.topFactors}
-              all={data.results.digital.factors}
+            <InsightBlock
+              top={data.results.digital.insights}
+              all={data.results.digital.allInsights}
             />
           )}
         </CollapsibleCard>
@@ -158,14 +194,23 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
         {/* Section 4: Telco */}
         <CollapsibleCard
           title="Telco Data"
-          summary={noHit ? <NoDataChip /> : <SummaryChip risk={data.summary.telcoRisk} />}
+          summary={
+            noHit ? (
+              <NoDataChip />
+            ) : (
+              <>
+                {data.results.telco.risky && <RiskyBadge />}
+                <SummaryChip risk={data.summary.telcoRisk} />
+              </>
+            )
+          }
         >
           {noHit ? (
             <NoData />
           ) : (
-            <FactorBlock
-              top={data.results.telco.topFactors}
-              all={data.results.telco.factors}
+            <InsightBlock
+              top={data.results.telco.insights}
+              all={data.results.telco.allInsights}
             />
           )}
         </CollapsibleCard>
@@ -203,13 +248,33 @@ function SummaryChip({ risk }: { risk: SummaryRisk }) {
   );
 }
 
-function FactorBlock({ top, all }: { top: Factor[]; all: Factor[] }) {
+function RiskyBadge() {
+  return (
+    <span className="inline-flex items-center gap-1 rounded-full border border-destructive/30 bg-destructive/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-destructive">
+      <AlertTriangle className="h-3 w-3" />
+      Risky
+    </span>
+  );
+}
+
+function InfluenceBadge({ influence }: { influence: Influence }) {
+  const Icon =
+    influence === "positive" ? TrendingUp : influence === "negative" ? TrendingDown : Minus;
+  return (
+    <span
+      className={`inline-flex shrink-0 items-center gap-1 rounded-full border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ${INFLUENCE_CLASS[influence]}`}
+    >
+      <Icon className="h-3 w-3" />
+      {INFLUENCE_LABEL[influence]}
+    </span>
+  );
+}
+
+function InsightBlock({ top, all }: { top: Insight[]; all: Insight[] }) {
   const [expanded, setExpanded] = useState(false);
 
   if (!all.length && !top.length) {
-    return (
-      <p className="text-sm text-muted-foreground">No risk indicators available</p>
-    );
+    return <p className="text-sm text-muted-foreground">No risk indicators available</p>;
   }
 
   const visible = expanded ? all : top.length ? top : all;
@@ -218,19 +283,19 @@ function FactorBlock({ top, all }: { top: Factor[]; all: Factor[] }) {
   return (
     <div className="space-y-3">
       <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-        {expanded ? `All risk factors (${all.length})` : `Top risk factors`}
+        {expanded ? `All insights (${all.length})` : `Top insights`}
       </p>
-      <ul className="space-y-1.5">
-        {visible.map((f, i) => (
+      <ul className="space-y-2">
+        {visible.map((ins, i) => (
           <li
-            key={`${f.key}-${i}`}
-            className="flex items-center gap-3 rounded-md border bg-muted/30 px-3 py-2 text-sm"
+            key={`${ins.title}-${i}`}
+            className="rounded-md border bg-muted/30 px-3 py-2.5 text-sm"
           >
-            <span className="h-2 w-2 shrink-0 rounded-full bg-primary/60" />
-            <span className="flex-1">{f.label}</span>
-            <span className="font-mono text-xs tabular-nums text-muted-foreground">
-              {formatFactorValue(f.value)}
-            </span>
+            <div className="flex items-start justify-between gap-3">
+              <h4 className="font-medium leading-tight">{ins.title}</h4>
+              <InfluenceBadge influence={ins.influence} />
+            </div>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{ins.text}</p>
           </li>
         ))}
       </ul>
@@ -240,7 +305,7 @@ function FactorBlock({ top, all }: { top: Factor[]; all: Factor[] }) {
           onClick={() => setExpanded((e) => !e)}
           className="inline-flex items-center gap-1 text-xs font-medium text-primary transition hover:underline"
         >
-          {expanded ? "Show top factors only" : `Show all ${all.length} factors`}
+          {expanded ? "Show top insights only" : `Show all ${all.length} insights`}
           <ChevronDown
             className={`h-3.5 w-3.5 transition-transform ${expanded ? "rotate-180" : ""}`}
           />
@@ -259,7 +324,5 @@ function NoDataChip() {
 }
 
 function NoData() {
-  return (
-    <p className="text-sm text-muted-foreground">No risk indicators available</p>
-  );
+  return <p className="text-sm text-muted-foreground">No risk indicators available</p>;
 }

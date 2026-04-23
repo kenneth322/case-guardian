@@ -1,0 +1,2912 @@
+{
+  "lovable": {
+    "variant": "v8_full_with_telco_variable_interpretation",
+    "sourceFiles": [
+      "10_ID_Characterstics.xlsx",
+      "Data Dictionary.xlsx",
+      "Variable Interpretation.xlsx"
+    ],
+    "dataModel": {
+      "primaryKey": "mobile",
+      "entities": {
+        "casesByMobile": {
+          "7547934604": {
+            "applicant": {
+              "mobile": "7547934604",
+              "firstName": "Ankit",
+              "lastName": "Sharma",
+              "email": "ankit.sharma95@yahoo.com",
+              "dob": "1982-04-05",
+              "aadhaar": "803326799935",
+              "pan": "CSNBA2535G",
+              "address": "Flat 577, Hadapsar, Pune, Maharashtra 411039"
+            },
+            "summary": {
+              "telcoRisk": "High Risk",
+              "digitalRisk": "High Risk",
+              "bureauRisk": "High Risk",
+              "overallRisk": "Very High Risk"
+            },
+            "results": {
+              "digital": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 15.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 100.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryFintech",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 10.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryFintech_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 9.0.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 5.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 2.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 15.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 100.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryFintech",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 10.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryFintech_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 9.0.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 5.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 2.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: mobile",
+                    "text": "Number of distinct mobile numbers connected to the primary node at a depth of 2 nan Observed value: 1.0.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.mobile_BUREAUID"
+                  },
+                  {
+                    "title": "Tenure: nameDiversity",
+                    "text": "Metric ranging from 0 to 1; Metric to assess the number of distinct names found on the Bureau network; nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nameDiversity_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: 1.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Count",
+                    "text": "Number of distinct connections to primary node at a depth of 1. Larger counts are linked to higher risk. nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l1Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: 1.",
+                    "influence": "positive",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: fullName",
+                    "text": "Number of distinct names connected to the primary node at a depth of 2 nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID"
+                  },
+                  {
+                    "title": "Network: email",
+                    "text": "Number of distinct emails connected to the primary node at a depth of 2 More than 5 verifi ed email IDs are connected to the provided phone number. Observed value: 1.0.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.email_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryOther",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryOther_BUREAUID"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 560.2894318907571,
+                    "Predicted": 0.456808477640152
+                  }
+                }
+              },
+              "telco": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is < 1 week. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 0 (Very Low). Higher indicates stronger known connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.000 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 1.00 (Match Likely).",
+                    "influence": "positive",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 0.367 (Low). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "negative",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~67 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is < 1 week. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 0 (Very Low). Higher indicates stronger known connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.000 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 1.00 (Match Likely).",
+                    "influence": "positive",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 0.367 (Low). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "negative",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~67 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  },
+                  {
+                    "title": "Spammy Connections Ratio",
+                    "text": "Spammy connections ratio is 0.000 (Very Low). Higher indicates more spam-linked connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong Spammy Connections Ratio",
+                    "text": "Strong spammy ratio is 0.000 (Very Low).",
+                    "influence": "positive",
+                    "sourceVariable": "Strong Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Outgoing vs Incoming Calls Ratio (60D)",
+                    "text": "Outgoing/Incoming ratio is 0.03 (Very Low). Higher values indicate higher outgoing dominance and higher risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 605.8910440954362,
+                    "Predicted": 0.2267386764287949
+                  }
+                }
+              },
+              "bureau": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Bureau alerts triggered",
+                    "text": "Rule count is 3 \u2014 bureau risk alerts were triggered.",
+                    "influence": "negative",
+                    "sourceVariable": "RULE_COUNT"
+                  },
+                  {
+                    "title": "Borr Appl Ne81",
+                    "text": "BORR_APPL_NE81 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "BORR_APPL_NE81"
+                  },
+                  {
+                    "title": "Borr Appl Ne82",
+                    "text": "BORR_APPL_NE82 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "BORR_APPL_NE82"
+                  },
+                  {
+                    "title": "Str Appl Ne83",
+                    "text": "STR_APPL_NE83 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "STR_APPL_NE83"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Bureau alerts triggered",
+                    "text": "Rule count is 3 \u2014 bureau risk alerts were triggered.",
+                    "influence": "negative",
+                    "sourceVariable": "RULE_COUNT"
+                  },
+                  {
+                    "title": "Borr Appl Ne81",
+                    "text": "BORR_APPL_NE81 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "BORR_APPL_NE81"
+                  },
+                  {
+                    "title": "Borr Appl Ne82",
+                    "text": "BORR_APPL_NE82 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "BORR_APPL_NE82"
+                  },
+                  {
+                    "title": "Str Appl Ne83",
+                    "text": "STR_APPL_NE83 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "STR_APPL_NE83"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 527.6590324057851,
+                    "Predicted": 0.6412340998649597
+                  }
+                }
+              }
+            }
+          },
+          "7627096571": {
+            "applicant": {
+              "mobile": "7627096571",
+              "firstName": "Rahul",
+              "lastName": "Reddy",
+              "email": "rahul.reddy26@outlook.com",
+              "dob": "1995-12-18",
+              "aadhaar": "543646118359",
+              "pan": "SIZAY3615W",
+              "address": "Flat 966, Aundh, Pune, Maharashtra 411018"
+            },
+            "summary": {
+              "telcoRisk": "High Risk",
+              "digitalRisk": "High Risk",
+              "bureauRisk": "High Risk",
+              "overallRisk": "Very High Risk"
+            },
+            "results": {
+              "digital": {
+                "topN": 6,
+                "risky": false,
+                "insights": [
+                  {
+                    "title": "Tenure: daysSinceRevocation",
+                    "text": "Number of days elpased since the phone number was last revocated. nan Observed value: 445.0.",
+                    "influence": "positive",
+                    "sourceVariable": "daysSinceRevocation_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 100.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 6.5.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 5.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 4.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 2.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Tenure: daysSinceRevocation",
+                    "text": "Number of days elpased since the phone number was last revocated. nan Observed value: 445.0.",
+                    "influence": "positive",
+                    "sourceVariable": "daysSinceRevocation_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 100.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 6.5.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 5.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 4.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 2.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: mobile",
+                    "text": "Number of distinct mobile numbers connected to the primary node at a depth of 2 nan Observed value: 1.0.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.mobile_BUREAUID"
+                  },
+                  {
+                    "title": "Tenure: nameDiversity",
+                    "text": "Metric ranging from 0 to 1; Metric to assess the number of distinct names found on the Bureau network; nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nameDiversity_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: 1.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Count",
+                    "text": "Number of distinct connections to primary node at a depth of 1. Larger counts are linked to higher risk. nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l1Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: 1.",
+                    "influence": "positive",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: fullName",
+                    "text": "Number of distinct names connected to the primary node at a depth of 2 nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID"
+                  },
+                  {
+                    "title": "Network: email",
+                    "text": "Number of distinct emails connected to the primary node at a depth of 2 More than 5 verifi ed email IDs are connected to the provided phone number. Observed value: 1.0.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.email_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryGaming",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryGaming_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryFintech",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryFintech_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryOther",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryOther_BUREAUID"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 592.1247143049541,
+                    "Predicted": 0.2872558832168579
+                  }
+                }
+              },
+              "telco": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is < 1 week. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.059 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~13 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong Spammy Connections Ratio",
+                    "text": "Strong spammy ratio is 0.000 (Very Low).",
+                    "influence": "positive",
+                    "sourceVariable": "Strong Spammy Connections Ratio_TRUECALLER"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is < 1 week. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.059 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~13 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong Spammy Connections Ratio",
+                    "text": "Strong spammy ratio is 0.000 (Very Low).",
+                    "influence": "positive",
+                    "sourceVariable": "Strong Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 1.000 (Very High). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "positive",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Spammy Connections Ratio",
+                    "text": "Spammy connections ratio is 0.077 (Low). Higher indicates more spam-linked connections.",
+                    "influence": "neutral",
+                    "sourceVariable": "Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 53 (Low). Higher indicates stronger known connections.",
+                    "influence": "neutral",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Outgoing vs Incoming Calls Ratio (60D)",
+                    "text": "Outgoing/Incoming ratio is 0.51 (Moderate). Higher values indicate higher outgoing dominance and higher risk.",
+                    "influence": "neutral",
+                    "sourceVariable": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 0.53 (Inconclusive).",
+                    "influence": "neutral",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 601.8748072023769,
+                    "Predicted": 0.2434192448854446
+                  }
+                }
+              },
+              "bureau": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Bureau alerts triggered",
+                    "text": "Rule count is 1 \u2014 bureau risk alerts were triggered.",
+                    "influence": "negative",
+                    "sourceVariable": "RULE_COUNT"
+                  },
+                  {
+                    "title": "Str Appl Ne83",
+                    "text": "STR_APPL_NE83 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "STR_APPL_NE83"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Bureau alerts triggered",
+                    "text": "Rule count is 1 \u2014 bureau risk alerts were triggered.",
+                    "influence": "negative",
+                    "sourceVariable": "RULE_COUNT"
+                  },
+                  {
+                    "title": "Str Appl Ne83",
+                    "text": "STR_APPL_NE83 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "STR_APPL_NE83"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 595.4930057009744,
+                    "Predicted": 0.2715894877910614
+                  }
+                }
+              }
+            }
+          },
+          "7524536787": {
+            "applicant": {
+              "mobile": "7524536787",
+              "firstName": "Sandeep",
+              "lastName": "Verma",
+              "email": "sandeep.verma98@yahoo.com",
+              "dob": "1978-02-13",
+              "aadhaar": "279268816635",
+              "pan": "TIZBX8527R",
+              "address": "Flat 356, Viman Nagar, Pune, Maharashtra 411006"
+            },
+            "summary": {
+              "telcoRisk": "Low Risk",
+              "digitalRisk": "High Risk",
+              "bureauRisk": "High Risk",
+              "overallRisk": "High Risk"
+            },
+            "results": {
+              "digital": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 100.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 9.0.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 4.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 2.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 100.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 9.0.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 4.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 2.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Tenure: nameDiversity",
+                    "text": "Metric ranging from 0 to 1; Metric to assess the number of distinct names found on the Bureau network; nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nameDiversity_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: fullName",
+                    "text": "Number of distinct names connected to the primary node at a depth of 2 nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 598.165806996125,
+                    "Predicted": 0.259546309709549
+                  }
+                }
+              },
+              "telco": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 0.00 (No Match Likely).",
+                    "influence": "negative",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is 1-3 weeks. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 11 (Very Low). Higher indicates stronger known connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.000 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "1 recycle detected in last 2 years \u2014 moderate stability risk.",
+                    "influence": "negative",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 0.383 (Low). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "negative",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 0.00 (No Match Likely).",
+                    "influence": "negative",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is 1-3 weeks. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 11 (Very Low). Higher indicates stronger known connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.000 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "1 recycle detected in last 2 years \u2014 moderate stability risk.",
+                    "influence": "negative",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 0.383 (Low). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "negative",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~67 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  },
+                  {
+                    "title": "Spammy Connections Ratio",
+                    "text": "Spammy connections ratio is 0.000 (Very Low). Higher indicates more spam-linked connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong Spammy Connections Ratio",
+                    "text": "Strong spammy ratio is 0.000 (Very Low).",
+                    "influence": "positive",
+                    "sourceVariable": "Strong Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Outgoing vs Incoming Calls Ratio (60D)",
+                    "text": "Outgoing/Incoming ratio is 0.77 (Moderate). Higher values indicate higher outgoing dominance and higher risk.",
+                    "influence": "neutral",
+                    "sourceVariable": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 616.5382079588053,
+                    "Predicted": 0.186514288187027
+                  }
+                }
+              },
+              "bureau": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Bureau alerts triggered",
+                    "text": "Rule count is 1 \u2014 bureau risk alerts were triggered.",
+                    "influence": "negative",
+                    "sourceVariable": "RULE_COUNT"
+                  },
+                  {
+                    "title": "Borr Appl Ne81",
+                    "text": "BORR_APPL_NE81 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "BORR_APPL_NE81"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Bureau alerts triggered",
+                    "text": "Rule count is 1 \u2014 bureau risk alerts were triggered.",
+                    "influence": "negative",
+                    "sourceVariable": "RULE_COUNT"
+                  },
+                  {
+                    "title": "Borr Appl Ne81",
+                    "text": "BORR_APPL_NE81 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "BORR_APPL_NE81"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 588.3926925010576,
+                    "Predicted": 0.3052287697792053
+                  }
+                }
+              }
+            }
+          },
+          "7601709226": {
+            "applicant": {
+              "mobile": "7601709226",
+              "firstName": "Pravin",
+              "lastName": "Kulkarni",
+              "email": "pravin.kulkarni81@outlook.com",
+              "dob": "1986-10-07",
+              "aadhaar": "777121391750",
+              "pan": "VHYJC4814D",
+              "address": "Flat 879, Aundh, Pune, Maharashtra 411030"
+            },
+            "summary": {
+              "telcoRisk": "High Risk",
+              "digitalRisk": "Low Risk",
+              "bureauRisk": "High Risk",
+              "overallRisk": "High Risk"
+            },
+            "results": {
+              "digital": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 18.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 90.7407407407407.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 9.0.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 5.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 3.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Count",
+                    "text": "Number of distinct connections to primary node at a depth of 1. Larger counts are linked to higher risk. nan Observed value: 2.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l1Count_BUREAUID"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 18.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 90.7407407407407.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 9.0.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 5.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 3.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Count",
+                    "text": "Number of distinct connections to primary node at a depth of 1. Larger counts are linked to higher risk. nan Observed value: 2.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l1Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: fullName",
+                    "text": "Number of distinct names connected to the primary node at a depth of 2 nan Observed value: 2.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID"
+                  },
+                  {
+                    "title": "Network: email",
+                    "text": "Number of distinct emails connected to the primary node at a depth of 2 More than 5 verifi ed email IDs are connected to the provided phone number. Observed value: 2.0.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.email_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: 1.",
+                    "influence": "positive",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryBreached",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryBreached_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: 0.81.",
+                    "influence": "positive",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 688.3094058775946,
+                    "Predicted": 0.0418429933488369
+                  }
+                }
+              },
+              "telco": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is < 1 week. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.000 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 0.90 (Match Likely).",
+                    "influence": "positive",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~67 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 55 (Moderate). Higher indicates stronger known connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is < 1 week. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.000 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 0.90 (Match Likely).",
+                    "influence": "positive",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~67 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 55 (Moderate). Higher indicates stronger known connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  },
+                  {
+                    "title": "Spammy Connections Ratio",
+                    "text": "Spammy connections ratio is 0.036 (Very Low). Higher indicates more spam-linked connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 0.750 (High). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "positive",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong Spammy Connections Ratio",
+                    "text": "Strong spammy ratio is 0.100 (Moderate).",
+                    "influence": "neutral",
+                    "sourceVariable": "Strong Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Outgoing vs Incoming Calls Ratio (60D)",
+                    "text": "Outgoing/Incoming ratio is 0.74 (Moderate). Higher values indicate higher outgoing dominance and higher risk.",
+                    "influence": "neutral",
+                    "sourceVariable": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 601.9838528021564,
+                    "Predicted": 0.2429555505514145
+                  }
+                }
+              },
+              "bureau": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Bureau alerts triggered",
+                    "text": "Rule count is 1 \u2014 bureau risk alerts were triggered.",
+                    "influence": "negative",
+                    "sourceVariable": "RULE_COUNT"
+                  },
+                  {
+                    "title": "Str Appl Ne83",
+                    "text": "STR_APPL_NE83 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "STR_APPL_NE83"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Bureau alerts triggered",
+                    "text": "Rule count is 1 \u2014 bureau risk alerts were triggered.",
+                    "influence": "negative",
+                    "sourceVariable": "RULE_COUNT"
+                  },
+                  {
+                    "title": "Str Appl Ne83",
+                    "text": "STR_APPL_NE83 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "STR_APPL_NE83"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 595.4930057009744,
+                    "Predicted": 0.2715894877910614
+                  }
+                }
+              }
+            }
+          },
+          "7521141423": {
+            "applicant": {
+              "mobile": "7521141423",
+              "firstName": "Nitin",
+              "lastName": "Gupta",
+              "email": "nitin.gupta48@yahoo.com",
+              "dob": "1981-11-09",
+              "aadhaar": "774921693803",
+              "pan": "RXHFO7216I",
+              "address": "Flat 550, Kothrud, Pune, Maharashtra 411021"
+            },
+            "summary": {
+              "telcoRisk": "High Risk",
+              "digitalRisk": "High Risk",
+              "bureauRisk": "Low Risk",
+              "overallRisk": "High Risk"
+            },
+            "results": {
+              "digital": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 9.0.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 6.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryFintech",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 4.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryFintech_BUREAUID"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 9.0.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 6.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryFintech",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 4.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryFintech_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 4.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: mobile",
+                    "text": "Number of distinct mobile numbers connected to the primary node at a depth of 2 nan Observed value: 1.0.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.mobile_BUREAUID"
+                  },
+                  {
+                    "title": "Tenure: nameDiversity",
+                    "text": "Metric ranging from 0 to 1; Metric to assess the number of distinct names found on the Bureau network; nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nameDiversity_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: fullName",
+                    "text": "Number of distinct names connected to the primary node at a depth of 2 nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 601.788029916231,
+                    "Predicted": 0.2437886893749237
+                  }
+                }
+              },
+              "telco": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is 1-3 weeks. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 0 (Very Low). Higher indicates stronger known connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.000 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 0.133 (Very Low). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "negative",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 0.89 (Match Likely).",
+                    "influence": "positive",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~67 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is 1-3 weeks. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 0 (Very Low). Higher indicates stronger known connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.000 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 0.133 (Very Low). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "negative",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 0.89 (Match Likely).",
+                    "influence": "positive",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~67 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  },
+                  {
+                    "title": "Spammy Connections Ratio",
+                    "text": "Spammy connections ratio is 0.000 (Very Low). Higher indicates more spam-linked connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong Spammy Connections Ratio",
+                    "text": "Strong spammy ratio is 0.000 (Very Low).",
+                    "influence": "positive",
+                    "sourceVariable": "Strong Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Outgoing vs Incoming Calls Ratio (60D)",
+                    "text": "Outgoing/Incoming ratio is 0.07 (Very Low). Higher values indicate higher outgoing dominance and higher risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 605.8510478101516,
+                    "Predicted": 0.2269007712602615
+                  }
+                }
+              },
+              "bureau": {
+                "topN": 6,
+                "risky": false,
+                "insights": [
+                  {
+                    "title": "No bureau alerts found",
+                    "text": "No bureau risk alert rules were triggered for this case.",
+                    "influence": "positive",
+                    "sourceVariable": null
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "No bureau alerts found",
+                    "text": "No bureau risk alert rules were triggered for this case.",
+                    "influence": "positive",
+                    "sourceVariable": null
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 664.2834226727541,
+                    "Predicted": 0.07070109248161316
+                  }
+                }
+              }
+            }
+          },
+          "7524596344": {
+            "applicant": {
+              "mobile": "7524596344",
+              "firstName": "Rahul",
+              "lastName": "Verma",
+              "email": "rahul.verma5@yahoo.com",
+              "dob": "1987-05-03",
+              "aadhaar": "372861554483",
+              "pan": "UPMUO3340I",
+              "address": "Flat 386, Wakad, Pune, Maharashtra 411048"
+            },
+            "summary": {
+              "telcoRisk": "High Risk",
+              "digitalRisk": "Low Risk",
+              "bureauRisk": "Low Risk",
+              "overallRisk": "Average Risk"
+            },
+            "results": {
+              "digital": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 100.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 6.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 6.0.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryFinance",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 3.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryFinance_BUREAUID"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 100.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 6.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 6.0.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryFinance",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 3.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryFinance_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 3.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: mobile",
+                    "text": "Number of distinct mobile numbers connected to the primary node at a depth of 2 nan Observed value: 1.0.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.mobile_BUREAUID"
+                  },
+                  {
+                    "title": "Tenure: nameDiversity",
+                    "text": "Metric ranging from 0 to 1; Metric to assess the number of distinct names found on the Bureau network; nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nameDiversity_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: fullName",
+                    "text": "Number of distinct names connected to the primary node at a depth of 2 nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 643.8038386769075,
+                    "Predicted": 0.1088259071111679
+                  }
+                }
+              },
+              "telco": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Outgoing vs Incoming Calls Ratio (60D)",
+                    "text": "Outgoing/Incoming ratio is 1.81 (Very High). Higher values indicate higher outgoing dominance and higher risk.",
+                    "influence": "negative",
+                    "sourceVariable": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is < 1 week. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 75 (High). Higher indicates stronger known connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 0.90 (Match Likely).",
+                    "influence": "positive",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~67 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Outgoing vs Incoming Calls Ratio (60D)",
+                    "text": "Outgoing/Incoming ratio is 1.81 (Very High). Higher values indicate higher outgoing dominance and higher risk.",
+                    "influence": "negative",
+                    "sourceVariable": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is < 1 week. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 75 (High). Higher indicates stronger known connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 0.90 (Match Likely).",
+                    "influence": "positive",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~67 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  },
+                  {
+                    "title": "Spammy Connections Ratio",
+                    "text": "Spammy connections ratio is 0.034 (Very Low). Higher indicates more spam-linked connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong Spammy Connections Ratio",
+                    "text": "Strong spammy ratio is 0.000 (Very Low).",
+                    "influence": "positive",
+                    "sourceVariable": "Strong Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 1.000 (Very High). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "positive",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.107 (Low).",
+                    "influence": "neutral",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 603.4791318825121,
+                    "Predicted": 0.2366576790809631
+                  }
+                }
+              },
+              "bureau": {
+                "topN": 6,
+                "risky": false,
+                "insights": [
+                  {
+                    "title": "No bureau alerts found",
+                    "text": "No bureau risk alert rules were triggered for this case.",
+                    "influence": "positive",
+                    "sourceVariable": null
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "No bureau alerts found",
+                    "text": "No bureau risk alert rules were triggered for this case.",
+                    "influence": "positive",
+                    "sourceVariable": null
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 664.2834226727541,
+                    "Predicted": 0.07070109248161316
+                  }
+                }
+              }
+            }
+          },
+          "7595414456": {
+            "applicant": {
+              "mobile": "7595414456",
+              "firstName": "Pravin",
+              "lastName": "Reddy",
+              "email": "pravin.reddy34@outlook.com",
+              "dob": "1993-07-19",
+              "aadhaar": "527169304593",
+              "pan": "EQPCY1771D",
+              "address": "Flat 414, Kothrud, Pune, Maharashtra 411011"
+            },
+            "summary": {
+              "telcoRisk": "Low Risk",
+              "digitalRisk": "High Risk",
+              "bureauRisk": "Low Risk",
+              "overallRisk": "Average Risk"
+            },
+            "results": {
+              "digital": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 10.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 100.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 9.0.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 7.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 10.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 100.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 9.0.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 7.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: mobile",
+                    "text": "Number of distinct mobile numbers connected to the primary node at a depth of 2 nan Observed value: 1.0.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.mobile_BUREAUID"
+                  },
+                  {
+                    "title": "Tenure: nameDiversity",
+                    "text": "Metric ranging from 0 to 1; Metric to assess the number of distinct names found on the Bureau network; nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nameDiversity_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: fullName",
+                    "text": "Number of distinct names connected to the primary node at a depth of 2 nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryBreached",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryBreached_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryOther",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryOther_BUREAUID"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 595.931153861792,
+                    "Predicted": 0.2695914208889008
+                  }
+                }
+              },
+              "telco": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is < 1 week. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 8 (Very Low). Higher indicates stronger known connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 1.00 (Match Likely).",
+                    "influence": "positive",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~67 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is < 1 week. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 8 (Very Low). Higher indicates stronger known connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 1.00 (Match Likely).",
+                    "influence": "positive",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~67 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  },
+                  {
+                    "title": "Spammy Connections Ratio",
+                    "text": "Spammy connections ratio is 0.000 (Very Low). Higher indicates more spam-linked connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong Spammy Connections Ratio",
+                    "text": "Strong spammy ratio is 0.000 (Very Low).",
+                    "influence": "positive",
+                    "sourceVariable": "Strong Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Outgoing vs Incoming Calls Ratio (60D)",
+                    "text": "Outgoing/Incoming ratio is 0.23 (Low). Higher values indicate higher outgoing dominance and higher risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 0.783 (High). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "positive",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.333 (Moderate).",
+                    "influence": "neutral",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 667.7741304597455,
+                    "Predicted": 0.06558205187320709
+                  }
+                }
+              },
+              "bureau": {
+                "topN": 6,
+                "risky": false,
+                "insights": [
+                  {
+                    "title": "No bureau alerts found",
+                    "text": "No bureau risk alert rules were triggered for this case.",
+                    "influence": "positive",
+                    "sourceVariable": null
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "No bureau alerts found",
+                    "text": "No bureau risk alert rules were triggered for this case.",
+                    "influence": "positive",
+                    "sourceVariable": null
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 664.2834226727541,
+                    "Predicted": 0.07070109248161316
+                  }
+                }
+              }
+            }
+          },
+          "7523806396": {
+            "applicant": {
+              "mobile": "7523806396",
+              "firstName": "Amit",
+              "lastName": "Chopra",
+              "email": "amit.chopra9@yahoo.com",
+              "dob": "1987-10-15",
+              "aadhaar": "633451191188",
+              "pan": "VXDVR5371Y",
+              "address": "Flat 797, Baner, Pune, Maharashtra 411019"
+            },
+            "summary": {
+              "telcoRisk": "Low Risk",
+              "digitalRisk": "Low Risk",
+              "bureauRisk": "High Risk",
+              "overallRisk": "Average Risk"
+            },
+            "results": {
+              "digital": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 32.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 90.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 6.5.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 5.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 3.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: fullName",
+                    "text": "Number of distinct names connected to the primary node at a depth of 2 nan Observed value: 3.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 32.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: 90.0.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Score: ecomScore",
+                    "text": "A normalized score that reflects the user\u2019s presence in e-commerce platforms, based on how common, actively used, and premium those platforms are. Bureau has an inhouse proprietary algorithm to compute this score basis the dimensions of characteristics like pricing premium, prevelance and popularity rank ordering of these ecomm platforms. Few or no registrations on general e-commerce websites/services like Amazon, Flipkart, Snapdeal, etc. Observed value: 6.5.",
+                    "influence": "positive",
+                    "sourceVariable": "ecomScore_BUREAUID"
+                  },
+                  {
+                    "title": "Social Media: phoneSocialCount",
+                    "text": "Total number of platforms where we found an account registered with the phone number Few or no registrations on communication websites/services like WhatsApp, Instagram, Skype, etc. Observed value: 5.",
+                    "influence": "positive",
+                    "sourceVariable": "Phone Social Advance.phoneSocialCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 3.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: fullName",
+                    "text": "Number of distinct names connected to the primary node at a depth of 2 nan Observed value: 3.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryFintech",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 3.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryFintech_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Count",
+                    "text": "Number of distinct connections to primary node at a depth of 1. Larger counts are linked to higher risk. nan Observed value: 2.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l1Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: email",
+                    "text": "Number of distinct emails connected to the primary node at a depth of 2 More than 5 verifi ed email IDs are connected to the provided phone number. Observed value: 2.0.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.email_BUREAUID"
+                  },
+                  {
+                    "title": "Network: mobile",
+                    "text": "Number of distinct mobile numbers connected to the primary node at a depth of 2 nan Observed value: 1.0.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.mobile_BUREAUID"
+                  },
+                  {
+                    "title": "Tenure: nameDiversity",
+                    "text": "Metric ranging from 0 to 1; Metric to assess the number of distinct names found on the Bureau network; nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nameDiversity_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: 1.",
+                    "influence": "positive",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryFinance",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryFinance_BUREAUID"
+                  },
+                  {
+                    "title": "Industry: industryOther",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.industryCounts.industryOther_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: 0.81.",
+                    "influence": "positive",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 638.1024486974605,
+                    "Predicted": 0.1222750470042229
+                  }
+                }
+              },
+              "telco": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Spammy Connections Ratio",
+                    "text": "Spammy connections ratio is 0.601 (Very High). Higher indicates more spam-linked connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong Spammy Connections Ratio",
+                    "text": "Strong spammy ratio is 0.880 (Very High).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 94 (Very High). Higher indicates stronger known connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is < 1 week. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.031 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 1.00 (Match Likely).",
+                    "influence": "positive",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Spammy Connections Ratio",
+                    "text": "Spammy connections ratio is 0.601 (Very High). Higher indicates more spam-linked connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong Spammy Connections Ratio",
+                    "text": "Strong spammy ratio is 0.880 (Very High).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 94 (Very High). Higher indicates stronger known connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "First Seen (Vintage)",
+                    "text": "First seen bucket is < 1 week. More recent first-seen generally increases risk.",
+                    "influence": "negative",
+                    "sourceVariable": "VintageBucket"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.031 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 1.00 (Match Likely).",
+                    "influence": "positive",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Active Since (Tenure)",
+                    "text": "Number active since ~33 months \u2014 longer tenure is generally lower risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Active Since Months_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 1.000 (Very High). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "positive",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Outgoing vs Incoming Calls Ratio (60D)",
+                    "text": "Outgoing/Incoming ratio is 0.69 (Moderate). Higher values indicate higher outgoing dominance and higher risk.",
+                    "influence": "neutral",
+                    "sourceVariable": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 629.6243919405275,
+                    "Predicted": 0.1448998749256134
+                  }
+                }
+              },
+              "bureau": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Bureau alerts triggered",
+                    "text": "Rule count is 1 \u2014 bureau risk alerts were triggered.",
+                    "influence": "negative",
+                    "sourceVariable": "RULE_COUNT"
+                  },
+                  {
+                    "title": "Str Appl Ne83",
+                    "text": "STR_APPL_NE83 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "STR_APPL_NE83"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Bureau alerts triggered",
+                    "text": "Rule count is 1 \u2014 bureau risk alerts were triggered.",
+                    "influence": "negative",
+                    "sourceVariable": "RULE_COUNT"
+                  },
+                  {
+                    "title": "Str Appl Ne83",
+                    "text": "STR_APPL_NE83 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "STR_APPL_NE83"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 595.4930057009744,
+                    "Predicted": 0.2715894877910614
+                  }
+                }
+              }
+            }
+          },
+          "7532330182": {
+            "applicant": {
+              "mobile": "7532330182",
+              "firstName": "Amit",
+              "lastName": "Gupta",
+              "email": "amit.gupta59@gmail.com",
+              "dob": "1998-12-09",
+              "aadhaar": "996192013927",
+              "pan": "QDUJU9317T",
+              "address": "Flat 508, Wakad, Pune, Maharashtra 411024"
+            },
+            "summary": {
+              "telcoRisk": "Low Risk",
+              "digitalRisk": "Low Risk",
+              "bureauRisk": "Low Risk",
+              "overallRisk": "Low Risk"
+            },
+            "results": {
+              "digital": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 31.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Tenure: nameDiversity",
+                    "text": "Metric ranging from 0 to 1; Metric to assess the number of distinct names found on the Bureau network; nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nameDiversity_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 31.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Tenure: nameDiversity",
+                    "text": "Metric ranging from 0 to 1; Metric to assess the number of distinct names found on the Bureau network; nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nameDiversity_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: fullName",
+                    "text": "Number of distinct names connected to the primary node at a depth of 2 nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 815.8582200637379,
+                    "Predicted": 0.002287305891513824
+                  }
+                }
+              },
+              "telco": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 0.00 (No Match Likely).",
+                    "influence": "negative",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 0 (Very Low). Higher indicates stronger known connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.000 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 0.000 (Very Low). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "negative",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 0.00 (No Match Likely).",
+                    "influence": "negative",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 0 (Very Low). Higher indicates stronger known connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.000 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 0.000 (Very Low). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "negative",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  },
+                  {
+                    "title": "Spammy Connections Ratio",
+                    "text": "Spammy connections ratio is 0.000 (Very Low). Higher indicates more spam-linked connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong Spammy Connections Ratio",
+                    "text": "Strong spammy ratio is 0.000 (Very Low).",
+                    "influence": "positive",
+                    "sourceVariable": "Strong Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Outgoing vs Incoming Calls Ratio (60D)",
+                    "text": "Outgoing/Incoming ratio is 0.00 (Very Low). Higher values indicate higher outgoing dominance and higher risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 780.2772109781539,
+                    "Predicted": 0.005189087241888046
+                  }
+                }
+              },
+              "bureau": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Bureau alerts triggered",
+                    "text": "Rule count is 2 \u2014 bureau risk alerts were triggered.",
+                    "influence": "negative",
+                    "sourceVariable": "RULE_COUNT"
+                  },
+                  {
+                    "title": "Id Appl Ma32",
+                    "text": "ID_APPL_MA32 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "ID_APPL_MA32"
+                  },
+                  {
+                    "title": "Mob App Ma77",
+                    "text": "MOB_APP_MA77 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "MOB_APP_MA77"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Bureau alerts triggered",
+                    "text": "Rule count is 2 \u2014 bureau risk alerts were triggered.",
+                    "influence": "negative",
+                    "sourceVariable": "RULE_COUNT"
+                  },
+                  {
+                    "title": "Id Appl Ma32",
+                    "text": "ID_APPL_MA32 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "ID_APPL_MA32"
+                  },
+                  {
+                    "title": "Mob App Ma77",
+                    "text": "MOB_APP_MA77 triggered (value 1).",
+                    "influence": "negative",
+                    "sourceVariable": "MOB_APP_MA77"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 670.9723473524144,
+                    "Predicted": 0.06119649484753609
+                  }
+                }
+              }
+            }
+          },
+          "7527058775": {
+            "applicant": {
+              "mobile": "7527058775",
+              "firstName": "Sandeep",
+              "lastName": "Reddy",
+              "email": "sandeep.reddy68@gmail.com",
+              "dob": "1994-06-16",
+              "aadhaar": "215928326947",
+              "pan": "ZJHBH2290C",
+              "address": "Flat 1096, Baner, Pune, Maharashtra 411049"
+            },
+            "summary": {
+              "telcoRisk": "Low Risk",
+              "digitalRisk": "Low Risk",
+              "bureauRisk": "Low Risk",
+              "overallRisk": "Low Risk"
+            },
+            "results": {
+              "digital": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 32.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Tenure: nameDiversity",
+                    "text": "Metric ranging from 0 to 1; Metric to assess the number of distinct names found on the Bureau network; nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nameDiversity_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Industry: relationshipCount",
+                    "text": "Number of times the primary node has been seen across industrys in Bureau's network nan Observed value: 32.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.industryCounts.relationshipCount_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l1Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 1; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l1Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Confidence",
+                    "text": "Metric ranging from 0 to 1; Assesses number of distinct connections to primary node at a depth of 2; l1Confidence lower than 0.7 indicates increasing risk nan Observed value: -1.",
+                    "influence": "negative",
+                    "sourceVariable": "Mobile GIN.l2Confidence_BUREAUID"
+                  },
+                  {
+                    "title": "Name Match: nameMatchScore",
+                    "text": "Match similarity between the provided name and the name found in official records nan Observed value: -1.0.",
+                    "influence": "negative",
+                    "sourceVariable": "Phone to Name.nameMatchScore_BUREAUID"
+                  },
+                  {
+                    "title": "Tenure: nameDiversity",
+                    "text": "Metric ranging from 0 to 1; Metric to assess the number of distinct names found on the Bureau network; nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nameDiversity_BUREAUID"
+                  },
+                  {
+                    "title": "Network: l2Count",
+                    "text": "Number of distinct connections to primary node at a depth of 2; Larger counts are linked to higher risk. nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.l2Count_BUREAUID"
+                  },
+                  {
+                    "title": "Network: fullName",
+                    "text": "Number of distinct names connected to the primary node at a depth of 2 nan Observed value: 1.",
+                    "influence": "neutral",
+                    "sourceVariable": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 815.8582200637379,
+                    "Predicted": 0.002287305891513824
+                  }
+                }
+              },
+              "telco": {
+                "topN": 6,
+                "risky": true,
+                "insights": [
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 0.00 (No Match Likely).",
+                    "influence": "negative",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 0 (Very Low). Higher indicates stronger known connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.000 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 0.000 (Very Low). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "negative",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "Name \u2194 Number Match",
+                    "text": "Name string match score is 0.00 (No Match Likely).",
+                    "influence": "negative",
+                    "sourceVariable": "Name String Match Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Network Connection Score",
+                    "text": "Network connection score is 0 (Very Low). Higher indicates stronger known connections.",
+                    "influence": "negative",
+                    "sourceVariable": "Network Connection Score_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong vs Weak Connection Ratio",
+                    "text": "Strong-to-weak ratio is 0.000 (Very Low).",
+                    "influence": "negative",
+                    "sourceVariable": "Strong to Weak Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Activity Spread (60D)",
+                    "text": "Activity spread is 0.000 (Very Low). Lower spread means activity concentrated in fewer days (riskier).",
+                    "influence": "negative",
+                    "sourceVariable": "Activity Spread (60 Days)_TRUECALLER"
+                  },
+                  {
+                    "title": "Number Recycles",
+                    "text": "No recycles detected in last 2 years \u2014 stable number association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Recycles_TRUECALLER"
+                  },
+                  {
+                    "title": "Elected Name Changes",
+                    "text": "No elected-name changes in last 2 years \u2014 stable identity association.",
+                    "influence": "positive",
+                    "sourceVariable": "Number of Elected Name Changes_TRUECALLER"
+                  },
+                  {
+                    "title": "Spammy Connections Ratio",
+                    "text": "Spammy connections ratio is 0.000 (Very Low). Higher indicates more spam-linked connections.",
+                    "influence": "positive",
+                    "sourceVariable": "Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Strong Spammy Connections Ratio",
+                    "text": "Strong spammy ratio is 0.000 (Very Low).",
+                    "influence": "positive",
+                    "sourceVariable": "Strong Spammy Connections Ratio_TRUECALLER"
+                  },
+                  {
+                    "title": "Outgoing vs Incoming Calls Ratio (60D)",
+                    "text": "Outgoing/Incoming ratio is 0.00 (Very Low). Higher values indicate higher outgoing dominance and higher risk.",
+                    "influence": "positive",
+                    "sourceVariable": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER"
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 780.2772109781539,
+                    "Predicted": 0.005189087241888046
+                  }
+                }
+              },
+              "bureau": {
+                "topN": 6,
+                "risky": false,
+                "insights": [
+                  {
+                    "title": "No bureau alerts found",
+                    "text": "No bureau risk alert rules were triggered for this case.",
+                    "influence": "positive",
+                    "sourceVariable": null
+                  }
+                ],
+                "allInsights": [
+                  {
+                    "title": "No bureau alerts found",
+                    "text": "No bureau risk alert rules were triggered for this case.",
+                    "influence": "positive",
+                    "sourceVariable": null
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Scaled_Score": 664.2834226727541,
+                    "Predicted": 0.07070109248161316
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "uiRules": {
+      "renderInsightsNotRawVariables": true,
+      "hideModelScoresInUI": true,
+      "insightFieldsToShow": [
+        "title",
+        "text",
+        "influence"
+      ],
+      "emptyStateMessage": "No risk indicators available",
+      "digitalRiskyFlagPath": "results.digital.risky",
+      "telcoRiskyFlagPath": "results.telco.risky",
+      "bureauRiskyFlagPath": "results.bureau.risky"
+    }
+  }
+}

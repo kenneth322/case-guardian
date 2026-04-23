@@ -1,10 +1,9 @@
-import rawData from "./lovable_variant2_ranked_topN.json";
+import rawData from "./lovable_v8_merged_full_telco_vi.json";
 
 // ---- Types ----
 export type RiskLevel = "Low" | "Medium" | "High" | "Very High";
-
-// Summary strings as they appear in the source JSON
 export type SummaryRisk = "Low Risk" | "Average Risk" | "High Risk" | "Very High Risk";
+export type Influence = "positive" | "negative" | "neutral";
 
 export interface Applicant {
   mobile: string;
@@ -24,16 +23,18 @@ export interface Summary {
   overallRisk: SummaryRisk;
 }
 
-export interface Factor {
-  key: string;
-  label: string;
-  value: number | string;
+export interface Insight {
+  title: string;
+  text: string;
+  influence: Influence;
+  sourceVariable?: string;
 }
 
 export interface SectionResult {
   topN: number;
-  topFactors: Factor[];
-  factors: Factor[];
+  risky: boolean;
+  insights: Insight[];
+  allInsights: Insight[];
   metadata?: { modelScores?: { Predicted?: number; Scaled_Score?: number } };
 }
 
@@ -55,18 +56,7 @@ export const SUMMARY_TO_LEVEL: Record<SummaryRisk, RiskLevel> = {
   "Very High Risk": "Very High",
 };
 
-const HIDDEN_KEY_TOKENS = ["predicted", "scaled_score"];
-
-/** Strip any model-output style entries that should never appear in the UI. */
-function sanitizeFactors(factors: Factor[] = []): Factor[] {
-  return factors.filter((f) => {
-    const k = (f.key || "").toLowerCase();
-    const l = (f.label || "").toLowerCase();
-    return !HIDDEN_KEY_TOKENS.some((t) => k.includes(t) || l.includes(t));
-  });
-}
-
-// ---- Load + freeze cases ----
+// ---- Load cases ----
 type RawShape = {
   lovable: {
     dataModel: {
@@ -79,43 +69,29 @@ type RawShape = {
 
 const rawCases = (rawData as unknown as RawShape).lovable.dataModel.entities.casesByMobile;
 
+function normalizeSection(s: SectionResult): SectionResult {
+  return {
+    topN: s.topN ?? 0,
+    risky: !!s.risky,
+    insights: Array.isArray(s.insights) ? s.insights : [],
+    allInsights: Array.isArray(s.allInsights) ? s.allInsights : [],
+    // metadata intentionally retained but never surfaced in UI
+    metadata: s.metadata,
+  };
+}
+
 export const CASES_BY_MOBILE: Record<string, CaseRecord> = Object.fromEntries(
   Object.entries(rawCases).map(([mobile, c]) => [
     mobile,
     {
       ...c,
       results: {
-        bureau: {
-          ...c.results.bureau,
-          topFactors: sanitizeFactors(c.results.bureau.topFactors),
-          factors: sanitizeFactors(c.results.bureau.factors),
-        },
-        telco: {
-          ...c.results.telco,
-          topFactors: sanitizeFactors(c.results.telco.topFactors),
-          factors: sanitizeFactors(c.results.telco.factors),
-        },
-        digital: {
-          ...c.results.digital,
-          topFactors: sanitizeFactors(c.results.digital.topFactors),
-          factors: sanitizeFactors(c.results.digital.factors),
-        },
+        bureau: normalizeSection(c.results.bureau),
+        telco: normalizeSection(c.results.telco),
+        digital: normalizeSection(c.results.digital),
       },
     },
   ]),
 );
 
 export const DEMO_MOBILES: string[] = Object.keys(CASES_BY_MOBILE);
-
-/** Format factor numeric values for display. */
-export function formatFactorValue(v: number | string): string {
-  if (typeof v === "string") return v;
-  if (!Number.isFinite(v)) return String(v);
-  if (Number.isInteger(v)) {
-    // Compact for very large integers
-    if (Math.abs(v) >= 1_000_000) return v.toLocaleString();
-    return String(v);
-  }
-  // Round floats to 2 decimals, trim trailing zeros
-  return Number(v.toFixed(2)).toString();
-}
