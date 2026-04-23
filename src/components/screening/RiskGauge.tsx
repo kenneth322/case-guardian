@@ -50,12 +50,6 @@ export default function RiskGauge({ risk, score, noHit }: Props) {
         {seg(90, 135, segColor("high"))}
         {seg(135, 180, segColor("veryhigh"))}
 
-        {/* Tick labels */}
-        <text x="20" y="170" fontSize="10" fill="var(--color-muted-foreground)">Low</text>
-        <text x="92" y="40" fontSize="10" fill="var(--color-muted-foreground)">Med</text>
-        <text x="180" y="40" fontSize="10" fill="var(--color-muted-foreground)">High</text>
-        <text x="245" y="170" fontSize="10" fill="var(--color-muted-foreground)">V.High</text>
-
         {/* Needle */}
         <g
           style={{
@@ -88,12 +82,11 @@ export default function RiskGauge({ risk, score, noHit }: Props) {
           </>
         ) : (
           <>
-            <div className="text-3xl font-bold tabular-nums">
-              {score}
-              <span className="text-base font-normal text-muted-foreground">/100</span>
+            <div className="text-3xl font-bold">
+              {risk}
             </div>
             <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
-              Overall Score
+              Risk Area
             </div>
           </>
         )}
