@@ -1,8 +1,9 @@
-import type { RiskLevel } from "@/data/cases";
+import type { RiskLevel, SummaryRisk } from "@/data/cases";
+import { SUMMARY_TO_LEVEL } from "@/data/cases";
 
 interface Props {
-  risk: RiskLevel | null;
-  score: number | null;
+  /** Either a normalized RiskLevel or the raw summary string from the dataset. */
+  risk: RiskLevel | SummaryRisk | null;
   noHit?: boolean;
 }
 
@@ -14,13 +15,18 @@ const ANGLES: Record<RiskLevel, number> = {
   "Very High": 67,
 };
 
-export default function RiskGauge({ risk, score, noHit }: Props) {
-  const angle = noHit || !risk ? 0 : ANGLES[risk];
+function toLevel(r: RiskLevel | SummaryRisk): RiskLevel {
+  if (r in SUMMARY_TO_LEVEL) return SUMMARY_TO_LEVEL[r as SummaryRisk];
+  return r as RiskLevel;
+}
+
+export default function RiskGauge({ risk, noHit }: Props) {
+  const level: RiskLevel | null = noHit || !risk ? null : toLevel(risk);
+  const angle = level ? ANGLES[level] : 0;
   const cx = 150;
   const cy = 150;
   const r = 110;
 
-  // 4 segments across 180deg arc, each 45deg
   const seg = (startDeg: number, endDeg: number, color: string) => {
     const toRad = (d: number) => ((d - 180) * Math.PI) / 180;
     const x1 = cx + r * Math.cos(toRad(startDeg));
@@ -50,7 +56,6 @@ export default function RiskGauge({ risk, score, noHit }: Props) {
         {seg(90, 135, segColor("high"))}
         {seg(135, 180, segColor("veryhigh"))}
 
-        {/* Needle */}
         <g
           style={{
             transform: `rotate(${angle}deg)`,
@@ -73,7 +78,7 @@ export default function RiskGauge({ risk, score, noHit }: Props) {
       </svg>
 
       <div className="-mt-4 text-center">
-        {noHit ? (
+        {noHit || !level ? (
           <>
             <div className="text-3xl font-bold tabular-nums text-muted-foreground">—</div>
             <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
@@ -82,9 +87,7 @@ export default function RiskGauge({ risk, score, noHit }: Props) {
           </>
         ) : (
           <>
-            <div className="text-3xl font-bold">
-              {risk}
-            </div>
+            <div className="text-3xl font-bold">{level}</div>
             <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
               Risk Area
             </div>
