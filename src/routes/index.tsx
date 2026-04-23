@@ -1,26 +1,55 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import ApplicationForm from "@/components/screening/ApplicationForm";
+import LoaderScreen from "@/components/screening/LoaderScreen";
+import ResultsScreen from "@/components/screening/ResultsScreen";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Anti-Fraud Case Screening" },
+      {
+        name: "description",
+        content:
+          "Enterprise anti-fraud case screening console — assess bureau, digital and telco risk in one workflow.",
+      },
+      { property: "og:title", content: "Anti-Fraud Case Screening" },
+      {
+        property: "og:description",
+        content:
+          "Enterprise anti-fraud case screening console — assess bureau, digital and telco risk in one workflow.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+type Screen = "form" | "loader" | "results";
 
 function Index() {
-  return <PlaceholderIndex />;
+  const [screen, setScreen] = useState<Screen>("form");
+  const [mobile, setMobile] = useState("");
+
+  if (screen === "loader") {
+    return <LoaderScreen onDone={() => setScreen("results")} />;
+  }
+  if (screen === "results") {
+    return (
+      <ResultsScreen
+        mobile={mobile}
+        onReset={() => {
+          setMobile("");
+          setScreen("form");
+        }}
+      />
+    );
+  }
+  return (
+    <ApplicationForm
+      onSubmit={(m) => {
+        setMobile(m);
+        setScreen("loader");
+      }}
+    />
+  );
 }
