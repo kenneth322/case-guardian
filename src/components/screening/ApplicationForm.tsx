@@ -180,7 +180,7 @@ export default function ApplicationForm({ onSubmit }: Props) {
               disabled={!allFilled}
               className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              Submit for Screening
+              Submit
             </button>
           </div>
         </form>
