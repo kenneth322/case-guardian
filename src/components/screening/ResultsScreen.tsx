@@ -1,9 +1,16 @@
 import { useState } from "react";
-import { CASES_BY_MOBILE, type RiskLevel, type Severity } from "@/data/cases";
+import {
+  CASES_BY_MOBILE,
+  SUMMARY_TO_LEVEL,
+  formatFactorValue,
+  type Factor,
+  type RiskLevel,
+  type SummaryRisk,
+} from "@/data/cases";
 import RiskGauge from "./RiskGauge";
 import CollapsibleCard from "./CollapsibleCard";
 import DecisionModal, { type Decision } from "./DecisionModal";
-import { ShieldCheck, RotateCcw, AlertTriangle } from "lucide-react";
+import { ShieldCheck, RotateCcw, AlertTriangle, ChevronDown } from "lucide-react";
 
 interface Props {
   mobile: string;
@@ -17,16 +24,12 @@ const RISK_CLASS: Record<RiskLevel, string> = {
   "Very High": "bg-risk-veryhigh/15 text-risk-veryhigh border-risk-veryhigh/30",
 };
 
-const SEV_DOT: Record<Severity, string> = {
-  Low: "bg-risk-low",
-  Medium: "bg-risk-medium",
-  High: "bg-risk-veryhigh",
-};
-
 export default function ResultsScreen({ mobile, onReset }: Props) {
   const data = CASES_BY_MOBILE[mobile];
   const noHit = !data;
   const [decision, setDecision] = useState<Decision | null>(null);
+
+  const overallLevel: RiskLevel | null = noHit ? null : SUMMARY_TO_LEVEL[data.summary.overallRisk];
 
   return (
     <div className="min-h-screen bg-background">
@@ -43,15 +46,15 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
                   Mobile Number: <span className="font-mono">+91 {mobile}</span>
                 </p>
               </div>
-              {noHit ? (
+              {noHit || !overallLevel ? (
                 <span className="ml-2 inline-flex items-center gap-1 rounded-full border border-risk-neutral/30 bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                   No Hit
                 </span>
               ) : (
                 <span
-                  className={`ml-2 inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${RISK_CLASS[data.overall.risk]}`}
+                  className={`ml-2 inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${RISK_CLASS[overallLevel]}`}
                 >
-                  {data.overall.risk} Risk
+                  {data.summary.overallRisk}
                 </span>
               )}
             </div>
@@ -106,17 +109,16 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
                 </div>
               ) : (
                 <div className="mt-4 space-y-2 text-sm">
-                  <Row label="Applicant" value={`${data.applicant.firstName} ${data.applicant.lastName}`} />
+                  <Row
+                    label="Applicant"
+                    value={`${data.applicant.firstName} ${data.applicant.lastName}`}
+                  />
                   <Row label="PAN" value={data.applicant.pan} mono />
                   <Row label="Email" value={data.applicant.email} />
                 </div>
               )}
             </div>
-            <RiskGauge
-              risk={noHit ? null : data.overall.risk}
-              score={noHit ? null : data.overall.score}
-              noHit={noHit}
-            />
+            <RiskGauge risk={noHit ? null : data.summary.overallRisk} noHit={noHit} />
           </div>
         </section>
 
@@ -125,22 +127,15 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
           title="Bureau Risk Alerts"
           defaultOpen
           summary={
-            noHit ? (
-              <NoDataChip />
-            ) : (
-              <>
-                <ScoreBar value={data.bureau.score} />
-                <span className="font-mono text-sm tabular-nums">{data.bureau.score}</span>
-                <RiskChip risk={data.bureau.risk} />
-              </>
-            )
+            noHit ? <NoDataChip /> : <SummaryChip risk={data.summary.bureauRisk} />
           }
         >
           {noHit ? (
             <NoData />
           ) : (
-            <FactorList
-              items={data.bureau.factors.map((f) => ({ text: f.text, severity: f.severity }))}
+            <FactorBlock
+              top={data.results.bureau.topFactors}
+              all={data.results.bureau.factors}
             />
           )}
         </CollapsibleCard>
@@ -148,17 +143,31 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
         {/* Section 3: Digital */}
         <CollapsibleCard
           title="Digital Footprints"
-          summary={noHit ? <NoDataChip /> : <BoolChip risky={data.digital.risky} />}
+          summary={noHit ? <NoDataChip /> : <SummaryChip risk={data.summary.digitalRisk} />}
         >
-          {noHit ? <NoData /> : <FactorList items={data.digital.factors} />}
+          {noHit ? (
+            <NoData />
+          ) : (
+            <FactorBlock
+              top={data.results.digital.topFactors}
+              all={data.results.digital.factors}
+            />
+          )}
         </CollapsibleCard>
 
         {/* Section 4: Telco */}
         <CollapsibleCard
           title="Telco Data"
-          summary={noHit ? <NoDataChip /> : <BoolChip risky={data.telco.risky} />}
+          summary={noHit ? <NoDataChip /> : <SummaryChip risk={data.summary.telcoRisk} />}
         >
-          {noHit ? <NoData /> : <FactorList items={data.telco.factors} />}
+          {noHit ? (
+            <NoData />
+          ) : (
+            <FactorBlock
+              top={data.results.telco.topFactors}
+              all={data.results.telco.factors}
+            />
+          )}
         </CollapsibleCard>
       </main>
 
@@ -183,68 +192,60 @@ function Row({ label, value, mono }: { label: string; value: string; mono?: bool
   );
 }
 
-function RiskChip({ risk }: { risk: RiskLevel }) {
+function SummaryChip({ risk }: { risk: SummaryRisk }) {
+  const level = SUMMARY_TO_LEVEL[risk];
   return (
     <span
-      className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium ${RISK_CLASS[risk]}`}
+      className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium ${RISK_CLASS[level]}`}
     >
       {risk}
     </span>
   );
 }
 
-function BoolChip({ risky }: { risky: boolean }) {
-  return risky ? (
-    <span className="inline-flex items-center gap-1 rounded-full border border-destructive/30 bg-destructive/10 px-2 py-0.5 text-xs font-medium text-destructive">
-      <span className="h-1.5 w-1.5 rounded-full bg-destructive" />
-      Yes — Risky
-    </span>
-  ) : (
-    <span className="inline-flex items-center gap-1 rounded-full border border-success/30 bg-success/10 px-2 py-0.5 text-xs font-medium text-success">
-      <span className="h-1.5 w-1.5 rounded-full bg-success" />
-      No — Not Risky
-    </span>
-  );
-}
+function FactorBlock({ top, all }: { top: Factor[]; all: Factor[] }) {
+  const [expanded, setExpanded] = useState(false);
 
-function ScoreBar({ value }: { value: number }) {
-  const tone =
-    value < 35 ? "bg-risk-low" : value < 60 ? "bg-risk-medium" : value < 80 ? "bg-risk-high" : "bg-risk-veryhigh";
-  return (
-    <div className="hidden h-1.5 w-24 overflow-hidden rounded-full bg-muted sm:block">
-      <div className={`h-full ${tone}`} style={{ width: `${value}%` }} />
-    </div>
-  );
-}
+  if (!all.length && !top.length) {
+    return (
+      <p className="text-sm text-muted-foreground">No risk indicators available</p>
+    );
+  }
 
-function FactorList({
-  items,
-}: {
-  items: { text: string; severity?: Severity }[];
-}) {
+  const visible = expanded ? all : top.length ? top : all;
+  const hasMore = all.length > top.length && top.length > 0;
+
   return (
-    <div className="space-y-2">
+    <div className="space-y-3">
       <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-        Top risk factors
+        {expanded ? `All risk factors (${all.length})` : `Top risk factors`}
       </p>
       <ul className="space-y-1.5">
-        {items.map((f, i) => (
+        {visible.map((f, i) => (
           <li
-            key={i}
+            key={`${f.key}-${i}`}
             className="flex items-center gap-3 rounded-md border bg-muted/30 px-3 py-2 text-sm"
           >
-            <span
-              className={`h-2 w-2 shrink-0 rounded-full ${
-                f.severity ? SEV_DOT[f.severity] : "bg-primary/60"
-              }`}
-            />
-            <span className="flex-1">{f.text}</span>
-            {f.severity && (
-              <span className="text-xs font-medium text-muted-foreground">{f.severity}</span>
-            )}
+            <span className="h-2 w-2 shrink-0 rounded-full bg-primary/60" />
+            <span className="flex-1">{f.label}</span>
+            <span className="font-mono text-xs tabular-nums text-muted-foreground">
+              {formatFactorValue(f.value)}
+            </span>
           </li>
         ))}
       </ul>
+      {hasMore && (
+        <button
+          type="button"
+          onClick={() => setExpanded((e) => !e)}
+          className="inline-flex items-center gap-1 text-xs font-medium text-primary transition hover:underline"
+        >
+          {expanded ? "Show top factors only" : `Show all ${all.length} factors`}
+          <ChevronDown
+            className={`h-3.5 w-3.5 transition-transform ${expanded ? "rotate-180" : ""}`}
+          />
+        </button>
+      )}
     </div>
   );
 }
@@ -259,6 +260,6 @@ function NoDataChip() {
 
 function NoData() {
   return (
-    <p className="text-sm text-muted-foreground">No data available for this mobile number.</p>
+    <p className="text-sm text-muted-foreground">No risk indicators available</p>
   );
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CASES_BY_MOBILE, type Applicant } from "@/data/cases";
+import { CASES_BY_MOBILE, DEMO_MOBILES, type Applicant } from "@/data/cases";
 import { ShieldCheck, CheckCircle2 } from "lucide-react";
 
 interface Props {
@@ -173,7 +173,7 @@ export default function ApplicationForm({ onSubmit }: Props) {
 
           <div className="flex flex-col-reverse items-stretch justify-between gap-3 border-t bg-muted/40 px-6 py-4 sm:flex-row sm:items-center">
             <p className="text-xs text-muted-foreground">
-              Demo numbers (auto-fill): 7547934604, 7627096571, 7524536787, 7601709226, 7521141423
+              Demo numbers (auto-fill): {DEMO_MOBILES.join(", ")}
             </p>
             <button
               type="submit"
