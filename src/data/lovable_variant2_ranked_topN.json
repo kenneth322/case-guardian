@@ -1,0 +1,3791 @@
+{
+  "lovable": {
+    "variant": "v2_ranked_topN_exclude_model_outputs",
+    "sourceFile": "10_ID_Characterstics.xlsx",
+    "dataModel": {
+      "primaryKey": "mobile",
+      "entities": {
+        "casesByMobile": {
+          "7547934604": {
+            "applicant": {
+              "mobile": "7547934604",
+              "firstName": "Ankit",
+              "lastName": "Sharma",
+              "email": "ankit.sharma95@yahoo.com",
+              "dob": "1982-04-05",
+              "aadhaar": "803326799935",
+              "pan": "CSNBA2535G",
+              "address": "Flat 577, Hadapsar, Pune, Maharashtra 411039"
+            },
+            "summary": {
+              "telcoRisk": "High Risk",
+              "bureauRisk": "High Risk",
+              "digitalRisk": "High Risk",
+              "overallRisk": "Very High Risk"
+            },
+            "results": {
+              "bureau": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 4058610000.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 834.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.phoneNameDigitalAge_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Phone Name Digital Age",
+                    "value": 834.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Network.statusCode_BUREAUID",
+                    "label": "Phone Network \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Social Advance.statusCode_BUREAUID",
+                    "label": "Phone Social Advance \u203a Status Code",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.status_BUREAUID",
+                    "label": "Mobile GIN \u203a Status",
+                    "value": 200
+                  },
+                  {
+                    "key": "Phone Name Attributes.nameMatchScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Name Match Score",
+                    "value": 100.0
+                  },
+                  {
+                    "key": "Phone to Name.nameMatchScore_BUREAUID",
+                    "label": "Phone To Name \u203a Name Match Score",
+                    "value": 100.0
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Relationship Count",
+                    "value": 15
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.industryFintech_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Industry Fintech",
+                    "value": 10
+                  },
+                  {
+                    "key": "ecomScore_BUREAUID",
+                    "label": "E-Com Score",
+                    "value": 9.0
+                  },
+                  {
+                    "key": "Phone Social Advance.phoneSocialCount_BUREAUID",
+                    "label": "Phone Social Advance \u203a Phone Social Count",
+                    "value": 5
+                  },
+                  {
+                    "key": "Mobile GIN.l2Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Count",
+                    "value": 2
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.mobile_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Mobile",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "derivedSignals_BUREAUID",
+                    "label": "Derived Signals",
+                    "value": 1
+                  },
+                  {
+                    "key": "enhancedCoverage_BUREAUID",
+                    "label": "Enhanced Coverage",
+                    "value": 1
+                  },
+                  {
+                    "key": "Phone Name Attributes.firstNameMatch_BUREAUID",
+                    "label": "Phone Name Attributes \u203a First Name Match",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.ndrScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Ndr Score",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isPhoneReachable_BUREAUID",
+                    "label": "Phone Network \u203a Is Phone Reachable",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isValidPhoneNumber_BUREAUID",
+                    "label": "Phone Network \u203a Is Valid Phone Number",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.amazon_BUREAUID",
+                    "label": "Phone Social Advance \u203a Amazon",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.flipkart_BUREAUID",
+                    "label": "Phone Social Advance \u203a Flipkart",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.instagram_BUREAUID",
+                    "label": "Phone Social Advance \u203a Instagram",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.shaadi_BUREAUID",
+                    "label": "Phone Social Advance \u203a Shaadi",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.swiggy_BUREAUID",
+                    "label": "Phone Social Advance \u203a Swiggy",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Mobile GIN.nameDiversity_BUREAUID",
+                    "label": "Mobile GIN \u203a Name Diversity",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l1Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Confidence",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Mobile GIN.l1Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l2Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Confidence",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Full Name",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.email_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Email",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.industryOther_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Industry Other",
+                    "value": 1
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 4058610000.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 834.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.phoneNameDigitalAge_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Phone Name Digital Age",
+                    "value": 834.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.456808477640152,
+                    "Scaled_Score": 560.2894318907571
+                  }
+                }
+              },
+              "telco": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Active Since Months_TRUECALLER",
+                    "label": "Active Since Months",
+                    "value": 67
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 18.3999996185303
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 13.0
+                  },
+                  {
+                    "key": "Incoming call score (7 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (7 Days)",
+                    "value": 8.60000038146973
+                  },
+                  {
+                    "key": "Incoming call score (14 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (14 Days)",
+                    "value": 8.0
+                  },
+                  {
+                    "key": "Name String Match Score_TRUECALLER",
+                    "label": "Name String Match Score",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "var_lt_1week_TRUECALLER",
+                    "label": "Var Lt 1week",
+                    "value": 1
+                  },
+                  {
+                    "key": "Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Activity Spread (7 Days)",
+                    "value": 0.4286
+                  },
+                  {
+                    "key": "Incoming Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (7 Days)",
+                    "value": 0.4286
+                  },
+                  {
+                    "key": "Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Activity Spread (60 Days)",
+                    "value": 0.3667
+                  },
+                  {
+                    "key": "Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Activity Spread (30 Days)",
+                    "value": 0.3667
+                  },
+                  {
+                    "key": "Incoming Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (30 Days)",
+                    "value": 0.3667
+                  },
+                  {
+                    "key": "Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Activity Spread (14 Days)",
+                    "value": 0.3571
+                  },
+                  {
+                    "key": "Incoming Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (14 Days)",
+                    "value": 0.3571
+                  },
+                  {
+                    "key": "Incoming Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (60 Days)",
+                    "value": 0.35
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (60 Days)",
+                    "value": 0.034
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (60 Days)",
+                    "value": 0.0167
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Active Since Months_TRUECALLER",
+                    "label": "Active Since Months",
+                    "value": 67
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 18.3999996185303
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 13.0
+                  },
+                  {
+                    "key": "Incoming call score (7 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (7 Days)",
+                    "value": 8.60000038146973
+                  },
+                  {
+                    "key": "Incoming call score (14 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (14 Days)",
+                    "value": 8.0
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.2267386764287949,
+                    "Scaled_Score": 605.8910440954362
+                  }
+                }
+              },
+              "digital": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "RULE_COUNT",
+                    "label": "Rule Count",
+                    "value": 3
+                  },
+                  {
+                    "key": "BORR_APPL_NE81",
+                    "label": "BORR APPL NE81",
+                    "value": 1
+                  },
+                  {
+                    "key": "BORR_APPL_NE82",
+                    "label": "BORR APPL NE82",
+                    "value": 1
+                  },
+                  {
+                    "key": "STR_APPL_NE83",
+                    "label": "STR APPL NE83",
+                    "value": 1
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "RULE_COUNT",
+                    "label": "Rule Count",
+                    "value": 3
+                  },
+                  {
+                    "key": "BORR_APPL_NE81",
+                    "label": "BORR APPL NE81",
+                    "value": 1
+                  },
+                  {
+                    "key": "BORR_APPL_NE82",
+                    "label": "BORR APPL NE82",
+                    "value": 1
+                  },
+                  {
+                    "key": "STR_APPL_NE83",
+                    "label": "STR APPL NE83",
+                    "value": 1
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.6412340998649597,
+                    "Scaled_Score": 527.6590324057851
+                  }
+                }
+              }
+            }
+          },
+          "7627096571": {
+            "applicant": {
+              "mobile": "7627096571",
+              "firstName": "Rahul",
+              "lastName": "Reddy",
+              "email": "rahul.reddy26@outlook.com",
+              "dob": "1995-12-18",
+              "aadhaar": "543646118359",
+              "pan": "SIZAY3615W",
+              "address": "Flat 966, Aundh, Pune, Maharashtra 411018"
+            },
+            "summary": {
+              "telcoRisk": "High Risk",
+              "bureauRisk": "High Risk",
+              "digitalRisk": "High Risk",
+              "overallRisk": "Very High Risk"
+            },
+            "results": {
+              "bureau": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 4058543270.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 2020.0
+                  },
+                  {
+                    "key": "daysSinceRevocation_BUREAUID",
+                    "label": "Days Since Revocation",
+                    "value": 445.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Network.statusCode_BUREAUID",
+                    "label": "Phone Network \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Social Advance.statusCode_BUREAUID",
+                    "label": "Phone Social Advance \u203a Status Code",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.status_BUREAUID",
+                    "label": "Mobile GIN \u203a Status",
+                    "value": 200
+                  },
+                  {
+                    "key": "Phone Name Attributes.nameMatchScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Name Match Score",
+                    "value": 100.0
+                  },
+                  {
+                    "key": "Phone to Name.nameMatchScore_BUREAUID",
+                    "label": "Phone To Name \u203a Name Match Score",
+                    "value": 100.0
+                  },
+                  {
+                    "key": "ecomScore_BUREAUID",
+                    "label": "E-Com Score",
+                    "value": 6.5
+                  },
+                  {
+                    "key": "Phone Social Advance.phoneSocialCount_BUREAUID",
+                    "label": "Phone Social Advance \u203a Phone Social Count",
+                    "value": 5
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Relationship Count",
+                    "value": 4
+                  },
+                  {
+                    "key": "Mobile GIN.l2Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Count",
+                    "value": 2
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.mobile_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Mobile",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "derivedSignals_BUREAUID",
+                    "label": "Derived Signals",
+                    "value": 1
+                  },
+                  {
+                    "key": "enhancedCoverage_BUREAUID",
+                    "label": "Enhanced Coverage",
+                    "value": 1
+                  },
+                  {
+                    "key": "Phone Name Attributes.ndrScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Ndr Score",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.phoneNameDigitalAge_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Phone Name Digital Age",
+                    "value": -1.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.revocationHistory_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Revocation History",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isPhoneReachable_BUREAUID",
+                    "label": "Phone Network \u203a Is Phone Reachable",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isValidPhoneNumber_BUREAUID",
+                    "label": "Phone Network \u203a Is Valid Phone Number",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.amazon_BUREAUID",
+                    "label": "Phone Social Advance \u203a Amazon",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.instagram_BUREAUID",
+                    "label": "Phone Social Advance \u203a Instagram",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.swiggy_BUREAUID",
+                    "label": "Phone Social Advance \u203a Swiggy",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.toi_BUREAUID",
+                    "label": "Phone Social Advance \u203a TOI",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.whatsapp_BUREAUID",
+                    "label": "Phone Social Advance \u203a WhatsApp",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Mobile GIN.nameDiversity_BUREAUID",
+                    "label": "Mobile GIN \u203a Name Diversity",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l1Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Confidence",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Mobile GIN.l1Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l2Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Confidence",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Full Name",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.email_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Email",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.industryGaming_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Industry Gaming",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.industryFintech_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Industry Fintech",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.industryOther_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Industry Other",
+                    "value": 1
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 4058543270.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 2020.0
+                  },
+                  {
+                    "key": "daysSinceRevocation_BUREAUID",
+                    "label": "Days Since Revocation",
+                    "value": 445.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.2872558832168579,
+                    "Scaled_Score": 592.1247143049541
+                  }
+                }
+              },
+              "telco": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Incoming call score (7 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (7 Days)",
+                    "value": 94.5999984741211
+                  },
+                  {
+                    "key": "Incoming call score (14 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (14 Days)",
+                    "value": 90.0
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 90.0
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 88.4000015258789
+                  },
+                  {
+                    "key": "Outgoing call score (60 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (60 Days)",
+                    "value": 67.0
+                  },
+                  {
+                    "key": "Network Connection Score_TRUECALLER",
+                    "label": "Network Connection Score",
+                    "value": 53
+                  },
+                  {
+                    "key": "Outgoing call score (30 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (30 Days)",
+                    "value": 31.0
+                  },
+                  {
+                    "key": "Outgoing call score (7 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (7 Days)",
+                    "value": 17.3999996185303
+                  },
+                  {
+                    "key": "Outgoing call score (14 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (14 Days)",
+                    "value": 15.8000001907349
+                  },
+                  {
+                    "key": "Active Since Months_TRUECALLER",
+                    "label": "Active Since Months",
+                    "value": 13
+                  },
+                  {
+                    "key": "Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Activity Spread (60 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Activity Spread (7 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Incoming Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (7 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Activity Spread (14 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Incoming Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (14 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Activity Spread (30 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Incoming Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (30 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "var_lt_1week_TRUECALLER",
+                    "label": "Var Lt 1week",
+                    "value": 1
+                  },
+                  {
+                    "key": "Incoming Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (60 Days)",
+                    "value": 0.9833
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (60 Days)",
+                    "value": 0.8
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (30 Days)",
+                    "value": 0.6667
+                  },
+                  {
+                    "key": "Name String Match Score_TRUECALLER",
+                    "label": "Name String Match Score",
+                    "value": 0.53333336
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (60 Days)",
+                    "value": 0.513
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (7 Days)",
+                    "value": 0.4286
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (14 Days)",
+                    "value": 0.4286
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (30 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (30 Days)",
+                    "value": 0.115
+                  },
+                  {
+                    "key": "Spammy Connections Ratio_TRUECALLER",
+                    "label": "Spammy Connections Ratio",
+                    "value": 0.0769230769230769
+                  },
+                  {
+                    "key": "Strong to Weak Connections Ratio_TRUECALLER",
+                    "label": "Strong To Weak Connections Ratio",
+                    "value": 0.0588235259515573
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (7 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (7 Days)",
+                    "value": 0.05
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (14 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (14 Days)",
+                    "value": 0.049
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Incoming call score (7 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (7 Days)",
+                    "value": 94.5999984741211
+                  },
+                  {
+                    "key": "Incoming call score (14 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (14 Days)",
+                    "value": 90.0
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 90.0
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 88.4000015258789
+                  },
+                  {
+                    "key": "Outgoing call score (60 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (60 Days)",
+                    "value": 67.0
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.2434192448854446,
+                    "Scaled_Score": 601.8748072023769
+                  }
+                }
+              },
+              "digital": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "RULE_COUNT",
+                    "label": "Rule Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "STR_APPL_NE83",
+                    "label": "STR APPL NE83",
+                    "value": 1
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "RULE_COUNT",
+                    "label": "Rule Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "STR_APPL_NE83",
+                    "label": "STR APPL NE83",
+                    "value": 1
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.2715894877910614,
+                    "Scaled_Score": 595.4930057009744
+                  }
+                }
+              }
+            }
+          },
+          "7524536787": {
+            "applicant": {
+              "mobile": "7524536787",
+              "firstName": "Sandeep",
+              "lastName": "Verma",
+              "email": "sandeep.verma98@yahoo.com",
+              "dob": "1978-02-13",
+              "aadhaar": "279268816635",
+              "pan": "TIZBX8527R",
+              "address": "Flat 356, Viman Nagar, Pune, Maharashtra 411006"
+            },
+            "summary": {
+              "telcoRisk": "Low Risk",
+              "bureauRisk": "High Risk",
+              "digitalRisk": "High Risk",
+              "overallRisk": "High Risk"
+            },
+            "results": {
+              "bureau": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 405540000000000.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 621.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.phoneNameDigitalAge_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Phone Name Digital Age",
+                    "value": 621.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Network.statusCode_BUREAUID",
+                    "label": "Phone Network \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Social Advance.statusCode_BUREAUID",
+                    "label": "Phone Social Advance \u203a Status Code",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.status_BUREAUID",
+                    "label": "Mobile GIN \u203a Status",
+                    "value": 200
+                  },
+                  {
+                    "key": "Phone Name Attributes.nameMatchScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Name Match Score",
+                    "value": 100.0
+                  },
+                  {
+                    "key": "Phone to Name.nameMatchScore_BUREAUID",
+                    "label": "Phone To Name \u203a Name Match Score",
+                    "value": 100.0
+                  },
+                  {
+                    "key": "ecomScore_BUREAUID",
+                    "label": "E-Com Score",
+                    "value": 9.0
+                  },
+                  {
+                    "key": "Phone Social Advance.phoneSocialCount_BUREAUID",
+                    "label": "Phone Social Advance \u203a Phone Social Count",
+                    "value": 4
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Relationship Count",
+                    "value": 2
+                  },
+                  {
+                    "key": "derivedSignals_BUREAUID",
+                    "label": "Derived Signals",
+                    "value": 1
+                  },
+                  {
+                    "key": "enhancedCoverage_BUREAUID",
+                    "label": "Enhanced Coverage",
+                    "value": 1
+                  },
+                  {
+                    "key": "Phone Name Attributes.firstNameMatch_BUREAUID",
+                    "label": "Phone Name Attributes \u203a First Name Match",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.ndrScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Ndr Score",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isPhoneReachable_BUREAUID",
+                    "label": "Phone Network \u203a Is Phone Reachable",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isValidPhoneNumber_BUREAUID",
+                    "label": "Phone Network \u203a Is Valid Phone Number",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.amazon_BUREAUID",
+                    "label": "Phone Social Advance \u203a Amazon",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.flipkart_BUREAUID",
+                    "label": "Phone Social Advance \u203a Flipkart",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.instagram_BUREAUID",
+                    "label": "Phone Social Advance \u203a Instagram",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.swiggy_BUREAUID",
+                    "label": "Phone Social Advance \u203a Swiggy",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Mobile GIN.nameDiversity_BUREAUID",
+                    "label": "Mobile GIN \u203a Name Diversity",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l1Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Confidence",
+                    "value": -1.0
+                  },
+                  {
+                    "key": "Mobile GIN.l2Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l2Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Confidence",
+                    "value": -1
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Full Name",
+                    "value": 1
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 405540000000000.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 621.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.phoneNameDigitalAge_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Phone Name Digital Age",
+                    "value": 621.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.259546309709549,
+                    "Scaled_Score": 598.165806996125
+                  }
+                }
+              },
+              "telco": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Active Since Months_TRUECALLER",
+                    "label": "Active Since Months",
+                    "value": 67
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 49.0
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 47.4000015258789
+                  },
+                  {
+                    "key": "Outgoing call score (30 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (30 Days)",
+                    "value": 46.0
+                  },
+                  {
+                    "key": "Outgoing call score (60 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (60 Days)",
+                    "value": 44.5999984741211
+                  },
+                  {
+                    "key": "Network Connection Score_TRUECALLER",
+                    "label": "Network Connection Score",
+                    "value": 11
+                  },
+                  {
+                    "key": "Number of Recycles_TRUECALLER",
+                    "label": "Number Of Recycles",
+                    "value": 1
+                  },
+                  {
+                    "key": "var_1-3 weeks_TRUECALLER",
+                    "label": "Var 1-3 Weeks",
+                    "value": 1
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (30 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (30 Days)",
+                    "value": 0.839
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (60 Days)",
+                    "value": 0.771
+                  },
+                  {
+                    "key": "Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Activity Spread (60 Days)",
+                    "value": 0.3833
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (60 Days)",
+                    "value": 0.3667
+                  },
+                  {
+                    "key": "Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Activity Spread (30 Days)",
+                    "value": 0.3667
+                  },
+                  {
+                    "key": "Incoming Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (30 Days)",
+                    "value": 0.3667
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (30 Days)",
+                    "value": 0.3667
+                  },
+                  {
+                    "key": "Incoming Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (60 Days)",
+                    "value": 0.35
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Active Since Months_TRUECALLER",
+                    "label": "Active Since Months",
+                    "value": 67
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 49.0
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 47.4000015258789
+                  },
+                  {
+                    "key": "Outgoing call score (30 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (30 Days)",
+                    "value": 46.0
+                  },
+                  {
+                    "key": "Outgoing call score (60 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (60 Days)",
+                    "value": 44.5999984741211
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.186514288187027,
+                    "Scaled_Score": 616.5382079588053
+                  }
+                }
+              },
+              "digital": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "RULE_COUNT",
+                    "label": "Rule Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "BORR_APPL_NE81",
+                    "label": "BORR APPL NE81",
+                    "value": 1
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "RULE_COUNT",
+                    "label": "Rule Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "BORR_APPL_NE81",
+                    "label": "BORR APPL NE81",
+                    "value": 1
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.3052287697792053,
+                    "Scaled_Score": 588.3926925010576
+                  }
+                }
+              }
+            }
+          },
+          "7601709226": {
+            "applicant": {
+              "mobile": "7601709226",
+              "firstName": "Pravin",
+              "lastName": "Kulkarni",
+              "email": "pravin.kulkarni81@outlook.com",
+              "dob": "1986-10-07",
+              "aadhaar": "777121391750",
+              "pan": "VHYJC4814D",
+              "address": "Flat 879, Aundh, Pune, Maharashtra 411030"
+            },
+            "summary": {
+              "telcoRisk": "High Risk",
+              "bureauRisk": "Low Risk",
+              "digitalRisk": "High Risk",
+              "overallRisk": "High Risk"
+            },
+            "results": {
+              "bureau": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 404929987334714.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 2691.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Network.statusCode_BUREAUID",
+                    "label": "Phone Network \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Social Advance.statusCode_BUREAUID",
+                    "label": "Phone Social Advance \u203a Status Code",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.status_BUREAUID",
+                    "label": "Mobile GIN \u203a Status",
+                    "value": 200
+                  },
+                  {
+                    "key": "Phone Name Attributes.nameMatchScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Name Match Score",
+                    "value": 90.7407407407407
+                  },
+                  {
+                    "key": "Phone to Name.nameMatchScore_BUREAUID",
+                    "label": "Phone To Name \u203a Name Match Score",
+                    "value": 90.7407407407407
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Relationship Count",
+                    "value": 18
+                  },
+                  {
+                    "key": "ecomScore_BUREAUID",
+                    "label": "E-Com Score",
+                    "value": 9.0
+                  },
+                  {
+                    "key": "Phone Social Advance.phoneSocialCount_BUREAUID",
+                    "label": "Phone Social Advance \u203a Phone Social Count",
+                    "value": 5
+                  },
+                  {
+                    "key": "Mobile GIN.l2Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Count",
+                    "value": 3
+                  },
+                  {
+                    "key": "Mobile GIN.l1Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Count",
+                    "value": 2
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Full Name",
+                    "value": 2
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.email_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Email",
+                    "value": 2.0
+                  },
+                  {
+                    "key": "derivedSignals_BUREAUID",
+                    "label": "Derived Signals",
+                    "value": 1
+                  },
+                  {
+                    "key": "enhancedCoverage_BUREAUID",
+                    "label": "Enhanced Coverage",
+                    "value": 1
+                  },
+                  {
+                    "key": "Phone Name Attributes.firstNameMatch_BUREAUID",
+                    "label": "Phone Name Attributes \u203a First Name Match",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.ndrScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Ndr Score",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.phoneNameDigitalAge_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Phone Name Digital Age",
+                    "value": -1.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.unrScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Unr Score",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isPhoneReachable_BUREAUID",
+                    "label": "Phone Network \u203a Is Phone Reachable",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isValidPhoneNumber_BUREAUID",
+                    "label": "Phone Network \u203a Is Valid Phone Number",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.amazon_BUREAUID",
+                    "label": "Phone Social Advance \u203a Amazon",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.flipkart_BUREAUID",
+                    "label": "Phone Social Advance \u203a Flipkart",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.instagram_BUREAUID",
+                    "label": "Phone Social Advance \u203a Instagram",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.swiggy_BUREAUID",
+                    "label": "Phone Social Advance \u203a Swiggy",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.whatsapp_BUREAUID",
+                    "label": "Phone Social Advance \u203a WhatsApp",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Mobile GIN.l2Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Confidence",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.industryBreached_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Industry Breached",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l1Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Confidence",
+                    "value": 0.81
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 404929987334714.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 2691.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Network.statusCode_BUREAUID",
+                    "label": "Phone Network \u203a Status Code",
+                    "value": 200.0
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.0418429933488369,
+                    "Scaled_Score": 688.3094058775946
+                  }
+                }
+              },
+              "telco": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Incoming call score (7 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (7 Days)",
+                    "value": 69.1999969482422
+                  },
+                  {
+                    "key": "Active Since Months_TRUECALLER",
+                    "label": "Active Since Months",
+                    "value": 67
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 66.1999969482422
+                  },
+                  {
+                    "key": "Outgoing call score (7 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (7 Days)",
+                    "value": 62.5999984741211
+                  },
+                  {
+                    "key": "Outgoing call score (60 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (60 Days)",
+                    "value": 59.2000007629395
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 58.2000007629395
+                  },
+                  {
+                    "key": "Incoming call score (14 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (14 Days)",
+                    "value": 56.2000007629395
+                  },
+                  {
+                    "key": "Network Connection Score_TRUECALLER",
+                    "label": "Network Connection Score",
+                    "value": 55
+                  },
+                  {
+                    "key": "Outgoing call score (14 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (14 Days)",
+                    "value": 46.7999992370605
+                  },
+                  {
+                    "key": "Outgoing call score (30 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (30 Days)",
+                    "value": 45.0
+                  },
+                  {
+                    "key": "var_lt_1week_TRUECALLER",
+                    "label": "Var Lt 1week",
+                    "value": 1
+                  },
+                  {
+                    "key": "Name String Match Score_TRUECALLER",
+                    "label": "Name String Match Score",
+                    "value": 0.8979167
+                  },
+                  {
+                    "key": "Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Activity Spread (7 Days)",
+                    "value": 0.8571
+                  },
+                  {
+                    "key": "Incoming Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (7 Days)",
+                    "value": 0.8571
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (7 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (7 Days)",
+                    "value": 0.775
+                  },
+                  {
+                    "key": "Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Activity Spread (60 Days)",
+                    "value": 0.75
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (60 Days)",
+                    "value": 0.745
+                  },
+                  {
+                    "key": "Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Activity Spread (30 Days)",
+                    "value": 0.7
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (14 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (14 Days)",
+                    "value": 0.689
+                  },
+                  {
+                    "key": "Incoming Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (60 Days)",
+                    "value": 0.6833
+                  },
+                  {
+                    "key": "Incoming Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (30 Days)",
+                    "value": 0.6667
+                  },
+                  {
+                    "key": "Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Activity Spread (14 Days)",
+                    "value": 0.6429
+                  },
+                  {
+                    "key": "Incoming Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (14 Days)",
+                    "value": 0.6429
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (30 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (30 Days)",
+                    "value": 0.554
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (7 Days)",
+                    "value": 0.4286
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (60 Days)",
+                    "value": 0.3667
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (14 Days)",
+                    "value": 0.2143
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (30 Days)",
+                    "value": 0.2
+                  },
+                  {
+                    "key": "Strong Spammy Connections Ratio_TRUECALLER",
+                    "label": "Strong Spammy Connections Ratio",
+                    "value": 0.1
+                  },
+                  {
+                    "key": "Spammy Connections Ratio_TRUECALLER",
+                    "label": "Spammy Connections Ratio",
+                    "value": 0.0357142857142857
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Incoming call score (7 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (7 Days)",
+                    "value": 69.1999969482422
+                  },
+                  {
+                    "key": "Active Since Months_TRUECALLER",
+                    "label": "Active Since Months",
+                    "value": 67
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 66.1999969482422
+                  },
+                  {
+                    "key": "Outgoing call score (7 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (7 Days)",
+                    "value": 62.5999984741211
+                  },
+                  {
+                    "key": "Outgoing call score (60 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (60 Days)",
+                    "value": 59.2000007629395
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.2429555505514145,
+                    "Scaled_Score": 601.9838528021564
+                  }
+                }
+              },
+              "digital": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "RULE_COUNT",
+                    "label": "Rule Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "STR_APPL_NE83",
+                    "label": "STR APPL NE83",
+                    "value": 1
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "RULE_COUNT",
+                    "label": "Rule Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "STR_APPL_NE83",
+                    "label": "STR APPL NE83",
+                    "value": 1
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.2715894877910614,
+                    "Scaled_Score": 595.4930057009744
+                  }
+                }
+              }
+            }
+          },
+          "7521141423": {
+            "applicant": {
+              "mobile": "7521141423",
+              "firstName": "Nitin",
+              "lastName": "Gupta",
+              "email": "nitin.gupta48@yahoo.com",
+              "dob": "1981-11-09",
+              "aadhaar": "774921693803",
+              "pan": "RXHFO7216I",
+              "address": "Flat 550, Kothrud, Pune, Maharashtra 411021"
+            },
+            "summary": {
+              "telcoRisk": "High Risk",
+              "bureauRisk": "High Risk",
+              "digitalRisk": "Low Risk",
+              "overallRisk": "High Risk"
+            },
+            "results": {
+              "bureau": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 405873489628690.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 2218.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Network.statusCode_BUREAUID",
+                    "label": "Phone Network \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Social Advance.statusCode_BUREAUID",
+                    "label": "Phone Social Advance \u203a Status Code",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.status_BUREAUID",
+                    "label": "Mobile GIN \u203a Status",
+                    "value": 200
+                  },
+                  {
+                    "key": "Phone Name Attributes.nameMatchScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Name Match Score",
+                    "value": 100.0
+                  },
+                  {
+                    "key": "ecomScore_BUREAUID",
+                    "label": "E-Com Score",
+                    "value": 9.0
+                  },
+                  {
+                    "key": "Phone Social Advance.phoneSocialCount_BUREAUID",
+                    "label": "Phone Social Advance \u203a Phone Social Count",
+                    "value": 6
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.industryFintech_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Industry Fintech",
+                    "value": 4
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Relationship Count",
+                    "value": 4
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.mobile_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Mobile",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "derivedSignals_BUREAUID",
+                    "label": "Derived Signals",
+                    "value": 1
+                  },
+                  {
+                    "key": "enhancedCoverage_BUREAUID",
+                    "label": "Enhanced Coverage",
+                    "value": 1
+                  },
+                  {
+                    "key": "Phone Name Attributes.firstNameMatch_BUREAUID",
+                    "label": "Phone Name Attributes \u203a First Name Match",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.ndrScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Ndr Score",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.phoneNameDigitalAge_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Phone Name Digital Age",
+                    "value": -1.0
+                  },
+                  {
+                    "key": "Phone Network.isPhoneReachable_BUREAUID",
+                    "label": "Phone Network \u203a Is Phone Reachable",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isValidPhoneNumber_BUREAUID",
+                    "label": "Phone Network \u203a Is Valid Phone Number",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.amazon_BUREAUID",
+                    "label": "Phone Social Advance \u203a Amazon",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.flipkart_BUREAUID",
+                    "label": "Phone Social Advance \u203a Flipkart",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.instagram_BUREAUID",
+                    "label": "Phone Social Advance \u203a Instagram",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.skype_BUREAUID",
+                    "label": "Phone Social Advance \u203a Skype",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.swiggy_BUREAUID",
+                    "label": "Phone Social Advance \u203a Swiggy",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.toi_BUREAUID",
+                    "label": "Phone Social Advance \u203a TOI",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Mobile GIN.nameDiversity_BUREAUID",
+                    "label": "Mobile GIN \u203a Name Diversity",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l1Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Confidence",
+                    "value": -1.0
+                  },
+                  {
+                    "key": "Mobile GIN.l2Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l2Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Confidence",
+                    "value": -1
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Full Name",
+                    "value": 1
+                  },
+                  {
+                    "key": "Phone to Name.nameMatchScore_BUREAUID",
+                    "label": "Phone To Name \u203a Name Match Score",
+                    "value": -1.0
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 405873489628690.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 2218.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Network.statusCode_BUREAUID",
+                    "label": "Phone Network \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Social Advance.statusCode_BUREAUID",
+                    "label": "Phone Social Advance \u203a Status Code",
+                    "value": 200
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.2437886893749237,
+                    "Scaled_Score": 601.788029916231
+                  }
+                }
+              },
+              "telco": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Active Since Months_TRUECALLER",
+                    "label": "Active Since Months",
+                    "value": 67
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 13.8000001907349
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 7.59999990463257
+                  },
+                  {
+                    "key": "Incoming call score (14 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (14 Days)",
+                    "value": 4.80000019073486
+                  },
+                  {
+                    "key": "var_1-3 weeks_TRUECALLER",
+                    "label": "Var 1-3 Weeks",
+                    "value": 1
+                  },
+                  {
+                    "key": "Name String Match Score_TRUECALLER",
+                    "label": "Name String Match Score",
+                    "value": 0.888549
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (30 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (30 Days)",
+                    "value": 0.167
+                  },
+                  {
+                    "key": "Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Activity Spread (30 Days)",
+                    "value": 0.1667
+                  },
+                  {
+                    "key": "Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Activity Spread (14 Days)",
+                    "value": 0.1429
+                  },
+                  {
+                    "key": "Incoming Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (14 Days)",
+                    "value": 0.1429
+                  },
+                  {
+                    "key": "Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Activity Spread (60 Days)",
+                    "value": 0.1333
+                  },
+                  {
+                    "key": "Incoming Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (30 Days)",
+                    "value": 0.1333
+                  },
+                  {
+                    "key": "Incoming Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (60 Days)",
+                    "value": 0.1167
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (60 Days)",
+                    "value": 0.067
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (30 Days)",
+                    "value": 0.0333
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (60 Days)",
+                    "value": 0.0167
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Active Since Months_TRUECALLER",
+                    "label": "Active Since Months",
+                    "value": 67
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 13.8000001907349
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 7.59999990463257
+                  },
+                  {
+                    "key": "Incoming call score (14 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (14 Days)",
+                    "value": 4.80000019073486
+                  },
+                  {
+                    "key": "var_1-3 weeks_TRUECALLER",
+                    "label": "Var 1-3 Weeks",
+                    "value": 1
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.2269007712602615,
+                    "Scaled_Score": 605.8510478101516
+                  }
+                }
+              },
+              "digital": {
+                "topN": 5,
+                "factors": [],
+                "topFactors": [],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.07070109248161316,
+                    "Scaled_Score": 664.2834226727541
+                  }
+                }
+              }
+            }
+          },
+          "7524596344": {
+            "applicant": {
+              "mobile": "7524596344",
+              "firstName": "Rahul",
+              "lastName": "Verma",
+              "email": "rahul.verma5@yahoo.com",
+              "dob": "1987-05-03",
+              "aadhaar": "372861554483",
+              "pan": "UPMUO3340I",
+              "address": "Flat 386, Wakad, Pune, Maharashtra 411048"
+            },
+            "summary": {
+              "telcoRisk": "High Risk",
+              "bureauRisk": "Low Risk",
+              "digitalRisk": "Low Risk",
+              "overallRisk": "Average Risk"
+            },
+            "results": {
+              "bureau": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 405872602156929.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 2750.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.phoneNameDigitalAge_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Phone Name Digital Age",
+                    "value": 380.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Network.statusCode_BUREAUID",
+                    "label": "Phone Network \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Social Advance.statusCode_BUREAUID",
+                    "label": "Phone Social Advance \u203a Status Code",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.status_BUREAUID",
+                    "label": "Mobile GIN \u203a Status",
+                    "value": 200
+                  },
+                  {
+                    "key": "Phone Name Attributes.nameMatchScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Name Match Score",
+                    "value": 100.0
+                  },
+                  {
+                    "key": "Phone to Name.nameMatchScore_BUREAUID",
+                    "label": "Phone To Name \u203a Name Match Score",
+                    "value": 100.0
+                  },
+                  {
+                    "key": "Phone Social Advance.phoneSocialCount_BUREAUID",
+                    "label": "Phone Social Advance \u203a Phone Social Count",
+                    "value": 6
+                  },
+                  {
+                    "key": "ecomScore_BUREAUID",
+                    "label": "E-Com Score",
+                    "value": 6.0
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.industryFinance_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Industry Finance",
+                    "value": 3
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Relationship Count",
+                    "value": 3
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.mobile_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Mobile",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "derivedSignals_BUREAUID",
+                    "label": "Derived Signals",
+                    "value": 1
+                  },
+                  {
+                    "key": "enhancedCoverage_BUREAUID",
+                    "label": "Enhanced Coverage",
+                    "value": 1
+                  },
+                  {
+                    "key": "Phone Name Attributes.firstNameMatch_BUREAUID",
+                    "label": "Phone Name Attributes \u203a First Name Match",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.ndrScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Ndr Score",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isPhoneReachable_BUREAUID",
+                    "label": "Phone Network \u203a Is Phone Reachable",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isValidPhoneNumber_BUREAUID",
+                    "label": "Phone Network \u203a Is Valid Phone Number",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.amazon_BUREAUID",
+                    "label": "Phone Social Advance \u203a Amazon",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.flipkart_BUREAUID",
+                    "label": "Phone Social Advance \u203a Flipkart",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.instagram_BUREAUID",
+                    "label": "Phone Social Advance \u203a Instagram",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.isWABusiness_BUREAUID",
+                    "label": "Phone Social Advance \u203a Is WA Business",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.toi_BUREAUID",
+                    "label": "Phone Social Advance \u203a TOI",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.whatsapp_BUREAUID",
+                    "label": "Phone Social Advance \u203a WhatsApp",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Mobile GIN.nameDiversity_BUREAUID",
+                    "label": "Mobile GIN \u203a Name Diversity",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l1Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Confidence",
+                    "value": -1.0
+                  },
+                  {
+                    "key": "Mobile GIN.l2Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l2Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Confidence",
+                    "value": -1
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Full Name",
+                    "value": 1
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 405872602156929.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 2750.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.phoneNameDigitalAge_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Phone Name Digital Age",
+                    "value": 380.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.1088259071111679,
+                    "Scaled_Score": 643.8038386769075
+                  }
+                }
+              },
+              "telco": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Outgoing call score (7 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (7 Days)",
+                    "value": 95.4000015258789
+                  },
+                  {
+                    "key": "Outgoing call score (60 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (60 Days)",
+                    "value": 91.1999969482422
+                  },
+                  {
+                    "key": "Outgoing call score (14 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (14 Days)",
+                    "value": 89.5999984741211
+                  },
+                  {
+                    "key": "Incoming call score (14 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (14 Days)",
+                    "value": 84.4000015258789
+                  },
+                  {
+                    "key": "Outgoing call score (30 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (30 Days)",
+                    "value": 83.8000030517578
+                  },
+                  {
+                    "key": "Incoming call score (7 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (7 Days)",
+                    "value": 80.5999984741211
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 78.5999984741211
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 77.4000015258789
+                  },
+                  {
+                    "key": "Network Connection Score_TRUECALLER",
+                    "label": "Network Connection Score",
+                    "value": 75
+                  },
+                  {
+                    "key": "Active Since Months_TRUECALLER",
+                    "label": "Active Since Months",
+                    "value": 67
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (7 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (7 Days)",
+                    "value": 2.255
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (60 Days)",
+                    "value": 1.81
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (14 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (14 Days)",
+                    "value": 1.384
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (30 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (30 Days)",
+                    "value": 1.339
+                  },
+                  {
+                    "key": "Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Activity Spread (60 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Incoming Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (60 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (60 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Activity Spread (7 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Incoming Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (7 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (7 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Activity Spread (14 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Incoming Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (14 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (14 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Activity Spread (30 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Incoming Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (30 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (30 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "var_lt_1week_TRUECALLER",
+                    "label": "Var Lt 1week",
+                    "value": 1
+                  },
+                  {
+                    "key": "Name String Match Score_TRUECALLER",
+                    "label": "Name String Match Score",
+                    "value": 0.9
+                  },
+                  {
+                    "key": "Strong to Weak Connections Ratio_TRUECALLER",
+                    "label": "Strong To Weak Connections Ratio",
+                    "value": 0.107142853316327
+                  },
+                  {
+                    "key": "Spammy Connections Ratio_TRUECALLER",
+                    "label": "Spammy Connections Ratio",
+                    "value": 0.0338983050847458
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Outgoing call score (7 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (7 Days)",
+                    "value": 95.4000015258789
+                  },
+                  {
+                    "key": "Outgoing call score (60 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (60 Days)",
+                    "value": 91.1999969482422
+                  },
+                  {
+                    "key": "Outgoing call score (14 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (14 Days)",
+                    "value": 89.5999984741211
+                  },
+                  {
+                    "key": "Incoming call score (14 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (14 Days)",
+                    "value": 84.4000015258789
+                  },
+                  {
+                    "key": "Outgoing call score (30 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (30 Days)",
+                    "value": 83.8000030517578
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.2366576790809631,
+                    "Scaled_Score": 603.4791318825121
+                  }
+                }
+              },
+              "digital": {
+                "topN": 5,
+                "factors": [],
+                "topFactors": [],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.07070109248161316,
+                    "Scaled_Score": 664.2834226727541
+                  }
+                }
+              }
+            }
+          },
+          "7595414456": {
+            "applicant": {
+              "mobile": "7595414456",
+              "firstName": "Pravin",
+              "lastName": "Reddy",
+              "email": "pravin.reddy34@outlook.com",
+              "dob": "1993-07-19",
+              "aadhaar": "527169304593",
+              "pan": "EQPCY1771D",
+              "address": "Flat 414, Kothrud, Pune, Maharashtra 411011"
+            },
+            "summary": {
+              "telcoRisk": "Low Risk",
+              "bureauRisk": "High Risk",
+              "digitalRisk": "Low Risk",
+              "overallRisk": "Average Risk"
+            },
+            "results": {
+              "bureau": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 404490000000000.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 2770.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.phoneNameDigitalAge_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Phone Name Digital Age",
+                    "value": 516.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Network.statusCode_BUREAUID",
+                    "label": "Phone Network \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Social Advance.statusCode_BUREAUID",
+                    "label": "Phone Social Advance \u203a Status Code",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.status_BUREAUID",
+                    "label": "Mobile GIN \u203a Status",
+                    "value": 200
+                  },
+                  {
+                    "key": "Phone Name Attributes.nameMatchScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Name Match Score",
+                    "value": 100.0
+                  },
+                  {
+                    "key": "Phone to Name.nameMatchScore_BUREAUID",
+                    "label": "Phone To Name \u203a Name Match Score",
+                    "value": 100.0
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Relationship Count",
+                    "value": 10
+                  },
+                  {
+                    "key": "ecomScore_BUREAUID",
+                    "label": "E-Com Score",
+                    "value": 9.0
+                  },
+                  {
+                    "key": "Phone Social Advance.phoneSocialCount_BUREAUID",
+                    "label": "Phone Social Advance \u203a Phone Social Count",
+                    "value": 7
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.mobile_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Mobile",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "derivedSignals_BUREAUID",
+                    "label": "Derived Signals",
+                    "value": 1
+                  },
+                  {
+                    "key": "enhancedCoverage_BUREAUID",
+                    "label": "Enhanced Coverage",
+                    "value": 1
+                  },
+                  {
+                    "key": "Phone Name Attributes.firstNameMatch_BUREAUID",
+                    "label": "Phone Name Attributes \u203a First Name Match",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.ndrScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Ndr Score",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isPhoneReachable_BUREAUID",
+                    "label": "Phone Network \u203a Is Phone Reachable",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isValidPhoneNumber_BUREAUID",
+                    "label": "Phone Network \u203a Is Valid Phone Number",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.amazon_BUREAUID",
+                    "label": "Phone Social Advance \u203a Amazon",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.flipkart_BUREAUID",
+                    "label": "Phone Social Advance \u203a Flipkart",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.instagram_BUREAUID",
+                    "label": "Phone Social Advance \u203a Instagram",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.microsoft_BUREAUID",
+                    "label": "Phone Social Advance \u203a Microsoft",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.skype_BUREAUID",
+                    "label": "Phone Social Advance \u203a Skype",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.swiggy_BUREAUID",
+                    "label": "Phone Social Advance \u203a Swiggy",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.toi_BUREAUID",
+                    "label": "Phone Social Advance \u203a TOI",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Mobile GIN.nameDiversity_BUREAUID",
+                    "label": "Mobile GIN \u203a Name Diversity",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l1Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Confidence",
+                    "value": -1.0
+                  },
+                  {
+                    "key": "Mobile GIN.l2Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l2Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Confidence",
+                    "value": -1
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Full Name",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.industryBreached_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Industry Breached",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.industryOther_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Industry Other",
+                    "value": 1
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 404490000000000.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 2770.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.phoneNameDigitalAge_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Phone Name Digital Age",
+                    "value": 516.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.2695914208889008,
+                    "Scaled_Score": 595.931153861792
+                  }
+                }
+              },
+              "telco": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Active Since Months_TRUECALLER",
+                    "label": "Active Since Months",
+                    "value": 67
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 51.7999992370605
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 50.4000015258789
+                  },
+                  {
+                    "key": "Incoming call score (14 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (14 Days)",
+                    "value": 45.4000015258789
+                  },
+                  {
+                    "key": "Incoming call score (7 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (7 Days)",
+                    "value": 31.6000003814697
+                  },
+                  {
+                    "key": "Outgoing call score (30 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (30 Days)",
+                    "value": 25.6000003814697
+                  },
+                  {
+                    "key": "Outgoing call score (60 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (60 Days)",
+                    "value": 24.6000003814697
+                  },
+                  {
+                    "key": "Network Connection Score_TRUECALLER",
+                    "label": "Network Connection Score",
+                    "value": 8
+                  },
+                  {
+                    "key": "Name String Match Score_TRUECALLER",
+                    "label": "Name String Match Score",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "var_lt_1week_TRUECALLER",
+                    "label": "Var Lt 1week",
+                    "value": 1
+                  },
+                  {
+                    "key": "Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Activity Spread (14 Days)",
+                    "value": 0.9286
+                  },
+                  {
+                    "key": "Incoming Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (14 Days)",
+                    "value": 0.9286
+                  },
+                  {
+                    "key": "Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Activity Spread (7 Days)",
+                    "value": 0.8571
+                  },
+                  {
+                    "key": "Incoming Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (7 Days)",
+                    "value": 0.8571
+                  },
+                  {
+                    "key": "Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Activity Spread (30 Days)",
+                    "value": 0.8333
+                  },
+                  {
+                    "key": "Incoming Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (30 Days)",
+                    "value": 0.8333
+                  },
+                  {
+                    "key": "Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Activity Spread (60 Days)",
+                    "value": 0.7833
+                  },
+                  {
+                    "key": "Incoming Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (60 Days)",
+                    "value": 0.75
+                  },
+                  {
+                    "key": "Strong to Weak Connections Ratio_TRUECALLER",
+                    "label": "Strong To Weak Connections Ratio",
+                    "value": 0.333333222222259
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (30 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (30 Days)",
+                    "value": 0.275
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (60 Days)",
+                    "value": 0.23
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (60 Days)",
+                    "value": 0.0833
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (30 Days)",
+                    "value": 0.0333
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Active Since Months_TRUECALLER",
+                    "label": "Active Since Months",
+                    "value": 67
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 51.7999992370605
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 50.4000015258789
+                  },
+                  {
+                    "key": "Incoming call score (14 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (14 Days)",
+                    "value": 45.4000015258789
+                  },
+                  {
+                    "key": "Incoming call score (7 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (7 Days)",
+                    "value": 31.6000003814697
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.06558205187320709,
+                    "Scaled_Score": 667.7741304597455
+                  }
+                }
+              },
+              "digital": {
+                "topN": 5,
+                "factors": [],
+                "topFactors": [],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.07070109248161316,
+                    "Scaled_Score": 664.2834226727541
+                  }
+                }
+              }
+            }
+          },
+          "7523806396": {
+            "applicant": {
+              "mobile": "7523806396",
+              "firstName": "Amit",
+              "lastName": "Chopra",
+              "email": "amit.chopra9@yahoo.com",
+              "dob": "1987-10-15",
+              "aadhaar": "633451191188",
+              "pan": "VXDVR5371Y",
+              "address": "Flat 797, Baner, Pune, Maharashtra 411019"
+            },
+            "summary": {
+              "telcoRisk": "Low Risk",
+              "bureauRisk": "Low Risk",
+              "digitalRisk": "High Risk",
+              "overallRisk": "Average Risk"
+            },
+            "results": {
+              "bureau": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 4049000000.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 4211.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.phoneNameDigitalAge_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Phone Name Digital Age",
+                    "value": 694.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Network.statusCode_BUREAUID",
+                    "label": "Phone Network \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Social Advance.statusCode_BUREAUID",
+                    "label": "Phone Social Advance \u203a Status Code",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.status_BUREAUID",
+                    "label": "Mobile GIN \u203a Status",
+                    "value": 200
+                  },
+                  {
+                    "key": "Phone Name Attributes.nameMatchScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Name Match Score",
+                    "value": 90.0
+                  },
+                  {
+                    "key": "Phone to Name.nameMatchScore_BUREAUID",
+                    "label": "Phone To Name \u203a Name Match Score",
+                    "value": 90.0
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Relationship Count",
+                    "value": 32
+                  },
+                  {
+                    "key": "ecomScore_BUREAUID",
+                    "label": "E-Com Score",
+                    "value": 6.5
+                  },
+                  {
+                    "key": "Phone Social Advance.phoneSocialCount_BUREAUID",
+                    "label": "Phone Social Advance \u203a Phone Social Count",
+                    "value": 5
+                  },
+                  {
+                    "key": "Mobile GIN.l2Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Count",
+                    "value": 3
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Full Name",
+                    "value": 3
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.industryFintech_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Industry Fintech",
+                    "value": 3
+                  },
+                  {
+                    "key": "Mobile GIN.l1Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Count",
+                    "value": 2
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.email_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Email",
+                    "value": 2.0
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.mobile_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Mobile",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "derivedSignals_BUREAUID",
+                    "label": "Derived Signals",
+                    "value": 1
+                  },
+                  {
+                    "key": "enhancedCoverage_BUREAUID",
+                    "label": "Enhanced Coverage",
+                    "value": 1
+                  },
+                  {
+                    "key": "Phone Name Attributes.firstNameMatch_BUREAUID",
+                    "label": "Phone Name Attributes \u203a First Name Match",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.ndrScore_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Ndr Score",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isPhoneReachable_BUREAUID",
+                    "label": "Phone Network \u203a Is Phone Reachable",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Network.isValidPhoneNumber_BUREAUID",
+                    "label": "Phone Network \u203a Is Valid Phone Number",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.flipkart_BUREAUID",
+                    "label": "Phone Social Advance \u203a Flipkart",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.indiamart_BUREAUID",
+                    "label": "Phone Social Advance \u203a Indiamart",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.instagram_BUREAUID",
+                    "label": "Phone Social Advance \u203a Instagram",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.swiggy_BUREAUID",
+                    "label": "Phone Social Advance \u203a Swiggy",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Phone Social Advance.toi_BUREAUID",
+                    "label": "Phone Social Advance \u203a TOI",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Mobile GIN.nameDiversity_BUREAUID",
+                    "label": "Mobile GIN \u203a Name Diversity",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l2Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Confidence",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.industryFinance_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Industry Finance",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.industryOther_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Industry Other",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l1Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Confidence",
+                    "value": 0.81
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Phone Network.imsi_BUREAUID",
+                    "label": "Phone Network \u203a IMSI",
+                    "value": 4049000000.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.digitalage_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Digitalage",
+                    "value": 4211.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.phoneNameDigitalAge_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Phone Name Digital Age",
+                    "value": 694.0
+                  },
+                  {
+                    "key": "Phone to Name.statusCode_BUREAUID",
+                    "label": "Phone To Name \u203a Status Code",
+                    "value": 200.0
+                  },
+                  {
+                    "key": "Phone Name Attributes.statusCode_BUREAUID",
+                    "label": "Phone Name Attributes \u203a Status Code",
+                    "value": 200.0
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.1222750470042229,
+                    "Scaled_Score": 638.1024486974605
+                  }
+                }
+              },
+              "telco": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Network Connection Score_TRUECALLER",
+                    "label": "Network Connection Score",
+                    "value": 94
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 92.0
+                  },
+                  {
+                    "key": "Incoming call score (14 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (14 Days)",
+                    "value": 91.4000015258789
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 89.5999984741211
+                  },
+                  {
+                    "key": "Incoming call score (7 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (7 Days)",
+                    "value": 86.1999969482422
+                  },
+                  {
+                    "key": "Outgoing call score (14 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (14 Days)",
+                    "value": 84.5999984741211
+                  },
+                  {
+                    "key": "Outgoing call score (30 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (30 Days)",
+                    "value": 83.8000030517578
+                  },
+                  {
+                    "key": "Outgoing call score (60 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (60 Days)",
+                    "value": 81.5999984741211
+                  },
+                  {
+                    "key": "Outgoing call score (7 Days)_TRUECALLER",
+                    "label": "Outgoing Call Score (7 Days)",
+                    "value": 75.1999969482422
+                  },
+                  {
+                    "key": "Active Since Months_TRUECALLER",
+                    "label": "Active Since Months",
+                    "value": 33
+                  },
+                  {
+                    "key": "Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Activity Spread (60 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Incoming Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (60 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Activity Spread (7 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Incoming Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (7 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (7 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (7 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Activity Spread (14 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Incoming Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (14 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (14 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (14 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Activity Spread (30 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Incoming Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Incoming Activity Spread (30 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (30 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (30 Days)",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "Name String Match Score_TRUECALLER",
+                    "label": "Name String Match Score",
+                    "value": 1.0
+                  },
+                  {
+                    "key": "var_lt_1week_TRUECALLER",
+                    "label": "Var Lt 1week",
+                    "value": 1
+                  },
+                  {
+                    "key": "Outgoing Activity Spread (60 Days)_TRUECALLER",
+                    "label": "Outgoing Activity Spread (60 Days)",
+                    "value": 0.9833
+                  },
+                  {
+                    "key": "Strong Spammy Connections Ratio_TRUECALLER",
+                    "label": "Strong Spammy Connections Ratio",
+                    "value": 0.88
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (30 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (30 Days)",
+                    "value": 0.867
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (14 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (14 Days)",
+                    "value": 0.84
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (7 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (7 Days)",
+                    "value": 0.763
+                  },
+                  {
+                    "key": "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER",
+                    "label": "Outgoing To Incoming Calls Ratio (60 Days)",
+                    "value": 0.691
+                  },
+                  {
+                    "key": "Spammy Connections Ratio_TRUECALLER",
+                    "label": "Spammy Connections Ratio",
+                    "value": 0.60126582278481
+                  },
+                  {
+                    "key": "Strong to Weak Connections Ratio_TRUECALLER",
+                    "label": "Strong To Weak Connections Ratio",
+                    "value": 0.0306122445855893
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Network Connection Score_TRUECALLER",
+                    "label": "Network Connection Score",
+                    "value": 94
+                  },
+                  {
+                    "key": "Incoming call score (60 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (60 Days)",
+                    "value": 92.0
+                  },
+                  {
+                    "key": "Incoming call score (14 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (14 Days)",
+                    "value": 91.4000015258789
+                  },
+                  {
+                    "key": "Incoming call score (30 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (30 Days)",
+                    "value": 89.5999984741211
+                  },
+                  {
+                    "key": "Incoming call score (7 Days)_TRUECALLER",
+                    "label": "Incoming Call Score (7 Days)",
+                    "value": 86.1999969482422
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.1448998749256134,
+                    "Scaled_Score": 629.6243919405275
+                  }
+                }
+              },
+              "digital": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "RULE_COUNT",
+                    "label": "Rule Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "STR_APPL_NE83",
+                    "label": "STR APPL NE83",
+                    "value": 1
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "RULE_COUNT",
+                    "label": "Rule Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "STR_APPL_NE83",
+                    "label": "STR APPL NE83",
+                    "value": 1
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.2715894877910614,
+                    "Scaled_Score": 595.4930057009744
+                  }
+                }
+              }
+            }
+          },
+          "7532330182": {
+            "applicant": {
+              "mobile": "7532330182",
+              "firstName": "Amit",
+              "lastName": "Gupta",
+              "email": "amit.gupta59@gmail.com",
+              "dob": "1998-12-09",
+              "aadhaar": "996192013927",
+              "pan": "QDUJU9317T",
+              "address": "Flat 508, Wakad, Pune, Maharashtra 411024"
+            },
+            "summary": {
+              "telcoRisk": "Low Risk",
+              "bureauRisk": "Low Risk",
+              "digitalRisk": "Low Risk",
+              "overallRisk": "Low Risk"
+            },
+            "results": {
+              "bureau": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Phone Social Advance.statusCode_BUREAUID",
+                    "label": "Phone Social Advance \u203a Status Code",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.status_BUREAUID",
+                    "label": "Mobile GIN \u203a Status",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Relationship Count",
+                    "value": 31
+                  },
+                  {
+                    "key": "derivedSignals_BUREAUID",
+                    "label": "Derived Signals",
+                    "value": 1
+                  },
+                  {
+                    "key": "enhancedCoverage_BUREAUID",
+                    "label": "Enhanced Coverage",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.nameDiversity_BUREAUID",
+                    "label": "Mobile GIN \u203a Name Diversity",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l1Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Confidence",
+                    "value": -1.0
+                  },
+                  {
+                    "key": "Mobile GIN.l2Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l2Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Confidence",
+                    "value": -1
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Full Name",
+                    "value": 1
+                  },
+                  {
+                    "key": "Phone to Name.nameMatchScore_BUREAUID",
+                    "label": "Phone To Name \u203a Name Match Score",
+                    "value": -1.0
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Phone Social Advance.statusCode_BUREAUID",
+                    "label": "Phone Social Advance \u203a Status Code",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.status_BUREAUID",
+                    "label": "Mobile GIN \u203a Status",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Relationship Count",
+                    "value": 31
+                  },
+                  {
+                    "key": "derivedSignals_BUREAUID",
+                    "label": "Derived Signals",
+                    "value": 1
+                  },
+                  {
+                    "key": "enhancedCoverage_BUREAUID",
+                    "label": "Enhanced Coverage",
+                    "value": 1
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.002287305891513824,
+                    "Scaled_Score": 815.8582200637379
+                  }
+                }
+              },
+              "telco": {
+                "topN": 5,
+                "factors": [],
+                "topFactors": [],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.005189087241888046,
+                    "Scaled_Score": 780.2772109781539
+                  }
+                }
+              },
+              "digital": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "RULE_COUNT",
+                    "label": "Rule Count",
+                    "value": 2
+                  },
+                  {
+                    "key": "ID_APPL_MA32",
+                    "label": "ID APPL MA32",
+                    "value": 1
+                  },
+                  {
+                    "key": "MOB_APP_MA77",
+                    "label": "MOB APP MA77",
+                    "value": 1
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "RULE_COUNT",
+                    "label": "Rule Count",
+                    "value": 2
+                  },
+                  {
+                    "key": "ID_APPL_MA32",
+                    "label": "ID APPL MA32",
+                    "value": 1
+                  },
+                  {
+                    "key": "MOB_APP_MA77",
+                    "label": "MOB APP MA77",
+                    "value": 1
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.06119649484753609,
+                    "Scaled_Score": 670.9723473524144
+                  }
+                }
+              }
+            }
+          },
+          "7527058775": {
+            "applicant": {
+              "mobile": "7527058775",
+              "firstName": "Sandeep",
+              "lastName": "Reddy",
+              "email": "sandeep.reddy68@gmail.com",
+              "dob": "1994-06-16",
+              "aadhaar": "215928326947",
+              "pan": "ZJHBH2290C",
+              "address": "Flat 1096, Baner, Pune, Maharashtra 411049"
+            },
+            "summary": {
+              "telcoRisk": "Low Risk",
+              "bureauRisk": "Low Risk",
+              "digitalRisk": "Low Risk",
+              "overallRisk": "Low Risk"
+            },
+            "results": {
+              "bureau": {
+                "topN": 5,
+                "factors": [
+                  {
+                    "key": "Phone Social Advance.statusCode_BUREAUID",
+                    "label": "Phone Social Advance \u203a Status Code",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.status_BUREAUID",
+                    "label": "Mobile GIN \u203a Status",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Relationship Count",
+                    "value": 32
+                  },
+                  {
+                    "key": "derivedSignals_BUREAUID",
+                    "label": "Derived Signals",
+                    "value": 1
+                  },
+                  {
+                    "key": "enhancedCoverage_BUREAUID",
+                    "label": "Enhanced Coverage",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.nameDiversity_BUREAUID",
+                    "label": "Mobile GIN \u203a Name Diversity",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l1Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l1Confidence",
+                    "value": -1.0
+                  },
+                  {
+                    "key": "Mobile GIN.l2Count_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Count",
+                    "value": 1
+                  },
+                  {
+                    "key": "Mobile GIN.l2Confidence_BUREAUID",
+                    "label": "Mobile GIN \u203a l2Confidence",
+                    "value": -1
+                  },
+                  {
+                    "key": "Mobile GIN.nodeTypeCounts.fullName_BUREAUID",
+                    "label": "Mobile GIN \u203a Node Type Counts \u203a Full Name",
+                    "value": 1
+                  },
+                  {
+                    "key": "Phone to Name.nameMatchScore_BUREAUID",
+                    "label": "Phone To Name \u203a Name Match Score",
+                    "value": -1.0
+                  }
+                ],
+                "topFactors": [
+                  {
+                    "key": "Phone Social Advance.statusCode_BUREAUID",
+                    "label": "Phone Social Advance \u203a Status Code",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.status_BUREAUID",
+                    "label": "Mobile GIN \u203a Status",
+                    "value": 200
+                  },
+                  {
+                    "key": "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+                    "label": "Mobile GIN \u203a Industry Counts \u203a Relationship Count",
+                    "value": 32
+                  },
+                  {
+                    "key": "derivedSignals_BUREAUID",
+                    "label": "Derived Signals",
+                    "value": 1
+                  },
+                  {
+                    "key": "enhancedCoverage_BUREAUID",
+                    "label": "Enhanced Coverage",
+                    "value": 1
+                  }
+                ],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.002287305891513824,
+                    "Scaled_Score": 815.8582200637379
+                  }
+                }
+              },
+              "telco": {
+                "topN": 5,
+                "factors": [],
+                "topFactors": [],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.005189087241888046,
+                    "Scaled_Score": 780.2772109781539
+                  }
+                }
+              },
+              "digital": {
+                "topN": 5,
+                "factors": [],
+                "topFactors": [],
+                "metadata": {
+                  "modelScores": {
+                    "Predicted": 0.07070109248161316,
+                    "Scaled_Score": 664.2834226727541
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "displayConfig": {
+      "excludeColumnsFromFactors": [
+        "Predicted",
+        "Scaled_Score"
+      ],
+      "zeroValueRule": "EXCLUDE",
+      "defaultTopN": 5,
+      "ranking": {
+        "strategy": "ABSOLUTE_VALUE_DESC",
+        "allowlistMode": {
+          "enabled": false,
+          "allowlists": {
+            "bureau": [
+              "Mobile GIN.fraud",
+              "Mobile GIN.fraudCount",
+              "Mobile GIN.fraudNetwork",
+              "industryCounts.industryBreached",
+              "industryCounts.industryFinance",
+              "Phone Network.numberHasPortingHistory",
+              "Phone Network.subscriberStatus"
+            ],
+            "telco": [
+              "Incoming call score (60 Days)",
+              "Outgoing call score (60 Days)",
+              "Outgoing to Incoming Calls Ratio (60 Days)",
+              "Spammy Connections Ratio",
+              "Number of Recycles",
+              "Active Since Months"
+            ],
+            "digital": [
+              "RULE_COUNT",
+              "ADDR_APPL_VE74",
+              "BORR_APPL_NE81",
+              "BORR_APPL_NE82",
+              "STR_APPL_NE83",
+              "ID_PAN_MA71",
+              "PHN_MOB_VE47"
+            ]
+          },
+          "description": "If enabled, only allowlisted keys are eligible for topFactors."
+        }
+      }
+    },
+    "uiLabels": {
+      "List_Scenarios": {
+        "Mobile Number": "Mobile Number",
+        "First Name": "First Name",
+        "Last Name": "Last Name",
+        "Email ID": "Email ID",
+        "Date of Birth": "Date of Birth",
+        "Aadhar": "Aadhaar Number",
+        "PAN": "PAN Number",
+        "Address": "Residential Address",
+        "Telecom": "Telco Risk (Summary)",
+        "Bureau": "Bureau Risk (Summary)",
+        "Digital Footprint": "Digital Footprint Risk (Summary)",
+        "Final": "Overall Risk (Summary)"
+      },
+      "Bureau": {
+        "Crif_Unique_ID": "CRIF Unique ID",
+        "Mobile GIN.nodeTypeCounts.mobile_BUREAUID": "Mobile GIN \u203a Node Type Counts \u203a Mobile",
+        "derivedSignals_BUREAUID": "Derived Signals",
+        "enhancedCoverage_BUREAUID": "Enhanced Coverage",
+        "serviceType_BUREAUID": "Service Type",
+        "Phone to Name.ccrp_BUREAUID": "Phone To Name \u203a Ccrp",
+        "Phone to Name.statusCode_BUREAUID": "Phone To Name \u203a Status Code",
+        "Phone Name Attributes.businessNameDetected_BUREAUID": "Phone Name Attributes \u203a Business Name Detected",
+        "Phone Name Attributes.ccrp_BUREAUID": "Phone Name Attributes \u203a Ccrp",
+        "Phone Name Attributes.digitalage_BUREAUID": "Phone Name Attributes \u203a Digitalage",
+        "Phone Name Attributes.firstNameMatch_BUREAUID": "Phone Name Attributes \u203a First Name Match",
+        "Phone Name Attributes.lastNameMatch_BUREAUID": "Phone Name Attributes \u203a Last Name Match",
+        "Phone Name Attributes.nameMatchScore_BUREAUID": "Phone Name Attributes \u203a Name Match Score",
+        "Phone Name Attributes.ndrScore_BUREAUID": "Phone Name Attributes \u203a Ndr Score",
+        "Phone Name Attributes.phoneNameDigitalAge_BUREAUID": "Phone Name Attributes \u203a Phone Name Digital Age",
+        "Phone Name Attributes.revocationHistory_BUREAUID": "Phone Name Attributes \u203a Revocation History",
+        "Phone Name Attributes.statusCode_BUREAUID": "Phone Name Attributes \u203a Status Code",
+        "Phone Name Attributes.unrScore_BUREAUID": "Phone Name Attributes \u203a Unr Score",
+        "Phone Network.alternateNumber_BUREAUID": "Phone Network \u203a Alternate Number",
+        "Phone Network.customerName_BUREAUID": "Phone Network \u203a Customer Name",
+        "Phone Network.imsi_BUREAUID": "Phone Network \u203a IMSI",
+        "Phone Network.isPhoneReachable_BUREAUID": "Phone Network \u203a Is Phone Reachable",
+        "Phone Network.isValidPhoneNumber_BUREAUID": "Phone Network \u203a Is Valid Phone Number",
+        "Phone Network.numberHasPortingHistory_BUREAUID": "Phone Network \u203a Number Has Porting History",
+        "Phone Network.roaming_BUREAUID": "Phone Network \u203a Roaming",
+        "Phone Network.roamingNetworkName_BUREAUID": "Phone Network \u203a Roaming Network Name",
+        "Phone Network.roamingNetworkRegion_BUREAUID": "Phone Network \u203a Roaming Network Region",
+        "Phone Network.roamingNetworkcountryCodeIso2_BUREAUID": "Phone Network \u203a Roaming Networkcountry Code Iso2",
+        "Phone Network.statusCode_BUREAUID": "Phone Network \u203a Status Code",
+        "Phone Network.subscriberStatus_BUREAUID": "Phone Network \u203a Subscriber Status",
+        "Phone Social Advance.amazon_BUREAUID": "Phone Social Advance \u203a Amazon",
+        "Phone Social Advance.flipkart_BUREAUID": "Phone Social Advance \u203a Flipkart",
+        "Phone Social Advance.housing_BUREAUID": "Phone Social Advance \u203a Housing",
+        "Phone Social Advance.indiamart_BUREAUID": "Phone Social Advance \u203a Indiamart",
+        "Phone Social Advance.instagram_BUREAUID": "Phone Social Advance \u203a Instagram",
+        "Phone Social Advance.isWABusiness_BUREAUID": "Phone Social Advance \u203a Is WA Business",
+        "Phone Social Advance.jeevansaathi_BUREAUID": "Phone Social Advance \u203a Jeevansaathi",
+        "Phone Social Advance.microsoft_BUREAUID": "Phone Social Advance \u203a Microsoft",
+        "Phone Social Advance.shaadi_BUREAUID": "Phone Social Advance \u203a Shaadi",
+        "Phone Social Advance.skype_BUREAUID": "Phone Social Advance \u203a Skype",
+        "Phone Social Advance.statusCode_BUREAUID": "Phone Social Advance \u203a Status Code",
+        "Phone Social Advance.swiggy_BUREAUID": "Phone Social Advance \u203a Swiggy",
+        "Phone Social Advance.toi_BUREAUID": "Phone Social Advance \u203a TOI",
+        "Phone Social Advance.whatsapp_BUREAUID": "Phone Social Advance \u203a WhatsApp",
+        "Phone Social Advance.zoho_BUREAUID": "Phone Social Advance \u203a Zoho",
+        "Mobile GIN.nameDiversity_BUREAUID": "Mobile GIN \u203a Name Diversity",
+        "Mobile GIN.status_BUREAUID": "Mobile GIN \u203a Status",
+        "Mobile GIN.fraudCount_BUREAUID": "Mobile GIN \u203a Fraud Count",
+        "Mobile GIN.fraud_BUREAUID": "Mobile GIN \u203a Fraud",
+        "Mobile GIN.l1Confidence_BUREAUID": "Mobile GIN \u203a l1Confidence",
+        "Mobile GIN.l1Count_BUREAUID": "Mobile GIN \u203a l1Count",
+        "Mobile GIN.fraudNetwork_BUREAUID": "Mobile GIN \u203a Fraud Network",
+        "Mobile GIN.l2Count_BUREAUID": "Mobile GIN \u203a l2Count",
+        "Mobile GIN.l2Confidence_BUREAUID": "Mobile GIN \u203a l2Confidence",
+        "Mobile GIN.nodeTypeCounts.fullName_BUREAUID": "Mobile GIN \u203a Node Type Counts \u203a Full Name",
+        "Mobile GIN.nodeTypeCounts.email_BUREAUID": "Mobile GIN \u203a Node Type Counts \u203a Email",
+        "Mobile GIN.nodeTypeCounts.pan_BUREAUID": "Mobile GIN \u203a Node Type Counts \u203a PAN",
+        "Mobile GIN.nodeTypeCounts.dlNumber_BUREAUID": "Mobile GIN \u203a Node Type Counts \u203a Dl Number",
+        "Mobile GIN.nodeTypeCounts.deviceFingerprint_BUREAUID": "Mobile GIN \u203a Node Type Counts \u203a Device Fingerprint",
+        "Mobile GIN.nodeTypeCounts.aadhaar_BUREAUID": "Mobile GIN \u203a Node Type Counts \u203a Aadhaar",
+        "Mobile GIN.nodeTypeCounts.passportNumber_BUREAUID": "Mobile GIN \u203a Node Type Counts \u203a Passport Number",
+        "Mobile GIN.nodeTypeCounts.vehicleRC_BUREAUID": "Mobile GIN \u203a Node Type Counts \u203a Vehicle RC",
+        "Mobile GIN.nodeTypeCounts.voterId_BUREAUID": "Mobile GIN \u203a Node Type Counts \u203a Voter Id",
+        "Mobile GIN.industryCounts.industryBreached_BUREAUID": "Mobile GIN \u203a Industry Counts \u203a Industry Breached",
+        "Mobile GIN.industryCounts.industryInsurtech_BUREAUID": "Mobile GIN \u203a Industry Counts \u203a Industry Insurtech",
+        "Mobile GIN.industryCounts.industryFinance_BUREAUID": "Mobile GIN \u203a Industry Counts \u203a Industry Finance",
+        "Mobile GIN.industryCounts.industryLogistics_BUREAUID": "Mobile GIN \u203a Industry Counts \u203a Industry Logistics",
+        "Mobile GIN.industryCounts.industryGaming_BUREAUID": "Mobile GIN \u203a Industry Counts \u203a Industry Gaming",
+        "Mobile GIN.industryCounts.industryFintech_BUREAUID": "Mobile GIN \u203a Industry Counts \u203a Industry Fintech",
+        "Mobile GIN.industryCounts.industryGig_BUREAUID": "Mobile GIN \u203a Industry Counts \u203a Industry Gig",
+        "Mobile GIN.industryCounts.industryECommerce_BUREAUID": "Mobile GIN \u203a Industry Counts \u203a Industry Ecommerce",
+        "Mobile GIN.industryCounts.industryInsurance_BUREAUID": "Mobile GIN \u203a Industry Counts \u203a Industry Insurance",
+        "Mobile GIN.industryCounts.industryOther_BUREAUID": "Mobile GIN \u203a Industry Counts \u203a Industry Other",
+        "Mobile GIN.industryCounts.relationshipCount_BUREAUID": "Mobile GIN \u203a Industry Counts \u203a Relationship Count",
+        "Phone Social Advance.phoneSocialCount_BUREAUID": "Phone Social Advance \u203a Phone Social Count",
+        "ecomScore_BUREAUID": "E-Com Score",
+        "Phone to Name.nameMatchScore_BUREAUID": "Phone To Name \u203a Name Match Score",
+        "daysSinceRevocation_BUREAUID": "Days Since Revocation",
+        "Predicted": "Predicted",
+        "Scaled_Score": "Scaled Score"
+      },
+      "Telecom": {
+        "Crif_Unique_ID": "CRIF Unique ID",
+        "Incoming call score (60 Days)_TRUECALLER": "Incoming Call Score (60 Days)",
+        "Outgoing call score (60 Days)_TRUECALLER": "Outgoing Call Score (60 Days)",
+        "Outgoing to Incoming Calls Ratio (60 Days)_TRUECALLER": "Outgoing To Incoming Calls Ratio (60 Days)",
+        "Activity Spread (60 Days)_TRUECALLER": "Activity Spread (60 Days)",
+        "Network Connection Score_TRUECALLER": "Network Connection Score",
+        "Spammy Connections Ratio_TRUECALLER": "Spammy Connections Ratio",
+        "Strong Spammy Connections Ratio_TRUECALLER": "Strong Spammy Connections Ratio",
+        "Strong to Weak Connections Ratio_TRUECALLER": "Strong To Weak Connections Ratio",
+        "Number of Recycles_TRUECALLER": "Number Of Recycles",
+        "Number of Elected Name Changes_TRUECALLER": "Number Of Elected Name Changes",
+        "Incoming Activity Spread (60 Days)_TRUECALLER": "Incoming Activity Spread (60 Days)",
+        "Outgoing Activity Spread (60 Days)_TRUECALLER": "Outgoing Activity Spread (60 Days)",
+        "Incoming call score (7 Days)_TRUECALLER": "Incoming Call Score (7 Days)",
+        "Outgoing call score (7 Days)_TRUECALLER": "Outgoing Call Score (7 Days)",
+        "Outgoing to Incoming Calls Ratio (7 Days)_TRUECALLER": "Outgoing To Incoming Calls Ratio (7 Days)",
+        "Activity Spread (7 Days)_TRUECALLER": "Activity Spread (7 Days)",
+        "Incoming Activity Spread (7 Days)_TRUECALLER": "Incoming Activity Spread (7 Days)",
+        "Outgoing Activity Spread (7 Days)_TRUECALLER": "Outgoing Activity Spread (7 Days)",
+        "Incoming call score (14 Days)_TRUECALLER": "Incoming Call Score (14 Days)",
+        "Outgoing call score (14 Days)_TRUECALLER": "Outgoing Call Score (14 Days)",
+        "Outgoing to Incoming Calls Ratio (14 Days)_TRUECALLER": "Outgoing To Incoming Calls Ratio (14 Days)",
+        "Activity Spread (14 Days)_TRUECALLER": "Activity Spread (14 Days)",
+        "Incoming Activity Spread (14 Days)_TRUECALLER": "Incoming Activity Spread (14 Days)",
+        "Outgoing Activity Spread (14 Days)_TRUECALLER": "Outgoing Activity Spread (14 Days)",
+        "Incoming call score (30 Days)_TRUECALLER": "Incoming Call Score (30 Days)",
+        "Outgoing call score (30 Days)_TRUECALLER": "Outgoing Call Score (30 Days)",
+        "Outgoing to Incoming Calls Ratio (30 Days)_TRUECALLER": "Outgoing To Incoming Calls Ratio (30 Days)",
+        "Activity Spread (30 Days)_TRUECALLER": "Activity Spread (30 Days)",
+        "Incoming Activity Spread (30 Days)_TRUECALLER": "Incoming Activity Spread (30 Days)",
+        "Outgoing Activity Spread (30 Days)_TRUECALLER": "Outgoing Activity Spread (30 Days)",
+        "Name String Match Score_TRUECALLER": "Name String Match Score",
+        "DND Active_TRUECALLER": "DND Active",
+        "var_1-3 weeks_TRUECALLER": "Var 1-3 Weeks",
+        "Active Since Months_TRUECALLER": "Active Since Months",
+        "var_lt_1week_TRUECALLER": "Var Lt 1week",
+        "var_lt_1 month_TRUECALLER": "Var Lt 1 Month",
+        "var_1-3 months_TRUECALLER": "Var 1-3 Months",
+        "Predicted": "Predicted",
+        "Scaled_Score": "Scaled Score"
+      },
+      "Digital Footprint": {
+        "Crif_Unique_ID": "CRIF Unique ID",
+        "RULE_COUNT": "Rule Count",
+        "ADDR_APPL_VE74": "ADDR APPL VE74",
+        "APPL_ACT_VE45": "APPL ACT VE45",
+        "APPL_MOB_VE71": "APPL MOB VE71",
+        "BORR_APPL_NE81": "BORR APPL NE81",
+        "BORR_APPL_NE82": "BORR APPL NE82",
+        "ID_APPL_MA32": "ID APPL MA32",
+        "ID_APPL_MA34": "ID APPL MA34",
+        "ID_PAN_MA71": "ID PAN MA71",
+        "ID_PAN_VE52": "ID PAN VE52",
+        "ID_VID_MA73": "ID VID MA73",
+        "MOB_APP_MA77": "MOB APP MA77",
+        "MOB_PAN_MA76": "MOB PAN MA76",
+        "PAN_PHN_MA75": "PAN PHN MA75",
+        "PHN_MOB_VE47": "PHN MOB VE47",
+        "STR_APPL_NE83": "STR APPL NE83",
+        "Predicted": "Predicted",
+        "Scaled_Score": "Scaled Score"
+      }
+    },
+    "rulesToWording": {
+      "excludeModelOutputsFromFactors": "Predicted and Scaled_Score must never appear in factor lists; store them under metadata.modelScores instead.",
+      "hideIfZero": "Do not display any variable whose value is exactly 0.",
+      "topNDisplay": "Display topFactors by default; allow users to expand to view full factors list if needed.",
+      "rankingStrategy": "Factors are ranked by descending absolute numeric value; non-numeric values appear after numeric values.",
+      "noDataMessage": "If a section has no non-zero factors, display: \"No risk indicators available\".",
+      "booleanDerivation": {
+        "telco": "Risky = Yes if results.telco.factors.length > 0 else No.",
+        "digital": "Risky = Yes if results.digital.factors.length > 0 else No."
+      }
+    }
+  }
+}
