@@ -21,9 +21,9 @@ export interface CaseRecord {
 }
 
 export const CASES_BY_MOBILE: Record<string, CaseRecord> = {
-  "9876543210": {
+  "7547934604": {
     applicant: {
-      mobile: "9876543210",
+      mobile: "7547934604",
       email: "ravi.sharma@example.com",
       aadhaar: "1234 5678 9012",
       pan: "ABCDE1234F",
