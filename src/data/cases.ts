@@ -59,9 +59,9 @@ export const CASES_BY_MOBILE: Record<string, CaseRecord> = {
       ],
     },
   },
-  "9123456789": {
+  "7627096571": {
     applicant: {
-      mobile: "9123456789",
+      mobile: "7627096571",
       email: "neha.patel@example.com",
       aadhaar: "2345 6789 0123",
       pan: "PQRSX6789L",
@@ -97,9 +97,9 @@ export const CASES_BY_MOBILE: Record<string, CaseRecord> = {
       ],
     },
   },
-  "9988776655": {
+  "7524536787": {
     applicant: {
-      mobile: "9988776655",
+      mobile: "7524536787",
       email: "imran.khan@example.com",
       aadhaar: "3456 7890 1234",
       pan: "LMNOP4321Q",
@@ -135,9 +135,9 @@ export const CASES_BY_MOBILE: Record<string, CaseRecord> = {
       ],
     },
   },
-  "9001122233": {
+  "7601709226": {
     applicant: {
-      mobile: "9001122233",
+      mobile: "7601709226",
       email: "sneha.iyer@example.com",
       aadhaar: "4567 8901 2345",
       pan: "TUVWX1111Z",
@@ -173,9 +173,9 @@ export const CASES_BY_MOBILE: Record<string, CaseRecord> = {
       ],
     },
   },
-  "9090909090": {
+  "7521141423": {
     applicant: {
-      mobile: "9090909090",
+      mobile: "7521141423",
       email: "arjun.mehta@example.com",
       aadhaar: "5678 9012 3456",
       pan: "GHJKL2222P",
