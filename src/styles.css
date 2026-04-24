@@ -103,7 +103,7 @@
 
   --risk-low: oklch(0.66 0.17 150);
   --risk-medium: oklch(0.82 0.16 90);
-  --risk-high: oklch(0.70 0.18 50);
+  --risk-high: oklch(0.58 0.22 27);
   --risk-veryhigh: oklch(0.58 0.22 27);
   --risk-neutral: oklch(0.70 0.02 255);
 }
