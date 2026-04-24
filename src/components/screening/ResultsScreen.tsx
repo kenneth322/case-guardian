@@ -261,7 +261,7 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
             risk={noHit ? null : data.summary.bureauRisk}
             insights={noHit ? [] : data.results.bureau.insights}
             allInsights={noHit ? [] : data.results.bureau.allInsights}
-            risky={!noHit && data.results.bureau.risky}
+            isBureau
           />
         )}
         {tab === "digital" && (
@@ -270,7 +270,6 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
             risk={noHit ? null : data.summary.digitalRisk}
             insights={noHit ? [] : data.results.digital.insights}
             allInsights={noHit ? [] : data.results.digital.allInsights}
-            risky={!noHit && data.results.digital.risky}
           />
         )}
         {tab === "telco" && (
@@ -279,7 +278,6 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
             risk={noHit ? null : data.summary.telcoRisk}
             insights={noHit ? [] : data.results.telco.insights}
             allInsights={noHit ? [] : data.results.telco.allInsights}
-            risky={!noHit && data.results.telco.risky}
           />
         )}
       </main>
@@ -466,18 +464,32 @@ function SectionTab({
   risk,
   insights,
   allInsights,
-  risky,
+  isBureau,
 }: {
   title: string;
   risk: SummaryRisk | null;
   insights: Insight[];
   allInsights: Insight[];
-  risky: boolean;
+  isBureau?: boolean;
 }) {
   const [expanded, setExpanded] = useState(false);
-  const list = expanded ? allInsights : insights.length ? insights : allInsights;
+
+  // For Bureau: extract rule count and exclude RULE_COUNT entries from insight lists
+  const isRuleCount = (i: Insight) => i.sourceVariable === "RULE_COUNT";
+  const ruleCount = useMemo(() => {
+    if (!isBureau) return null;
+    const rc = allInsights.find(isRuleCount) ?? insights.find(isRuleCount);
+    if (!rc) return null;
+    const m = rc.text.match(/\d+/);
+    return m ? parseInt(m[0], 10) : null;
+  }, [isBureau, insights, allInsights]);
+
+  const filteredInsights = isBureau ? insights.filter((i) => !isRuleCount(i)) : insights;
+  const filteredAll = isBureau ? allInsights.filter((i) => !isRuleCount(i)) : allInsights;
+
+  const list = expanded ? filteredAll : filteredInsights.length ? filteredInsights : filteredAll;
   const sorted = sortByImpact(list);
-  const hasMore = allInsights.length > insights.length && insights.length > 0;
+  const hasMore = filteredAll.length > filteredInsights.length && filteredInsights.length > 0;
   const level = risk ? SUMMARY_TO_LEVEL[risk] : null;
 
   return (
@@ -491,12 +503,6 @@ function SectionTab({
           </p>
         </div>
         <div className="flex items-center gap-2">
-          {risky && (
-            <span className="inline-flex items-center gap-1 rounded-full border border-destructive/30 bg-destructive/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-destructive">
-              <AlertTriangle className="h-3.5 w-3.5" />
-              Risky
-            </span>
-          )}
           {risk && level ? (
             <span
               className={`inline-flex items-center rounded-full border px-3 py-1 text-sm font-semibold ${RISK_CLASS[level]}`}
@@ -519,7 +525,7 @@ function SectionTab({
           <>
             <div className="mb-3 flex items-center justify-between">
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                {expanded ? `All Signals (${allInsights.length})` : "Top Signals"}
+                {expanded ? `All Signals (${filteredAll.length})` : "Top Signals"}
               </p>
               {hasMore && (
                 <button
@@ -527,7 +533,7 @@ function SectionTab({
                   onClick={() => setExpanded((e) => !e)}
                   className="text-xs font-medium text-primary transition hover:underline"
                 >
-                  {expanded ? "Show top only" : `Show all ${allInsights.length}`}
+                  {expanded ? "Show top only" : `Show all ${filteredAll.length}`}
                 </button>
               )}
             </div>
@@ -537,6 +543,11 @@ function SectionTab({
               ))}
             </ul>
           </>
+        )}
+        {isBureau && ruleCount !== null && (
+          <p className="mt-4 border-t pt-3 text-xs text-muted-foreground">
+            {ruleCount} {ruleCount === 1 ? "alert" : "alerts"} triggered
+          </p>
         )}
       </div>
     </section>
