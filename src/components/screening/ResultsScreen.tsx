@@ -244,11 +244,6 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
                 >
                   <Icon className="h-4 w-4" />
                   <span>{t.label}</span>
-                  {t.risky && (
-                    <span title="Risky signals detected" className="inline-flex">
-                      <AlertTriangle className="h-4 w-4 text-destructive" />
-                    </span>
-                  )}
                 </button>
               );
             })}
