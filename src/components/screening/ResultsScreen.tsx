@@ -7,6 +7,10 @@ import {
   type RiskLevel,
   type SummaryRisk,
 } from "@/data/cases";
+import {
+  BUREAU_RULE_BY_CODE,
+  BUREAU_CATEGORY_ORDER,
+} from "@/data/bureauRules";
 import RiskGauge from "./RiskGauge";
 import DecisionModal, { type Decision } from "./DecisionModal";
 import {
