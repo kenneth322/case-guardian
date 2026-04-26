@@ -670,8 +670,8 @@ function BureauTab({
             {grouped.map((g) => (
               <div key={g.category}>
                 <div className="mb-2 flex items-center gap-2">
-                  <span className="inline-flex items-center rounded-full border border-destructive/30 bg-destructive/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-destructive">
-                    {g.category}
+                  <span className="inline-flex items-center rounded-full border border-destructive/30 bg-destructive/10 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-destructive">
+                    {formatBureauCategory(g.category)}
                   </span>
                   <span className="text-[11px] text-muted-foreground">
                     {g.descriptions.length} {g.descriptions.length === 1 ? "alert" : "alerts"}
@@ -683,7 +683,7 @@ function BureauTab({
                       key={`${g.category}-${i}`}
                       className="rounded-md border border-l-4 border-l-destructive bg-muted/20 px-4 py-2.5 text-sm leading-snug"
                     >
-                      {desc}
+                      {formatBureauDescription(desc)}
                     </li>
                   ))}
                 </ul>
