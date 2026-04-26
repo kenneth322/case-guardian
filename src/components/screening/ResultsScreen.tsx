@@ -7,6 +7,10 @@ import {
   type RiskLevel,
   type SummaryRisk,
 } from "@/data/cases";
+import {
+  BUREAU_RULE_BY_CODE,
+  BUREAU_CATEGORY_ORDER,
+} from "@/data/bureauRules";
 import RiskGauge from "./RiskGauge";
 import DecisionModal, { type Decision } from "./DecisionModal";
 import {
@@ -256,12 +260,10 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
           <OverviewTab data={data} noHit={noHit} overallLevel={overallLevel} />
         )}
         {tab === "bureau" && (
-          <SectionTab
-            title="Bureau Risk Alerts"
+          <BureauTab
             risk={noHit ? null : data.summary.bureauRisk}
             insights={noHit ? [] : data.results.bureau.insights}
             allInsights={noHit ? [] : data.results.bureau.allInsights}
-            isBureau
           />
         )}
         {tab === "digital" && (
@@ -583,5 +585,113 @@ function InsightCard({ insight }: { insight: Insight }) {
       </div>
       <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{insight.text}</p>
     </li>
+  );
+}
+
+/* ---------- Bureau Tab (grouped by Rule Category from Risk Alerts Rules.xlsx) ---------- */
+function BureauTab({
+  risk,
+  insights,
+  allInsights,
+}: {
+  risk: SummaryRisk | null;
+  insights: Insight[];
+  allInsights: Insight[];
+}) {
+  const level = risk ? SUMMARY_TO_LEVEL[risk] : null;
+
+  // Use allInsights if available, fall back to insights. Bureau rules are
+  // "triggered" when the JSON includes them — they are filtered upstream so
+  // any non-RULE_COUNT entry whose sourceVariable maps to a known rule is
+  // a triggered alert.
+  const source = allInsights.length ? allInsights : insights;
+
+  // Build category -> descriptions[], preserving Excel rule order within each
+  // category and excluding any unmapped / RULE_COUNT entries.
+  const grouped = useMemo(() => {
+    const triggeredCodes = new Set<string>();
+    for (const ins of source) {
+      const code = ins.sourceVariable;
+      if (!code) continue;
+      if (code === "RULE_COUNT") continue;
+      if (BUREAU_RULE_BY_CODE[code]) {
+        triggeredCodes.add(code);
+      }
+    }
+    const map = new Map<string, string[]>();
+    for (const cat of BUREAU_CATEGORY_ORDER) map.set(cat, []);
+    // Iterate BUREAU_RULES to preserve Excel ordering
+    for (const rule of Object.values(BUREAU_RULE_BY_CODE)) {
+      if (triggeredCodes.has(rule.code)) {
+        const list = map.get(rule.category) ?? [];
+        list.push(rule.description);
+        map.set(rule.category, list);
+      }
+    }
+    // Drop empty categories, keep Excel order
+    return BUREAU_CATEGORY_ORDER
+      .map((cat) => ({ category: cat, descriptions: map.get(cat) ?? [] }))
+      .filter((g) => g.descriptions.length > 0);
+  }, [source]);
+
+  const totalTriggered = grouped.reduce((acc, g) => acc + g.descriptions.length, 0);
+
+  return (
+    <section className="space-y-4">
+      {/* Risk Status header */}
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+        <div>
+          <h2 className="text-base font-semibold tracking-tight">Bureau Risk Alerts</h2>
+          <p className="mt-1 text-xs text-muted-foreground">
+            {totalTriggered} {totalTriggered === 1 ? "alert" : "alerts"} triggered
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          {risk && level ? (
+            <span
+              className={`inline-flex items-center rounded-full border px-3 py-1 text-sm font-semibold ${RISK_CLASS[level]}`}
+            >
+              {risk}
+            </span>
+          ) : (
+            <span className="rounded-full border bg-muted px-3 py-1 text-sm text-muted-foreground">
+              No data
+            </span>
+          )}
+        </div>
+      </div>
+
+      {/* Grouped rule list */}
+      <div className="rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+        {grouped.length === 0 ? (
+          <p className="text-sm text-muted-foreground">No risk indicators available</p>
+        ) : (
+          <div className="space-y-5">
+            {grouped.map((g) => (
+              <div key={g.category}>
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="inline-flex items-center rounded-full border border-destructive/30 bg-destructive/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-destructive">
+                    {g.category}
+                  </span>
+                  <span className="text-[11px] text-muted-foreground">
+                    {g.descriptions.length} {g.descriptions.length === 1 ? "alert" : "alerts"}
+                  </span>
+                </div>
+                <ul className="space-y-2">
+                  {g.descriptions.map((desc, i) => (
+                    <li
+                      key={`${g.category}-${i}`}
+                      className="rounded-md border border-l-4 border-l-destructive bg-muted/20 px-4 py-2.5 text-sm leading-snug"
+                    >
+                      {desc}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
