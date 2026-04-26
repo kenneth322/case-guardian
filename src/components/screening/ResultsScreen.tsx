@@ -267,8 +267,7 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
           />
         )}
         {tab === "digital" && (
-          <SectionTab
-            title="Digital Footprint"
+          <DigitalTab
             risk={noHit ? null : data.summary.digitalRisk}
             insights={noHit ? [] : data.results.digital.insights}
             allInsights={noHit ? [] : data.results.digital.allInsights}
