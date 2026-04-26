@@ -741,3 +741,177 @@ function BureauTab({
     </section>
   );
 }
+
+/* ---------- Digital Footprint Tab ---------- */
+// Master list of all Digital Footprint variables observed across cases,
+// in a stable display order. Used so we always show every indicator,
+// even when not triggered for the current case.
+const DIGITAL_VARIABLES: string[] = [
+  "Phone to Name.nameMatchScore_BUREAUID",
+  "Phone Social Advance.phoneSocialCount_BUREAUID",
+  "ecomScore_BUREAUID",
+  "daysSinceRevocation_BUREAUID",
+  "Mobile GIN.l1Count_BUREAUID",
+  "Mobile GIN.l1Confidence_BUREAUID",
+  "Mobile GIN.l2Count_BUREAUID",
+  "Mobile GIN.l2Confidence_BUREAUID",
+  "Mobile GIN.nameDiversity_BUREAUID",
+  "Mobile GIN.nodeTypeCounts.mobile_BUREAUID",
+  "Mobile GIN.nodeTypeCounts.email_BUREAUID",
+  "Mobile GIN.nodeTypeCounts.fullName_BUREAUID",
+  "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+  "Mobile GIN.industryCounts.industryFinance_BUREAUID",
+  "Mobile GIN.industryCounts.industryFintech_BUREAUID",
+  "Mobile GIN.industryCounts.industryGaming_BUREAUID",
+  "Mobile GIN.industryCounts.industryBreached_BUREAUID",
+  "Mobile GIN.industryCounts.industryOther_BUREAUID",
+];
+
+// Friendly labels for known Digital Footprint variables.
+const DIGITAL_LABELS: Record<string, string> = {
+  "Phone to Name.nameMatchScore_BUREAUID": "Name Match Score",
+  "Phone Social Advance.phoneSocialCount_BUREAUID": "Social Presence Count",
+  "ecomScore_BUREAUID": "E-commerce Presence Score",
+  "daysSinceRevocation_BUREAUID": "Days Since Number Revocation",
+  "Mobile GIN.l1Count_BUREAUID": "Network Connections (Level 1)",
+  "Mobile GIN.l1Confidence_BUREAUID": "Network Confidence (Level 1)",
+  "Mobile GIN.l2Count_BUREAUID": "Network Connections (Level 2)",
+  "Mobile GIN.l2Confidence_BUREAUID": "Network Confidence (Level 2)",
+  "Mobile GIN.nameDiversity_BUREAUID": "Name Diversity in Network",
+  "Mobile GIN.nodeTypeCounts.mobile_BUREAUID": "Connected Mobile Numbers",
+  "Mobile GIN.nodeTypeCounts.email_BUREAUID": "Connected Email Addresses",
+  "Mobile GIN.nodeTypeCounts.fullName_BUREAUID": "Connected Full Names",
+  "Mobile GIN.industryCounts.relationshipCount_BUREAUID": "Industry Relationship Count",
+  "Mobile GIN.industryCounts.industryFinance_BUREAUID": "Finance Industry Presence",
+  "Mobile GIN.industryCounts.industryFintech_BUREAUID": "Fintech Industry Presence",
+  "Mobile GIN.industryCounts.industryGaming_BUREAUID": "Gaming Industry Presence",
+  "Mobile GIN.industryCounts.industryBreached_BUREAUID": "Breached Database Presence",
+  "Mobile GIN.industryCounts.industryOther_BUREAUID": "Other Industry Presence",
+};
+
+const DIGITAL_DEFAULT_VALUE = 0.4;
+
+function humanizeDigitalKey(key: string): string {
+  // Fallback humanizer for unknown variables.
+  let s = key.replace(/_BUREAUID$/i, "");
+  // Take last meaningful segment
+  s = s.split(".").pop() ?? s;
+  s = s.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/[_]+/g, " ");
+  return s
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(" ");
+}
+
+function digitalLabelFor(key: string): string {
+  return DIGITAL_LABELS[key] ?? humanizeDigitalKey(key);
+}
+
+function extractObservedValue(text: string): number | null {
+  // Matches "Observed value: 12.34" / "Observed value: 100" / "Observed value: -1.2"
+  const m = text.match(/Observed value:\s*(-?\d+(?:\.\d+)?)/i);
+  if (!m) return null;
+  const n = Number(m[1]);
+  return Number.isFinite(n) ? n : null;
+}
+
+function formatDigitalValue(n: number): string {
+  // Show integers as-is, decimals with up to 2 places.
+  if (Number.isInteger(n)) return String(n);
+  return n.toFixed(2);
+}
+
+function DigitalTab({
+  risk,
+  insights,
+  allInsights,
+}: {
+  risk: SummaryRisk | null;
+  insights: Insight[];
+  allInsights: Insight[];
+}) {
+  const level = risk ? SUMMARY_TO_LEVEL[risk] : null;
+  const source = allInsights.length ? allInsights : insights;
+
+  // Index insights by sourceVariable for value lookup.
+  const bySource = useMemo(() => {
+    const map = new Map<string, Insight>();
+    for (const ins of source) {
+      if (ins.sourceVariable && !map.has(ins.sourceVariable)) {
+        map.set(ins.sourceVariable, ins);
+      }
+    }
+    return map;
+  }, [source]);
+
+  // Build display rows: union of master list + any extra variables present
+  // in the case data (so we never hide a variable). Master order first.
+  const rows = useMemo(() => {
+    const ordered: string[] = [...DIGITAL_VARIABLES];
+    for (const key of bySource.keys()) {
+      if (!ordered.includes(key)) ordered.push(key);
+    }
+    return ordered.map((key) => {
+      const ins = bySource.get(key);
+      const observed = ins ? extractObservedValue(ins.text) : null;
+      const value = observed ?? DIGITAL_DEFAULT_VALUE;
+      return {
+        key,
+        label: digitalLabelFor(key),
+        value,
+        isDefault: observed === null,
+      };
+    });
+  }, [bySource]);
+
+  return (
+    <section className="space-y-4">
+      {/* Risk Status header */}
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+        <div>
+          <h2 className="text-base font-semibold tracking-tight">Digital Footprint</h2>
+          <p className="mt-1 text-xs text-muted-foreground">
+            {rows.length} {rows.length === 1 ? "indicator" : "indicators"} tracked
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          {risk && level ? (
+            <span
+              className={`inline-flex items-center rounded-full border px-3 py-1 text-sm font-semibold ${RISK_CLASS[level]}`}
+            >
+              {risk}
+            </span>
+          ) : (
+            <span className="rounded-full border bg-muted px-3 py-1 text-sm text-muted-foreground">
+              No data
+            </span>
+          )}
+        </div>
+      </div>
+
+      {/* Indicators list */}
+      <div className="rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+        <p className="mb-3 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+          All Indicators ({rows.length})
+        </p>
+        <ul className="divide-y">
+          {rows.map((r) => (
+            <li
+              key={r.key}
+              className="flex items-center justify-between gap-4 py-2.5"
+            >
+              <span className="text-sm font-medium text-foreground">{r.label}</span>
+              <span
+                className="font-mono text-sm tabular-nums text-foreground"
+                title={r.isDefault ? "Default value (no data)" : "Observed value"}
+              >
+                {formatDigitalValue(r.value)}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
