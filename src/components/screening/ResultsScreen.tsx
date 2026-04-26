@@ -260,12 +260,10 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
           <OverviewTab data={data} noHit={noHit} overallLevel={overallLevel} />
         )}
         {tab === "bureau" && (
-          <SectionTab
-            title="Bureau Risk Alerts"
+          <BureauTab
             risk={noHit ? null : data.summary.bureauRisk}
             insights={noHit ? [] : data.results.bureau.insights}
             allInsights={noHit ? [] : data.results.bureau.allInsights}
-            isBureau
           />
         )}
         {tab === "digital" && (
