@@ -588,6 +588,53 @@ function InsightCard({ insight }: { insight: Insight }) {
   );
 }
 
+/* ---------- Bureau presentation helpers ---------- */
+// Words that must stay uppercase even after sentence/title casing.
+const BUREAU_KEEP_UPPER = new Set([
+  "PAN", "GST", "KYC", "ID", "DL", "VID", "EMI",
+]);
+
+function decodeHtmlEntities(input: string): string {
+  return input
+    .replace(/&gt;/gi, ">")
+    .replace(/&lt;/gi, "<")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
+    .replace(/&nbsp;/gi, " ");
+}
+
+function titleCaseWord(w: string): string {
+  if (!w) return w;
+  const stripped = w.replace(/[^A-Za-z]/g, "");
+  if (stripped && BUREAU_KEEP_UPPER.has(stripped.toUpperCase())) {
+    return w.toUpperCase();
+  }
+  return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+}
+
+function formatBureauCategory(cat: string): string {
+  return decodeHtmlEntities(cat)
+    .toLowerCase()
+    .split(/(\s+)/)
+    .map((tok) => (/\s+/.test(tok) ? tok : titleCaseWord(tok)))
+    .join("");
+}
+
+function formatBureauDescription(desc: string): string {
+  const decoded = decodeHtmlEntities(desc);
+  // Sentence case: first letter uppercase, rest lowercase, but preserve
+  // acronyms (PAN, GST, etc.) and keep numbers/symbols intact.
+  const lower = decoded.toLowerCase();
+  // Restore acronyms by tokenising on non-letter boundaries.
+  const restored = lower.replace(/[a-z]+/g, (word) => {
+    const upper = word.toUpperCase();
+    return BUREAU_KEEP_UPPER.has(upper) ? upper : word;
+  });
+  // Capitalise the first alphabetic character.
+  return restored.replace(/[a-z]/, (c) => c.toUpperCase());
+}
+
 /* ---------- Bureau Tab (grouped by Rule Category from Risk Alerts Rules.xlsx) ---------- */
 function BureauTab({
   risk,
@@ -670,8 +717,8 @@ function BureauTab({
             {grouped.map((g) => (
               <div key={g.category}>
                 <div className="mb-2 flex items-center gap-2">
-                  <span className="inline-flex items-center rounded-full border border-destructive/30 bg-destructive/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-destructive">
-                    {g.category}
+                  <span className="inline-flex items-center rounded-full border border-destructive/30 bg-destructive/10 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-destructive">
+                    {formatBureauCategory(g.category)}
                   </span>
                   <span className="text-[11px] text-muted-foreground">
                     {g.descriptions.length} {g.descriptions.length === 1 ? "alert" : "alerts"}
@@ -683,7 +730,7 @@ function BureauTab({
                       key={`${g.category}-${i}`}
                       className="rounded-md border border-l-4 border-l-destructive bg-muted/20 px-4 py-2.5 text-sm leading-snug"
                     >
-                      {desc}
+                      {formatBureauDescription(desc)}
                     </li>
                   ))}
                 </ul>
