@@ -32,13 +32,15 @@ import {
   Signal,
 } from "lucide-react";
 import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
   ResponsiveContainer,
   Tooltip as RTooltip,
+  ScatterChart,
+  Scatter,
+  XAxis,
+  YAxis,
+  ZAxis,
+  CartesianGrid,
+  Cell,
 } from "recharts";
 
 interface Props {
