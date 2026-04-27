@@ -789,12 +789,98 @@ const DIGITAL_LABELS: Record<string, string> = {
   "Mobile GIN.industryCounts.industryOther_BUREAUID": "Other Industry Presence",
 };
 
+// Fallback descriptions for each indicator (used when the case data does not
+// supply a textual description).
+const DIGITAL_DESCRIPTIONS: Record<string, string> = {
+  "Phone to Name.nameMatchScore_BUREAUID":
+    "Match similarity between the provided name and the name found in official records.",
+  "Phone Social Advance.phoneSocialCount_BUREAUID":
+    "Total number of platforms where an account is registered with the phone number.",
+  "ecomScore_BUREAUID":
+    "Reflects the user's presence and activity across major e-commerce platforms.",
+  "daysSinceRevocation_BUREAUID":
+    "Days since the phone number was last revoked or reassigned.",
+  "Mobile GIN.l1Count_BUREAUID":
+    "Number of distinct first-degree connections to the primary node.",
+  "Mobile GIN.l1Confidence_BUREAUID":
+    "Confidence score for first-degree network connections.",
+  "Mobile GIN.l2Count_BUREAUID":
+    "Number of distinct second-degree connections to the primary node; larger counts are linked to higher risk.",
+  "Mobile GIN.l2Confidence_BUREAUID":
+    "Confidence score for second-degree network connections.",
+  "Mobile GIN.nameDiversity_BUREAUID":
+    "Diversity of names linked to the primary node across the network.",
+  "Mobile GIN.nodeTypeCounts.mobile_BUREAUID":
+    "Number of distinct mobile numbers connected to the primary node.",
+  "Mobile GIN.nodeTypeCounts.email_BUREAUID":
+    "Number of distinct email addresses connected to the primary node.",
+  "Mobile GIN.nodeTypeCounts.fullName_BUREAUID":
+    "Number of distinct full names connected to the primary node.",
+  "Mobile GIN.industryCounts.relationshipCount_BUREAUID":
+    "Number of times the primary node has been seen across industries in the network.",
+  "Mobile GIN.industryCounts.industryFinance_BUREAUID":
+    "Presence of the primary node across finance-related platforms.",
+  "Mobile GIN.industryCounts.industryFintech_BUREAUID":
+    "Presence of the primary node across fintech platforms.",
+  "Mobile GIN.industryCounts.industryGaming_BUREAUID":
+    "Presence of the primary node across gaming platforms.",
+  "Mobile GIN.industryCounts.industryBreached_BUREAUID":
+    "Presence of the primary node in known breached databases.",
+  "Mobile GIN.industryCounts.industryOther_BUREAUID":
+    "Presence of the primary node across other industry platforms.",
+};
+
+// Group → ordered indicator keys.
+const DIGITAL_GROUPS: { key: string; label: string; keys: string[] }[] = [
+  {
+    key: "key",
+    label: "Key Indicators",
+    keys: [
+      "Phone to Name.nameMatchScore_BUREAUID",
+      "Phone Social Advance.phoneSocialCount_BUREAUID",
+      "ecomScore_BUREAUID",
+      "daysSinceRevocation_BUREAUID",
+    ],
+  },
+  {
+    key: "industry",
+    label: "Industry",
+    keys: [
+      "Mobile GIN.industryCounts.relationshipCount_BUREAUID",
+      "Mobile GIN.industryCounts.industryFinance_BUREAUID",
+      "Mobile GIN.industryCounts.industryFintech_BUREAUID",
+      "Mobile GIN.industryCounts.industryGaming_BUREAUID",
+      "Mobile GIN.industryCounts.industryBreached_BUREAUID",
+      "Mobile GIN.industryCounts.industryOther_BUREAUID",
+    ],
+  },
+  {
+    key: "connections",
+    label: "Connections",
+    keys: [
+      "Mobile GIN.nodeTypeCounts.mobile_BUREAUID",
+      "Mobile GIN.nodeTypeCounts.email_BUREAUID",
+      "Mobile GIN.nodeTypeCounts.fullName_BUREAUID",
+      "Mobile GIN.nameDiversity_BUREAUID",
+    ],
+  },
+  {
+    key: "network",
+    label: "Network",
+    keys: [
+      "Mobile GIN.l1Count_BUREAUID",
+      "Mobile GIN.l1Confidence_BUREAUID",
+      "Mobile GIN.l2Count_BUREAUID",
+      "Mobile GIN.l2Confidence_BUREAUID",
+    ],
+  },
+];
+
 const DIGITAL_DEFAULT_VALUE = 0.4;
 
 function humanizeDigitalKey(key: string): string {
   // Fallback humanizer for unknown variables.
   let s = key.replace(/_BUREAUID$/i, "");
-  // Take last meaningful segment
   s = s.split(".").pop() ?? s;
   s = s.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/[_]+/g, " ");
   return s
@@ -809,15 +895,28 @@ function digitalLabelFor(key: string): string {
 }
 
 function extractObservedValue(text: string): number | null {
-  // Matches "Observed value: 12.34" / "Observed value: 100" / "Observed value: -1.2"
   const m = text.match(/Observed value:\s*(-?\d+(?:\.\d+)?)/i);
   if (!m) return null;
   const n = Number(m[1]);
   return Number.isFinite(n) ? n : null;
 }
 
+function extractDescription(text: string): string {
+  // Strip "Observed value: ..." trailing sentence and any " nan " filler.
+  let s = text.replace(/\s*Observed value:\s*-?\d+(?:\.\d+)?\.?\s*$/i, "");
+  s = s.replace(/\s+nan\s+/gi, " ").replace(/\s{2,}/g, " ").trim();
+  return s;
+}
+
+function digitalDescriptionFor(key: string, ins?: Insight): string {
+  if (ins) {
+    const d = extractDescription(ins.text);
+    if (d) return d;
+  }
+  return DIGITAL_DESCRIPTIONS[key] ?? "";
+}
+
 function formatDigitalValue(n: number): string {
-  // Show integers as-is, decimals with up to 2 places.
   if (Number.isInteger(n)) return String(n);
   return n.toFixed(2);
 }
@@ -834,7 +933,7 @@ function DigitalTab({
   const level = risk ? SUMMARY_TO_LEVEL[risk] : null;
   const source = allInsights.length ? allInsights : insights;
 
-  // Index insights by sourceVariable for value lookup.
+  // Index insights by sourceVariable for value/description lookup.
   const bySource = useMemo(() => {
     const map = new Map<string, Insight>();
     for (const ins of source) {
@@ -845,25 +944,35 @@ function DigitalTab({
     return map;
   }, [source]);
 
-  // Build display rows: union of master list + any extra variables present
-  // in the case data (so we never hide a variable). Master order first.
-  const rows = useMemo(() => {
-    const ordered: string[] = [...DIGITAL_VARIABLES];
+  // Build grouped rows. Any extra variables present in the case but not in
+  // any predefined group are appended to "Key Indicators" so nothing is hidden.
+  const groups = useMemo(() => {
+    const knownKeys = new Set(DIGITAL_GROUPS.flatMap((g) => g.keys));
+    const extras: string[] = [];
     for (const key of bySource.keys()) {
-      if (!ordered.includes(key)) ordered.push(key);
+      if (!knownKeys.has(key) && !DIGITAL_VARIABLES.includes(key)) {
+        extras.push(key);
+      }
     }
-    return ordered.map((key) => {
-      const ins = bySource.get(key);
-      const observed = ins ? extractObservedValue(ins.text) : null;
-      const value = observed ?? DIGITAL_DEFAULT_VALUE;
-      return {
-        key,
-        label: digitalLabelFor(key),
-        value,
-        isDefault: observed === null,
-      };
+    return DIGITAL_GROUPS.map((g, idx) => {
+      const keys = idx === 0 ? [...g.keys, ...extras] : g.keys;
+      const items = keys.map((key) => {
+        const ins = bySource.get(key);
+        const observed = ins ? extractObservedValue(ins.text) : null;
+        const value = observed ?? DIGITAL_DEFAULT_VALUE;
+        return {
+          key,
+          label: digitalLabelFor(key),
+          description: digitalDescriptionFor(key, ins),
+          value,
+          isDefault: observed === null,
+        };
+      });
+      return { ...g, items };
     });
   }, [bySource]);
+
+  const totalIndicators = groups.reduce((acc, g) => acc + g.items.length, 0);
 
   return (
     <section className="space-y-4">
@@ -872,7 +981,7 @@ function DigitalTab({
         <div>
           <h2 className="text-base font-semibold tracking-tight">Digital Footprint</h2>
           <p className="mt-1 text-xs text-muted-foreground">
-            {rows.length} {rows.length === 1 ? "indicator" : "indicators"} tracked
+            {totalIndicators} {totalIndicators === 1 ? "indicator" : "indicators"} tracked
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -890,27 +999,47 @@ function DigitalTab({
         </div>
       </div>
 
-      {/* Indicators list */}
+      {/* Grouped indicators list (mirrors Bureau Risk Alerts layout) */}
       <div className="rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
-        <p className="mb-3 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-          All Indicators ({rows.length})
-        </p>
-        <ul className="divide-y">
-          {rows.map((r) => (
-            <li
-              key={r.key}
-              className="flex items-center justify-between gap-4 py-2.5"
-            >
-              <span className="text-sm font-medium text-foreground">{r.label}</span>
-              <span
-                className="font-mono text-sm tabular-nums text-foreground"
-                title={r.isDefault ? "Default value (no data)" : "Observed value"}
-              >
-                {formatDigitalValue(r.value)}
-              </span>
-            </li>
+        <div className="space-y-5">
+          {groups.map((g) => (
+            <div key={g.key}>
+              <div className="mb-2 flex items-center gap-2">
+                <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-primary">
+                  {g.label}
+                </span>
+                <span className="text-[11px] text-muted-foreground">
+                  {g.items.length} {g.items.length === 1 ? "indicator" : "indicators"}
+                </span>
+              </div>
+              <ul className="space-y-2">
+                {g.items.map((it) => (
+                  <li
+                    key={it.key}
+                    className="rounded-md border border-l-4 border-l-primary/60 bg-muted/20 px-4 py-2.5"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <span className="text-sm font-semibold text-foreground">
+                        {it.label}
+                      </span>
+                      <span
+                        className="font-mono text-sm tabular-nums text-foreground"
+                        title={it.isDefault ? "Default value (no data)" : "Observed value"}
+                      >
+                        {formatDigitalValue(it.value)}
+                      </span>
+                    </div>
+                    {it.description && (
+                      <p className="mt-1 text-xs leading-snug text-muted-foreground">
+                        {it.description}
+                      </p>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
