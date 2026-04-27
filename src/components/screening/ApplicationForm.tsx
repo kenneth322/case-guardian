@@ -124,12 +124,21 @@ export default function ApplicationForm({ onSubmit }: Props) {
                 </span>
                 <input
                   id="mobile"
+                  ref={mobileInputRef}
                   type="tel"
                   inputMode="numeric"
+                  autoComplete="tel-national"
                   maxLength={10}
                   placeholder="10-digit mobile number"
                   value={mobile}
                   onChange={(e) => handleMobileChange(e.target.value)}
+                  onPaste={(e) => {
+                    const text = e.clipboardData.getData("text");
+                    if (text) {
+                      e.preventDefault();
+                      handleMobileChange(text);
+                    }
+                  }}
                   className={`w-full rounded-md border bg-background py-2 pl-12 pr-3 text-sm outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20 ${
                     showMobileError ? "border-destructive focus:ring-destructive/20" : ""
                   }`}
