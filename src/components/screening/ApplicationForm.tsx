@@ -20,23 +20,51 @@ export default function ApplicationForm({ onSubmit }: Props) {
   const [mobile, setMobile] = useState("");
   const [details, setDetails] = useState(EMPTY);
   const [autoFilled, setAutoFilled] = useState(false);
+  const mobileInputRef = useRef<HTMLInputElement | null>(null);
 
   const validMobile = /^[6-9]\d{9}$/.test(mobile);
   const showMobileError = mobile.length > 0 && !validMobile;
 
-  const handleMobileChange = (raw: string) => {
-    const m = raw.replace(/\D/g, "").slice(0, 10);
-    setMobile(m);
-    const hit = CASES_BY_MOBILE[m];
+  // Centralized autofill: triggered whenever the mobile state changes,
+  // regardless of how it was set (typing, paste, programmatic, browser autofill).
+  useEffect(() => {
+    const hit = CASES_BY_MOBILE[mobile];
     if (hit) {
       const { mobile: _m, ...rest } = hit.applicant;
       setDetails(rest);
       setAutoFilled(true);
     } else if (autoFilled) {
-      // Clear any prior auto-fill once the number no longer matches
       setDetails(EMPTY);
       setAutoFilled(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mobile]);
+
+  // Catch browser autofill / paste flows that set the input value without
+  // dispatching a React-recognized change event. We poll the DOM value on
+  // focus, blur and the native 'input'/'change' events, and sync it to state.
+  useEffect(() => {
+    const el = mobileInputRef.current;
+    if (!el) return;
+    const sync = () => {
+      const next = el.value.replace(/\D/g, "").slice(0, 10);
+      if (next !== mobile) setMobile(next);
+    };
+    el.addEventListener("input", sync);
+    el.addEventListener("change", sync);
+    el.addEventListener("blur", sync);
+    el.addEventListener("animationstart", sync); // Chrome autofill fires this
+    return () => {
+      el.removeEventListener("input", sync);
+      el.removeEventListener("change", sync);
+      el.removeEventListener("blur", sync);
+      el.removeEventListener("animationstart", sync);
+    };
+  }, [mobile]);
+
+  const handleMobileChange = (raw: string) => {
+    const m = raw.replace(/\D/g, "").slice(0, 10);
+    setMobile(m);
   };
 
   const setField = <K extends keyof typeof EMPTY>(key: K, value: string) => {
