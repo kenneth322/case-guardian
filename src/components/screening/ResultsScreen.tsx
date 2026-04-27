@@ -32,13 +32,15 @@ import {
   Signal,
 } from "lucide-react";
 import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
   ResponsiveContainer,
   Tooltip as RTooltip,
+  ScatterChart,
+  Scatter,
+  XAxis,
+  YAxis,
+  ZAxis,
+  CartesianGrid,
+  Cell,
 } from "recharts";
 
 interface Props {
@@ -332,106 +334,257 @@ function OverviewTab({
   noHit: boolean;
   overallLevel: RiskLevel | null;
 }) {
-  const chartData = useMemo(() => {
-    if (noHit) return [];
-    const sections = [
-      { key: "Bureau", insights: data.results.bureau.allInsights },
-      { key: "Digital", insights: data.results.digital.allInsights },
-      { key: "Telecom", insights: data.results.telco.allInsights },
+  // Build a TSNE-style scatter of every signal/rule across the three sections.
+  // Each point's coordinates are derived from section + influence so that
+  // similar items naturally cluster together. Pure presentation — no scoring
+  // logic is added.
+  const scatterClusters = useMemo(() => {
+    if (noHit) return [] as Array<{
+      name: string;
+      color: string;
+      points: Array<{ x: number; y: number; z: number; label: string; section: string; influence: Influence }>;
+    }>;
+
+    const sections: Array<{ key: string; insights: Insight[]; cx: number; cy: number }> = [
+      { key: "Bureau", insights: data.results.bureau.allInsights, cx: 22, cy: 70 },
+      { key: "Digital", insights: data.results.digital.allInsights, cx: 50, cy: 30 },
+      { key: "Telecom", insights: data.results.telco.allInsights, cx: 78, cy: 70 },
     ];
-    return sections.map((s) => {
-      const neg = s.insights.filter((i) => i.influence === "negative").length;
-      const pos = s.insights.filter((i) => i.influence === "positive").length;
-      const total = s.insights.length || 1;
-      // riskIntensity: 0..100 weighted by negative share
-      const riskIntensity = Math.round((neg / total) * 100);
-      return {
-        dimension: s.key,
-        "Risk Signals": neg,
-        "Positive Signals": pos,
-        riskIntensity,
-      };
+
+    type Pt = { x: number; y: number; z: number; label: string; section: string; influence: Influence };
+    const high: Pt[] = [];
+    const mid: Pt[] = [];
+    const low: Pt[] = [];
+
+    sections.forEach((s) => {
+      s.insights.forEach((ins, idx) => {
+        // Deterministic pseudo-random offset around section centroid.
+        const seed = (idx + 1) * 9301 + s.key.charCodeAt(0) * 49297;
+        const r1 = ((seed % 1000) / 1000) - 0.5;
+        const r2 = (((seed * 7) % 1000) / 1000) - 0.5;
+        // Negative signals pull toward upper-right "high risk" zone, positive
+        // toward lower-left, neutral stays near the centroid.
+        const drift = ins.influence === "negative" ? 8 : ins.influence === "positive" ? -8 : 0;
+        const x = Math.max(2, Math.min(98, s.cx + r1 * 18 + drift * 0.6));
+        const y = Math.max(2, Math.min(98, s.cy + r2 * 18 - drift * 0.6));
+        const label = displayNameForInsight(ins, s.key);
+        const pt: Pt = { x, y, z: 80, label, section: s.key, influence: ins.influence };
+        if (ins.influence === "negative") high.push(pt);
+        else if (ins.influence === "neutral") mid.push(pt);
+        else low.push(pt);
+      });
     });
+
+    return [
+      { name: "High Risk Cluster", color: "var(--color-destructive)", points: high },
+      { name: "Mid Risk Cluster", color: "var(--color-risk-medium, #d97706)", points: mid },
+      { name: "Low Risk Cluster", color: "var(--color-success)", points: low },
+    ].filter((c) => c.points.length > 0);
+  }, [data, noHit]);
+
+  const topFactors = useMemo(() => {
+    if (noHit) return [] as Array<{
+      label: string;
+      section: string;
+      description: string;
+      influence: Influence;
+    }>;
+    const all: Array<{ label: string; section: string; description: string; influence: Influence }> = [];
+
+    // Bureau
+    for (const ins of data.results.bureau.allInsights) {
+      const code = ins.sourceVariable;
+      if (!code || code === "RULE_COUNT") continue;
+      const rule = BUREAU_RULE_BY_CODE[code];
+      if (!rule) continue;
+      all.push({
+        label: rule.description,
+        section: "Bureau",
+        description: `Triggered under ${formatBureauCategory(rule.category)}.`,
+        influence: ins.influence,
+      });
+    }
+    // Digital
+    for (const ins of data.results.digital.allInsights) {
+      const key = ins.sourceVariable ?? "";
+      if (!key) continue;
+      all.push({
+        label: digitalLabelFor(key),
+        section: "Digital Footprint",
+        description: digitalDescriptionFor(key, ins) || "Digital footprint indicator.",
+        influence: ins.influence,
+      });
+    }
+    // Telecom
+    for (const ins of data.results.telco.allInsights) {
+      all.push({
+        label: ins.title || "Telecom signal",
+        section: "Telecom",
+        description: extractDescription(ins.text) || "Telecom usage indicator.",
+        influence: ins.influence,
+      });
+    }
+
+    const negatives = all.filter((f) => f.influence === "negative");
+    const pool = negatives.length > 0 ? negatives : all.filter((f) => f.influence === "positive");
+    return pool.slice(0, 6);
   }, [data, noHit]);
 
   return (
-    <div className="grid gap-5 lg:grid-cols-2">
-      {/* Overall Risk Area */}
-      <section className="rounded-xl border bg-surface p-6 shadow-[var(--shadow-card)]">
-        <h2 className="text-sm font-semibold tracking-tight">Overall Risk Area</h2>
-        <p className="mt-1 text-xs text-muted-foreground">
-          Aggregate risk across bureau, digital and telecom signals.
-        </p>
-        <div className="mt-4">
-          <RiskGauge risk={noHit ? null : data.summary.overallRisk} noHit={noHit} />
-        </div>
-        {!noHit && overallLevel && (
-          <div className="mt-4 grid grid-cols-3 gap-2 text-center">
-            <RiskMini label="Bureau" risk={data.summary.bureauRisk} />
-            <RiskMini label="Digital" risk={data.summary.digitalRisk} />
-            <RiskMini label="Telecom" risk={data.summary.telcoRisk} />
+    <div className="space-y-5">
+      <div className="grid gap-5 lg:grid-cols-2">
+        {/* Overall Risk Area */}
+        <section className="rounded-xl border bg-surface p-6 shadow-[var(--shadow-card)]">
+          <h2 className="text-sm font-semibold tracking-tight">Overall Risk Area</h2>
+          <p className="mt-1 text-xs text-muted-foreground">
+            Aggregate risk across bureau, digital and telecom signals.
+          </p>
+          <div className="mt-4">
+            <RiskGauge risk={noHit ? null : data.summary.overallRisk} noHit={noHit} />
           </div>
-        )}
-      </section>
+          {!noHit && overallLevel && (
+            <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+              <RiskMini label="Bureau" risk={data.summary.bureauRisk} />
+              <RiskMini label="Digital" risk={data.summary.digitalRisk} />
+              <RiskMini label="Telecom" risk={data.summary.telcoRisk} />
+            </div>
+          )}
+        </section>
 
-      {/* Risk Contribution Chart */}
-      <section className="rounded-xl border bg-surface p-6 shadow-[var(--shadow-card)]">
-        <h2 className="text-sm font-semibold tracking-tight">Risk Contribution by Dimension</h2>
-        <p className="mt-1 text-xs text-muted-foreground">
-          Comparing risk-increasing vs risk-reducing signals across data sources.
-        </p>
-        {noHit || chartData.length === 0 ? (
-          <div className="mt-6 flex h-64 items-center justify-center rounded-md border border-dashed text-sm text-muted-foreground">
-            No signals available
+        {/* Multi-Dimensional Risk Visualization */}
+        <section className="rounded-xl border bg-surface p-6 shadow-[var(--shadow-card)]">
+          <h2 className="text-sm font-semibold tracking-tight">Multi-Dimensional Risk Map</h2>
+          <p className="mt-1 text-xs text-muted-foreground">
+            Population-style clustering of bureau rules, digital footprint and telecom signals.
+          </p>
+          {noHit || scatterClusters.length === 0 ? (
+            <div className="mt-6 flex h-64 items-center justify-center rounded-md border border-dashed text-sm text-muted-foreground">
+              No signals available
+            </div>
+          ) : (
+            <div className="mt-4 h-72 w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <ScatterChart margin={{ top: 10, right: 16, bottom: 10, left: 0 }}>
+                  <CartesianGrid stroke="var(--color-border)" strokeDasharray="3 3" />
+                  <XAxis
+                    type="number"
+                    dataKey="x"
+                    domain={[0, 100]}
+                    tick={false}
+                    axisLine={{ stroke: "var(--color-border)" }}
+                    label={{
+                      value: "Bureau ←  signal space  → Telecom",
+                      position: "insideBottom",
+                      offset: -2,
+                      style: { fill: "var(--color-muted-foreground)", fontSize: 11 },
+                    }}
+                  />
+                  <YAxis
+                    type="number"
+                    dataKey="y"
+                    domain={[0, 100]}
+                    tick={false}
+                    axisLine={{ stroke: "var(--color-border)" }}
+                    label={{
+                      value: "Risk intensity",
+                      angle: -90,
+                      position: "insideLeft",
+                      offset: 10,
+                      style: { fill: "var(--color-muted-foreground)", fontSize: 11 },
+                    }}
+                  />
+                  <ZAxis type="number" dataKey="z" range={[60, 180]} />
+                  <RTooltip
+                    cursor={{ strokeDasharray: "3 3" }}
+                    contentStyle={{
+                      background: "var(--color-surface)",
+                      border: "1px solid var(--color-border)",
+                      borderRadius: 8,
+                      fontSize: 12,
+                    }}
+                    formatter={(_v, _n, p: { payload?: { label: string; section: string } }) => {
+                      const pl = p?.payload;
+                      if (!pl) return ["", ""];
+                      return [pl.label, pl.section];
+                    }}
+                  />
+                  {scatterClusters.map((c) => (
+                    <Scatter key={c.name} name={c.name} data={c.points} fill={c.color} fillOpacity={0.55}>
+                      {c.points.map((_, i) => (
+                        <Cell key={i} stroke={c.color} strokeOpacity={0.9} />
+                      ))}
+                    </Scatter>
+                  ))}
+                </ScatterChart>
+              </ResponsiveContainer>
+            </div>
+          )}
+          {!noHit && scatterClusters.length > 0 && (
+            <div className="mt-3 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
+              {scatterClusters.map((c) => (
+                <LegendDot key={c.name} color={c.color} label={c.name} />
+              ))}
+            </div>
+          )}
+        </section>
+      </div>
+
+      {/* Top Risk Factors */}
+      {!noHit && topFactors.length > 0 && (
+        <section className="rounded-xl border bg-surface p-6 shadow-[var(--shadow-card)]">
+          <div className="flex items-center justify-between gap-3">
+            <div>
+              <h2 className="text-sm font-semibold tracking-tight">Top Risk Factors</h2>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Most impactful drivers across Bureau, Digital Footprint and Telecom.
+              </p>
+            </div>
+            <span className="rounded-full border bg-muted/40 px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground">
+              {topFactors[0]?.influence === "negative" ? "Risk-increasing" : "Risk-reducing"}
+            </span>
           </div>
-        ) : (
-          <div className="mt-4 h-72 w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <RadarChart data={chartData} outerRadius="75%">
-                <PolarGrid stroke="var(--color-border)" />
-                <PolarAngleAxis
-                  dataKey="dimension"
-                  tick={{ fill: "var(--color-foreground)", fontSize: 12, fontWeight: 500 }}
-                />
-                <PolarRadiusAxis
-                  angle={90}
-                  tick={{ fill: "var(--color-muted-foreground)", fontSize: 10 }}
-                />
-                <RTooltip
-                  contentStyle={{
-                    background: "var(--color-surface)",
-                    border: "1px solid var(--color-border)",
-                    borderRadius: 8,
-                    fontSize: 12,
-                  }}
-                />
-                <Radar
-                  name="Risk Signals"
-                  dataKey="Risk Signals"
-                  stroke="var(--color-destructive)"
-                  fill="var(--color-destructive)"
-                  fillOpacity={0.35}
-                />
-                <Radar
-                  name="Positive Signals"
-                  dataKey="Positive Signals"
-                  stroke="var(--color-success)"
-                  fill="var(--color-success)"
-                  fillOpacity={0.3}
-                />
-              </RadarChart>
-            </ResponsiveContainer>
-          </div>
-        )}
-        {!noHit && chartData.length > 0 && (
-          <div className="mt-3 flex items-center justify-center gap-4 text-xs text-muted-foreground">
-            <LegendDot color="var(--color-destructive)" label="Risk-increasing" />
-            <LegendDot color="var(--color-success)" label="Risk-reducing" />
-          </div>
-        )}
-      </section>
+          <ul className="mt-4 grid gap-3 md:grid-cols-2">
+            {topFactors.map((f, i) => {
+              const accent =
+                f.influence === "negative"
+                  ? "border-l-destructive"
+                  : f.influence === "positive"
+                    ? "border-l-success"
+                    : "border-l-muted-foreground/40";
+              return (
+                <li
+                  key={`${f.section}-${i}-${f.label}`}
+                  className={`rounded-md border border-l-4 ${accent} bg-muted/20 p-3`}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <p className="text-sm font-medium leading-snug">{f.label}</p>
+                    <span className="shrink-0 rounded-full border bg-surface px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+                      {f.section}
+                    </span>
+                  </div>
+                  {f.description && (
+                    <p className="mt-1.5 text-xs text-muted-foreground">{f.description}</p>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
     </div>
   );
+}
+
+function displayNameForInsight(ins: Insight, section: string): string {
+  if (section === "Bureau") {
+    const code = ins.sourceVariable;
+    if (code && BUREAU_RULE_BY_CODE[code]) return BUREAU_RULE_BY_CODE[code].description;
+    return ins.title || "Bureau rule";
+  }
+  if (section === "Digital") {
+    return digitalLabelFor(ins.sourceVariable ?? "");
+  }
+  return ins.title || "Telecom signal";
 }
 
 function LegendDot({ color, label }: { color: string; label: string }) {
