@@ -45,8 +45,13 @@ export default function RiskGauge({ risk, noHit }: Props) {
     );
   };
 
-  const segColor = (key: "low" | "medium" | "high" | "veryhigh") =>
-    noHit ? "var(--risk-neutral)" : `var(--risk-${key})`;
+  const segColor = (key: "low" | "medium" | "high" | "veryhigh") => {
+    if (noHit) return "var(--risk-neutral)";
+    // Dial-only override: render the 3rd (High) segment in orange,
+    // independent of the global --risk-high token used elsewhere.
+    if (key === "high") return "oklch(0.72 0.18 55)";
+    return `var(--risk-${key})`;
+  };
 
   return (
     <div className="flex flex-col items-center">
