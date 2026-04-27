@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CASES_BY_MOBILE, DEMO_MOBILES, type Applicant } from "@/data/cases";
 import { ShieldCheck, CheckCircle2 } from "lucide-react";
 
