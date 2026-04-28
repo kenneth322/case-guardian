@@ -188,7 +188,7 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
 
       {/* SECTION 1: Applicant Details */}
       <div className="border-b bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-4">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
           <div className="mb-3 flex items-center gap-2">
             <User className="h-4 w-4 text-primary" />
             <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
