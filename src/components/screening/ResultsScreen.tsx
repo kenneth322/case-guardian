@@ -260,7 +260,7 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
         </div>
       </div>
 
-      <main className="mx-auto max-w-6xl space-y-5 px-6 py-6 animate-[fade-in_0.4s_ease-out]">
+      <main className="mx-auto max-w-6xl space-y-5 px-4 py-6 sm:px-6 animate-[fade-in_0.4s_ease-out]">
         {tab === "overview" && (
           <OverviewTab data={data} noHit={noHit} overallLevel={overallLevel} />
         )}
