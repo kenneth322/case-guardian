@@ -132,7 +132,7 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
     <div className="min-h-screen bg-background">
       {/* Top header */}
       <header className="sticky top-0 z-30 border-b bg-surface/95 shadow-[var(--shadow-card)] backdrop-blur">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-start gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground">
               <ShieldCheck className="h-5 w-5" />
