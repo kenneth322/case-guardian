@@ -156,10 +156,10 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
             )}
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center">
             <button
               onClick={onReset}
-              className="inline-flex items-center gap-1.5 rounded-md border bg-surface px-3 py-2 text-sm font-medium transition hover:bg-muted"
+              className="col-span-2 inline-flex items-center justify-center gap-1.5 rounded-md border bg-surface px-3 py-2 text-sm font-medium transition hover:bg-muted sm:col-auto"
             >
               <RotateCcw className="h-3.5 w-3.5" />
               Run Another Case
@@ -178,7 +178,7 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
             </button>
             <button
               onClick={() => setDecision("Reject")}
-              className="rounded-md bg-destructive px-4 py-2 text-sm font-medium text-destructive-foreground shadow-sm transition hover:bg-destructive/90"
+              className="col-span-2 rounded-md bg-destructive px-4 py-2 text-sm font-medium text-destructive-foreground shadow-sm transition hover:bg-destructive/90 sm:col-auto"
             >
               Reject
             </button>
