@@ -231,8 +231,11 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
 
       {/* SECTION 2: Tabs */}
       <div className="border-b bg-surface">
-        <div className="mx-auto max-w-6xl px-6">
-          <nav className="flex flex-wrap gap-1" role="tablist">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <nav
+            className="-mx-4 flex gap-1 overflow-x-auto px-4 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0"
+            role="tablist"
+          >
             {tabs.map((t) => {
               const Icon = t.icon;
               const isActive = tab === t.id;
@@ -242,7 +245,7 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setTab(t.id)}
-                  className={`relative inline-flex items-center gap-2 border-b-2 px-4 py-3 text-sm font-medium transition ${
+                  className={`relative inline-flex shrink-0 items-center gap-2 whitespace-nowrap border-b-2 px-3 py-3 text-sm font-medium transition sm:px-4 ${
                     isActive
                       ? "border-primary text-primary"
                       : "border-transparent text-muted-foreground hover:text-foreground"
