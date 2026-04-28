@@ -437,7 +437,7 @@ function OverviewTab({
     <div className="space-y-5">
       <div className="grid gap-5 lg:grid-cols-2">
         {/* Overall Risk Area */}
-        <section className="rounded-xl border bg-surface p-6 shadow-[var(--shadow-card)]">
+        <section className="rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-6">
           <h2 className="text-sm font-semibold tracking-tight">Overall Risk Area</h2>
           <p className="mt-1 text-xs text-muted-foreground">
             Aggregate risk across bureau, digital and telecom signals.
@@ -455,7 +455,7 @@ function OverviewTab({
         </section>
 
         {/* Multi-Dimensional Risk Visualization */}
-        <section className="rounded-xl border bg-surface p-6 shadow-[var(--shadow-card)]">
+        <section className="rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-6">
           <h2 className="text-sm font-semibold tracking-tight">Multi-Dimensional Risk Map</h2>
           <p className="mt-1 text-xs text-muted-foreground">
             Population-style clustering of bureau rules, digital footprint and telecom signals.
@@ -534,7 +534,7 @@ function OverviewTab({
 
       {/* Top Risk Factors */}
       {!noHit && topFactors.length > 0 && (
-        <section className="rounded-xl border bg-surface p-6 shadow-[var(--shadow-card)]">
+        <section className="rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-6">
           <div className="flex items-center justify-between gap-3">
             <div>
               <h2 className="text-sm font-semibold tracking-tight">Top Risk Factors</h2>
@@ -652,7 +652,7 @@ function SectionTab({
   return (
     <section className="space-y-4">
       {/* Risk Status header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-5">
         <div>
           <h2 className="text-base font-semibold tracking-tight">{title}</h2>
           <p className="mt-1 text-xs text-muted-foreground">
@@ -675,7 +675,7 @@ function SectionTab({
       </div>
 
       {/* Insights list */}
-      <div className="rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+      <div className="rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-5">
         {sorted.length === 0 ? (
           <p className="text-sm text-muted-foreground">No risk indicators available</p>
         ) : (
@@ -841,7 +841,7 @@ function BureauTab({
   return (
     <section className="space-y-4">
       {/* Risk Status header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-5">
         <div>
           <h2 className="text-base font-semibold tracking-tight">Bureau Risk Alerts</h2>
           <p className="mt-1 text-xs text-muted-foreground">
@@ -864,7 +864,7 @@ function BureauTab({
       </div>
 
       {/* Grouped rule list */}
-      <div className="rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+      <div className="rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-5">
         {grouped.length === 0 ? (
           <p className="text-sm text-muted-foreground">No risk indicators available</p>
         ) : (
@@ -1133,7 +1133,7 @@ function DigitalTab({
   return (
     <section className="space-y-4">
       {/* Risk Status header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-5">
         <div>
           <h2 className="text-base font-semibold tracking-tight">Digital Footprint</h2>
           <p className="mt-1 text-xs text-muted-foreground">
@@ -1156,7 +1156,7 @@ function DigitalTab({
       </div>
 
       {/* Grouped indicators list (mirrors Bureau Risk Alerts layout) */}
-      <div className="rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+      <div className="rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-5">
         <div className="space-y-5">
           {groups.map((g) => (
             <div key={g.key}>
