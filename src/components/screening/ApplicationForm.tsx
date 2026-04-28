@@ -101,7 +101,7 @@ export default function ApplicationForm({ onSubmit }: Props) {
         </div>
       </header>
 
-      <main className="mx-auto max-w-3xl px-6 py-10">
+      <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-10">
         <div className="mb-8">
           <h2 className="text-2xl font-semibold tracking-tight">New Application Screening</h2>
           <p className="mt-1 text-sm text-muted-foreground">
