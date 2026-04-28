@@ -90,7 +90,7 @@ export default function ApplicationForm({ onSubmit }: Props) {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b bg-surface">
-        <div className="mx-auto flex max-w-6xl items-center gap-3 px-6 py-4">
+        <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-4 sm:px-6">
           <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground">
             <ShieldCheck className="h-5 w-5" />
           </div>
@@ -101,7 +101,7 @@ export default function ApplicationForm({ onSubmit }: Props) {
         </div>
       </header>
 
-      <main className="mx-auto max-w-3xl px-6 py-10">
+      <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-10">
         <div className="mb-8">
           <h2 className="text-2xl font-semibold tracking-tight">New Application Screening</h2>
           <p className="mt-1 text-sm text-muted-foreground">
@@ -113,7 +113,7 @@ export default function ApplicationForm({ onSubmit }: Props) {
           onSubmit={handleSubmit}
           className="rounded-xl border bg-surface shadow-[var(--shadow-card)]"
         >
-          <div className="grid gap-5 px-6 py-6 sm:grid-cols-2">
+          <div className="grid gap-5 px-4 py-6 sm:grid-cols-2 sm:px-6">
             <div className="sm:col-span-2">
               <label htmlFor="mobile" className="text-xs font-medium text-muted-foreground">
                 Mobile Number <span className="text-destructive">*</span>
@@ -208,7 +208,7 @@ export default function ApplicationForm({ onSubmit }: Props) {
             </div>
           </div>
 
-          <div className="flex flex-col-reverse items-stretch justify-between gap-3 border-t bg-muted/40 px-6 py-4 sm:flex-row sm:items-center">
+          <div className="flex flex-col-reverse items-stretch justify-between gap-3 border-t bg-muted/40 px-4 py-4 sm:flex-row sm:items-center sm:px-6">
             <p className="text-xs text-muted-foreground">
               Demo numbers (auto-fill): {DEMO_MOBILES.join(", ")}
             </p>

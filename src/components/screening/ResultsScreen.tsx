@@ -132,7 +132,7 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
     <div className="min-h-screen bg-background">
       {/* Top header */}
       <header className="sticky top-0 z-30 border-b bg-surface/95 shadow-[var(--shadow-card)] backdrop-blur">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-start gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground">
               <ShieldCheck className="h-5 w-5" />
@@ -156,10 +156,10 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
             )}
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center">
             <button
               onClick={onReset}
-              className="inline-flex items-center gap-1.5 rounded-md border bg-surface px-3 py-2 text-sm font-medium transition hover:bg-muted"
+              className="col-span-2 inline-flex items-center justify-center gap-1.5 rounded-md border bg-surface px-3 py-2 text-sm font-medium transition hover:bg-muted sm:col-auto"
             >
               <RotateCcw className="h-3.5 w-3.5" />
               Run Another Case
@@ -178,7 +178,7 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
             </button>
             <button
               onClick={() => setDecision("Reject")}
-              className="rounded-md bg-destructive px-4 py-2 text-sm font-medium text-destructive-foreground shadow-sm transition hover:bg-destructive/90"
+              className="col-span-2 rounded-md bg-destructive px-4 py-2 text-sm font-medium text-destructive-foreground shadow-sm transition hover:bg-destructive/90 sm:col-auto"
             >
               Reject
             </button>
@@ -188,7 +188,7 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
 
       {/* SECTION 1: Applicant Details */}
       <div className="border-b bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-4">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
           <div className="mb-3 flex items-center gap-2">
             <User className="h-4 w-4 text-primary" />
             <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -231,8 +231,11 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
 
       {/* SECTION 2: Tabs */}
       <div className="border-b bg-surface">
-        <div className="mx-auto max-w-6xl px-6">
-          <nav className="flex flex-wrap gap-1" role="tablist">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <nav
+            className="-mx-4 flex gap-1 overflow-x-auto px-4 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0"
+            role="tablist"
+          >
             {tabs.map((t) => {
               const Icon = t.icon;
               const isActive = tab === t.id;
@@ -242,7 +245,7 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setTab(t.id)}
-                  className={`relative inline-flex items-center gap-2 border-b-2 px-4 py-3 text-sm font-medium transition ${
+                  className={`relative inline-flex shrink-0 items-center gap-2 whitespace-nowrap border-b-2 px-3 py-3 text-sm font-medium transition sm:px-4 ${
                     isActive
                       ? "border-primary text-primary"
                       : "border-transparent text-muted-foreground hover:text-foreground"
@@ -257,7 +260,7 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
         </div>
       </div>
 
-      <main className="mx-auto max-w-6xl space-y-5 px-6 py-6 animate-[fade-in_0.4s_ease-out]">
+      <main className="mx-auto max-w-6xl space-y-5 px-4 py-6 sm:px-6 animate-[fade-in_0.4s_ease-out]">
         {tab === "overview" && (
           <OverviewTab data={data} noHit={noHit} overallLevel={overallLevel} />
         )}
@@ -434,7 +437,7 @@ function OverviewTab({
     <div className="space-y-5">
       <div className="grid gap-5 lg:grid-cols-2">
         {/* Overall Risk Area */}
-        <section className="rounded-xl border bg-surface p-6 shadow-[var(--shadow-card)]">
+        <section className="rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-6">
           <h2 className="text-sm font-semibold tracking-tight">Overall Risk Area</h2>
           <p className="mt-1 text-xs text-muted-foreground">
             Aggregate risk across bureau, digital and telecom signals.
@@ -452,7 +455,7 @@ function OverviewTab({
         </section>
 
         {/* Multi-Dimensional Risk Visualization */}
-        <section className="rounded-xl border bg-surface p-6 shadow-[var(--shadow-card)]">
+        <section className="rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-6">
           <h2 className="text-sm font-semibold tracking-tight">Multi-Dimensional Risk Map</h2>
           <p className="mt-1 text-xs text-muted-foreground">
             Population-style clustering of bureau rules, digital footprint and telecom signals.
@@ -531,7 +534,7 @@ function OverviewTab({
 
       {/* Top Risk Factors */}
       {!noHit && topFactors.length > 0 && (
-        <section className="rounded-xl border bg-surface p-6 shadow-[var(--shadow-card)]">
+        <section className="rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-6">
           <div className="flex items-center justify-between gap-3">
             <div>
               <h2 className="text-sm font-semibold tracking-tight">Top Risk Factors</h2>
@@ -649,7 +652,7 @@ function SectionTab({
   return (
     <section className="space-y-4">
       {/* Risk Status header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-5">
         <div>
           <h2 className="text-base font-semibold tracking-tight">{title}</h2>
           <p className="mt-1 text-xs text-muted-foreground">
@@ -672,7 +675,7 @@ function SectionTab({
       </div>
 
       {/* Insights list */}
-      <div className="rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+      <div className="rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-5">
         {sorted.length === 0 ? (
           <p className="text-sm text-muted-foreground">No risk indicators available</p>
         ) : (
@@ -838,7 +841,7 @@ function BureauTab({
   return (
     <section className="space-y-4">
       {/* Risk Status header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-5">
         <div>
           <h2 className="text-base font-semibold tracking-tight">Bureau Risk Alerts</h2>
           <p className="mt-1 text-xs text-muted-foreground">
@@ -861,7 +864,7 @@ function BureauTab({
       </div>
 
       {/* Grouped rule list */}
-      <div className="rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+      <div className="rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-5">
         {grouped.length === 0 ? (
           <p className="text-sm text-muted-foreground">No risk indicators available</p>
         ) : (
@@ -1130,7 +1133,7 @@ function DigitalTab({
   return (
     <section className="space-y-4">
       {/* Risk Status header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-5">
         <div>
           <h2 className="text-base font-semibold tracking-tight">Digital Footprint</h2>
           <p className="mt-1 text-xs text-muted-foreground">
@@ -1153,7 +1156,7 @@ function DigitalTab({
       </div>
 
       {/* Grouped indicators list (mirrors Bureau Risk Alerts layout) */}
-      <div className="rounded-xl border bg-surface p-5 shadow-[var(--shadow-card)]">
+      <div className="rounded-xl border bg-surface p-4 shadow-[var(--shadow-card)] sm:p-5">
         <div className="space-y-5">
           {groups.map((g) => (
             <div key={g.key}>
