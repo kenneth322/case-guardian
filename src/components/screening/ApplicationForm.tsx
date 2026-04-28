@@ -208,7 +208,7 @@ export default function ApplicationForm({ onSubmit }: Props) {
             </div>
           </div>
 
-          <div className="flex flex-col-reverse items-stretch justify-between gap-3 border-t bg-muted/40 px-6 py-4 sm:flex-row sm:items-center">
+          <div className="flex flex-col-reverse items-stretch justify-between gap-3 border-t bg-muted/40 px-4 py-4 sm:flex-row sm:items-center sm:px-6">
             <p className="text-xs text-muted-foreground">
               Demo numbers (auto-fill): {DEMO_MOBILES.join(", ")}
             </p>
