@@ -113,7 +113,7 @@ export default function ApplicationForm({ onSubmit }: Props) {
           onSubmit={handleSubmit}
           className="rounded-xl border bg-surface shadow-[var(--shadow-card)]"
         >
-          <div className="grid gap-5 px-6 py-6 sm:grid-cols-2">
+          <div className="grid gap-5 px-4 py-6 sm:grid-cols-2 sm:px-6">
             <div className="sm:col-span-2">
               <label htmlFor="mobile" className="text-xs font-medium text-muted-foreground">
                 Mobile Number <span className="text-destructive">*</span>
