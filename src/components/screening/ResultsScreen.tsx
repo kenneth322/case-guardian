@@ -171,14 +171,8 @@ export default function ResultsScreen({ mobile, onReset }: Props) {
               Approve
             </button>
             <button
-              onClick={() => setDecision("Step-up")}
-              className="rounded-md bg-warning px-4 py-2 text-sm font-medium text-warning-foreground shadow-sm transition hover:bg-warning/90"
-            >
-              Step-up
-            </button>
-            <button
               onClick={() => setDecision("Reject")}
-              className="col-span-2 rounded-md bg-destructive px-4 py-2 text-sm font-medium text-destructive-foreground shadow-sm transition hover:bg-destructive/90 sm:col-auto"
+              className="rounded-md bg-destructive px-4 py-2 text-sm font-medium text-destructive-foreground shadow-sm transition hover:bg-destructive/90"
             >
               Reject
             </button>

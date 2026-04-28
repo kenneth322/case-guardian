@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { CheckCircle2, X } from "lucide-react";
 
-export type Decision = "Approve" | "Step-up" | "Reject";
+export type Decision = "Approve" | "Reject";
 
 interface Props {
   decision: Decision | null;
@@ -24,8 +24,7 @@ export default function DecisionModal({ decision, onClose, onConfirmed }: Props)
 
   if (!decision) return null;
 
-  const pastTense =
-    decision === "Approve" ? "Approved" : decision === "Reject" ? "Rejected" : "Step-up";
+  const pastTense = decision === "Approve" ? "Approved" : "Rejected";
 
   return (
     <div
